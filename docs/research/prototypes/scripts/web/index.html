@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>mp-browser-bench</title></head>
+<body>
+<img id="im" src="img/business-person.png">
+<script type="module">
+import { FilesetResolver, FaceLandmarker, ImageSegmenter } from './vendor/vision_bundle.mjs';
+const log = (o) => { window.__results = window.__results || []; window.__results.push(o); console.log(JSON.stringify(o)); };
+const med = (arr) => { const a = [...arr].sort((x, y) => x - y); return a[Math.floor(a.length / 2)]; };
+const timeit = (fn, n = 7) => { fn(); const ts = []; for (let i = 0; i < n; i++) { const t = performance.now(); fn(); ts.push(performance.now() - t); } return { median: +med(ts).toFixed(1), min: +Math.min(...ts).toFixed(1) }; };
+
+async function run(delegate) {
+  const t0 = performance.now();
+  const fileset = await FilesetResolver.forVisionTasks('./vendor/wasm');
+  const t1 = performance.now();
+  const fl = await FaceLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetPath: './models/face_landmarker.task', delegate }, runningMode: 'IMAGE', numFaces: 1, outputFaceBlendshapes: true, outputFacialTransformationMatrixes: true });
+  const t2 = performance.now();
+  const hair = await ImageSegmenter.createFromOptions(fileset, { baseOptions: { modelAssetPath: './models/hair_segmenter.tflite', delegate }, runningMode: 'IMAGE', outputConfidenceMasks: true, outputCategoryMask: false });
+  const t3 = performance.now();
+  const multi = await ImageSegmenter.createFromOptions(fileset, { baseOptions: { modelAssetPath: './models/selfie_multiclass_256x256.tflite', delegate }, runningMode: 'IMAGE', outputConfidenceMasks: false, outputCategoryMask: true });
+  const t4 = performance.now();
+  const im = document.getElementById('im'); if (im.decode) await im.decode();
+  const s = 640 / Math.max(im.naturalWidth, im.naturalHeight);
+  const c = document.createElement('canvas'); c.width = Math.round(im.naturalWidth * s); c.height = Math.round(im.naturalHeight * s);
+  c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+  let lmres; const tl = timeit(() => { lmres = fl.detect(c); });
+  let hairFrac = 0; const th = timeit(() => { const r = hair.segment(c); const m = r.confidenceMasks[1].getAsFloat32Array(); let n = 0; for (let i = 0; i < m.length; i++) if (m[i] > 0.5) n++; hairFrac = n / m.length; r.close(); });
+  let classes = {}; const tm = timeit(() => { const r = multi.segment(c); const m = r.categoryMask.getAsUint8Array(); classes = {}; for (let i = 0; i < m.length; i++) classes[m[i]] = (classes[m[i]] || 0) + 1; r.close(); });
+  const res = { delegate, wasm_fileset_ms: +(t1 - t0).toFixed(0), landmarker_create_ms: +(t2 - t1).toFixed(0), hair_create_ms: +(t3 - t2).toFixed(0), multi_create_ms: +(t4 - t3).toFixed(0),
+    input: `${c.width}x${c.height}`, n_faces: lmres.faceLandmarks.length, n_landmarks: lmres.faceLandmarks[0] && lmres.faceLandmarks[0].length,
+    n_blendshapes: lmres.faceBlendshapes[0] && lmres.faceBlendshapes[0].categories.length, has_matrix: !!(lmres.facialTransformationMatrixes && lmres.facialTransformationMatrixes[0]),
+    landmarker_ms: tl, hair_ms: th, hair_frac: +hairFrac.toFixed(4), multi_ms: tm, classes, hw_threads: navigator.hardwareConcurrency, ua: navigator.userAgent };
+  fl.close(); hair.close(); multi.close();
+  // VIDEO mode: per-frame cost with tracking (same frame fed 30 times with increasing timestamps)
+  const flv = await FaceLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetPath: './models/face_landmarker.task', delegate }, runningMode: 'VIDEO', numFaces: 1, outputFaceBlendshapes: true, outputFacialTransformationMatrixes: true });
+  const hv = await ImageSegmenter.createFromOptions(fileset, { baseOptions: { modelAssetPath: './models/hair_segmenter.tflite', delegate }, runningMode: 'VIDEO', outputConfidenceMasks: true, outputCategoryMask: false });
+  const tsl = [], tsh = [];
+  for (let i = 0; i < 30; i++) {
+    let t = performance.now(); flv.detectForVideo(c, i * 33); tsl.push(performance.now() - t);
+    t = performance.now(); const r = hv.segmentForVideo(c, i * 33); r.close(); tsh.push(performance.now() - t);
+  }
+  res.video_landmarker_ms = { first: +tsl[0].toFixed(1), median: +med(tsl.slice(1)).toFixed(1) };
+  res.video_hair_ms = { first: +tsh[0].toFixed(1), median: +med(tsh.slice(1)).toFixed(1) };
+  flv.close(); hv.close();
+  log(res);
+}
+(async () => {
+  try { await run('CPU'); } catch (e) { log({ delegate: 'CPU', error: String(e && e.stack || e) }); }
+  try { await run('GPU'); } catch (e) { log({ delegate: 'GPU', error: String(e && e.message || e) }); }
+  window.__done = true;
+})();
+</script>
+</body></html>

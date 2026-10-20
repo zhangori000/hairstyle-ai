@@ -1,0 +1,60 @@
+{
+ "name": "glshare_gpu_shared",
+ "chromium": "141.0.7390.37",
+ "playwright_core": "1.64.1",
+ "tasks_vision": "1.1.1",
+ "remote_via_curl": [],
+ "args": [
+  "--use-fake-ui-for-media-stream",
+  "--use-fake-device-for-media-stream",
+  "--autoplay-policy=no-user-gesture-required",
+  "--enable-unsafe-swiftshader",
+  "--use-gl=angle",
+  "--use-angle=swiftshader",
+  "--ignore-gpu-blocklist",
+  "--enable-webgl",
+  "--enable-unsafe-webgpu",
+  "--use-file-for-fake-video-capture=face_640x480.y4m"
+ ],
+ "proxy": false,
+ "url": "/gl_share.html?delegate=GPU&share=1",
+ "wall_ms": 9216,
+ "rss": {
+  "processes": 11,
+  "total_rss_mb": 1047,
+  "renderer_rss_mb": 298
+ },
+ "screenshots": [
+  "<scratchpad>/proto/out/browser_glshare_gpu_shared_gl_share_GPU_shared.png",
+  "<scratchpad>/proto/out/browser_glshare_gpu_shared_gl_share_GPU_shared_canvas.png"
+ ],
+ "results": {
+  "params": {
+   "delegate": "GPU",
+   "share": true
+  },
+  "phases": {
+   "seg_ms": {
+    "n": 12,
+    "median": 8.3,
+    "min": 2.6,
+    "max": 737.8
+   },
+   "draw_ms": {
+    "n": 12,
+    "median": 0.7,
+    "min": 0.3,
+    "max": 16.2
+   },
+   "frame_total_ms": {
+    "n": 12,
+    "median": 8.7,
+    "min": 3,
+    "max": 754
+   },
+   "magenta_pixels": 5093,
+   "magenta_pct": 1.66
+  },
+  "errors": []
+ }
+}

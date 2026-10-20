@@ -1,0 +1,444 @@
+model load ms: {'face_landmarker': 75.0, 'hair_segmenter': 22.1, 'selfie_multiclass': 40.6, 'face_detector': 4.5}
+hair labels: ['background', 'hair'] multiclass labels: ['background', 'hair', 'body-skin', 'face-skin', 'clothes', 'others']
+
+=== portrait.jpg 820x1024  faces=1 detector=1  t_ms lm=14 hair=45 multi=113 fd=3
+  hair: area=0.014 comps=1/2 largest=1.00 band=0.48 meanconf=0.90 border=[] IoU_vs_multiclass=0.82 multi_hair_area=0.013
+  multiclass fractions: {'background': 0.4912, 'hair': 0.0132, 'body-skin': 0.0209, 'face-skin': 0.0576, 'clothes': 0.4148, 'others': 0.0023}
+  face0: pose={'pitch': 3.9, 'yaw': 1.8, 'roll': 0.9} 
+    len mesh=245.6 hairline=276.6 (hair_mask, lines=5) cheek=189.3 (3d 189.4) cheekbone116/345=174.1 jaw172/397=151.7 jaw58/288=168.5 forehead103/332=138.5 temple54/284=166.2 forehead67/297=96.7 chin=37.2
+    jaw angle 172/397=139.0 58/288=140.6 auto=[176, 400] [129.3, 130.0]
+    ratios LW=1.461 (mesh 1.297) JC=0.801 FC=0.731 chinC=0.196 | rel-to-canonical LW=1.125 JC=1.034 FC=1.092 chin=1.162 dAng=6.8
+    -> oval-long: long face, balanced widths (LW=1.46 LW_rel=1.13 JC_rel=1.03 FC_rel=1.09 dAng=+7)
+    silhouette(multiclass): skin jaw/cheek/forehead=153/242/159 person cheek=242 (1.278x landmark cheek) hair widest above forehead=209 (1.104x) hair height above mesh top=80.0px
+    top blendshapes: [('mouthSmileLeft', 0.96), ('mouthSmileRight', 0.934), ('browDownLeft', 0.839), ('browDownRight', 0.818), ('mouthUpperUpLeft', 0.763), ('mouthUpperUpRight', 0.756)]
+    crop box: (159,0)-(644,457) 485x457 hair comps used=[1]
+
+=== business-person.png 958x1358  faces=1 detector=1  t_ms lm=13 hair=54 multi=136 fd=3
+  hair: area=0.029 comps=1/3 largest=1.00 band=0.15 meanconf=0.96 border=[] IoU_vs_multiclass=0.95 multi_hair_area=0.029
+  multiclass fractions: {'background': 0.4492, 'hair': 0.0287, 'body-skin': 0.0572, 'face-skin': 0.0559, 'clothes': 0.409, 'others': 0.0}
+  face0: pose={'pitch': 18.1, 'yaw': 4.9, 'roll': 5.2} pitch
+    len mesh=280.4 hairline=344.4 (hair_mask, lines=5) cheek=246.8 (3d 248.1) cheekbone116/345=226.3 jaw172/397=202.0 jaw58/288=223.1 forehead103/332=175.6 temple54/284=209.4 forehead67/297=124.3 chin=43.8
+    jaw angle 172/397=132.1 58/288=134.7 auto=[176, 400] [129.9, 127.4]
+    ratios LW=1.395 (mesh 1.136) JC=0.818 FC=0.712 chinC=0.178 | rel-to-canonical LW=0.985 JC=1.056 FC=1.062 chin=1.051 dAng=-0.1
+    -> oval: medium length, widths within ~5% of canonical (LW=1.40 LW_rel=0.99 JC_rel=1.06 FC_rel=1.06 dAng=-0)
+    silhouette(multiclass): skin jaw/cheek/forehead=209/294/187 person cheek=294 (1.191x landmark cheek) hair widest above forehead=310 (1.256x) hair height above mesh top=156.0px
+    top blendshapes: [('mouthSmileLeft', 0.649), ('mouthSmileRight', 0.549), ('eyeSquintLeft', 0.497), ('eyeLookUpLeft', 0.289), ('eyeSquintRight', 0.277), ('eyeLookUpRight', 0.261)]
+    crop box: (161,0)-(817,607) 656x607 hair comps used=[1]
+
+=== obama.jpg 910x1137  faces=1 detector=1  t_ms lm=15 hair=42 multi=112 fd=3
+  hair: area=0.016 comps=1/1 largest=1.00 band=0.41 meanconf=0.91 border=[] IoU_vs_multiclass=0.86 multi_hair_area=0.016
+  multiclass fractions: {'background': 0.4485, 'hair': 0.0159, 'body-skin': 0.0255, 'face-skin': 0.0696, 'clothes': 0.4376, 'others': 0.0029}
+  face0: pose={'pitch': 3.6, 'yaw': 1.0, 'roll': 1.0} 
+    len mesh=297.9 hairline=337.9 (hair_mask, lines=5) cheek=231.6 (3d 231.7) cheekbone116/345=212.0 jaw172/397=185.8 jaw58/288=206.3 forehead103/332=168.7 temple54/284=202.4 forehead67/297=117.8 chin=45.5
+    jaw angle 172/397=138.3 58/288=140.0 auto=[176, 400] [129.0, 130.0]
+    ratios LW=1.459 (mesh 1.286) JC=0.802 FC=0.728 chinC=0.196 | rel-to-canonical LW=1.116 JC=1.035 FC=1.087 chin=1.161 dAng=6.1
+    -> oval-long: long face, balanced widths (LW=1.46 LW_rel=1.12 JC_rel=1.04 FC_rel=1.09 dAng=+6)
+    silhouette(multiclass): skin jaw/cheek/forehead=189/293/192 person cheek=293 (1.265x landmark cheek) hair widest above forehead=258 (1.114x) hair height above mesh top=98.0px
+    top blendshapes: [('mouthSmileLeft', 0.953), ('mouthSmileRight', 0.932), ('browDownLeft', 0.844), ('browDownRight', 0.832), ('mouthUpperUpLeft', 0.781), ('mouthUpperUpRight', 0.781)]
+    crop box: (187,0)-(778,557) 591x557 hair comps used=[1]
+
+=== biden.jpg 970x2204  faces=1 detector=1  t_ms lm=15 hair=66 multi=127 fd=2
+  hair: area=0.009 comps=3/4 largest=0.63 band=1.17 meanconf=0.82 border=[] IoU_vs_multiclass=0.36 multi_hair_area=0.010
+  multiclass fractions: {'background': 0.2899, 'hair': 0.0101, 'body-skin': 0.0139, 'face-skin': 0.0513, 'clothes': 0.6248, 'others': 0.0099}
+  face0: pose={'pitch': 2.5, 'yaw': 11.5, 'roll': -8.2} 
+    len mesh=337.3 hairline=461.3 (hair_mask, lines=5) cheek=273.1 (3d 279.1) cheekbone116/345=248.2 jaw172/397=218.1 jaw58/288=243.3 forehead103/332=194.8 temple54/284=233.9 forehead67/297=136.2 chin=50.2
+    jaw angle 172/397=133.3 58/288=135.3 auto=[176, 400] [131.8, 123.1]
+    ratios LW=1.689 (mesh 1.235) JC=0.799 FC=0.714 chinC=0.184 | rel-to-canonical LW=1.071 JC=1.031 FC=1.065 chin=1.088 dAng=1.1
+    -> oval-long: long face, balanced widths (LW=1.69 LW_rel=1.07 JC_rel=1.03 FC_rel=1.06 dAng=+1)
+    silhouette(multiclass): skin jaw/cheek/forehead=0/337/252 person cheek=337 (1.234x landmark cheek) hair widest above forehead=361 (1.322x) hair height above mesh top=133.0px
+    top blendshapes: [('browDownLeft', 0.698), ('mouthPressRight', 0.684), ('browDownRight', 0.64), ('mouthPressLeft', 0.578), ('eyeLookDownLeft', 0.475), ('eyeLookDownRight', 0.47)]
+    crop box: (180,0)-(968,744) 788x744 hair comps used=[1, 2, 4]
+
+=== alex-lacamoire.png 424x394  faces=1 detector=1  t_ms lm=13 hair=39 multi=109 fd=3
+  hair: area=0.151 comps=1/3 largest=1.00 band=0.31 meanconf=0.94 border=[] IoU_vs_multiclass=0.89 multi_hair_area=0.143
+  multiclass fractions: {'background': 0.569, 'hair': 0.1427, 'body-skin': 0.0294, 'face-skin': 0.1724, 'clothes': 0.0865, 'others': 0.0}
+  face0: pose={'pitch': 2.8, 'yaw': 8.7, 'roll': 3.0} 
+    len mesh=177.4 hairline=217.4 (hair_mask, lines=5) cheek=150.9 (3d 152.9) cheekbone116/345=134.2 jaw172/397=126.0 jaw58/288=140.6 forehead103/332=100.4 temple54/284=121.8 forehead67/297=70.2 chin=27.7
+    jaw angle 172/397=133.9 58/288=135.3 auto=[58, 400] [127.8, 122.8]
+    ratios LW=1.441 (mesh 1.176) JC=0.835 FC=0.665 chinC=0.183 | rel-to-canonical LW=1.02 JC=1.078 FC=0.993 chin=1.085 dAng=1.7
+    -> triangle: jaw wider than canonical, forehead not (LW=1.44 LW_rel=1.02 JC_rel=1.08 FC_rel=0.99 dAng=+2)
+    silhouette(multiclass): skin jaw/cheek/forehead=149/148/115 person cheek=239 (1.584x landmark cheek) hair widest above forehead=247 (1.637x) hair height above mesh top=87.0px
+    top blendshapes: [('mouthSmileRight', 0.943), ('mouthSmileLeft', 0.921), ('mouthUpperUpRight', 0.725), ('mouthUpperUpLeft', 0.632), ('eyeSquintRight', 0.608), ('eyeSquintLeft', 0.592)]
+    crop box: (31,8)-(424,394) 393x386 hair comps used=[1]
+
+=== two_people.jpg 1126x661  faces=2 detector=2  t_ms lm=19 hair=43 multi=117 fd=3
+  hair: area=0.004 comps=5/5 largest=0.67 band=2.42 meanconf=0.76 border=[] IoU_vs_multiclass=0.29 multi_hair_area=0.013
+  multiclass fractions: {'background': 0.4037, 'hair': 0.0128, 'body-skin': 0.0284, 'face-skin': 0.0804, 'clothes': 0.4699, 'others': 0.0047}
+  face0: pose={'pitch': 1.0, 'yaw': 4.8, 'roll': -7.4} 
+    len mesh=178.2 hairline=212.0 (skin_end_damped, lines=0) cheek=145.2 (3d 148.7) cheekbone116/345=131.4 jaw172/397=116.3 jaw58/288=129.7 forehead103/332=103.4 temple54/284=124.5 forehead67/297=72.3 chin=26.1
+    jaw angle 172/397=131.4 58/288=133.7 auto=[172, 400] [130.0, 122.6]
+    ratios LW=1.459 (mesh 1.227) JC=0.801 FC=0.712 chinC=0.179 | rel-to-canonical LW=1.064 JC=1.033 FC=1.063 chin=1.062 dAng=-0.8
+    -> oval: medium length, widths within ~5% of canonical (LW=1.46 LW_rel=1.06 JC_rel=1.03 FC_rel=1.06 dAng=-1)
+    silhouette(multiclass): skin jaw/cheek/forehead=116/180/146 person cheek=180 (1.239x landmark cheek) hair widest above forehead=192 (1.322x) hair height above mesh top=71.0px
+    top blendshapes: [('browDownLeft', 0.687), ('mouthPressLeft', 0.65), ('browDownRight', 0.64), ('mouthPressRight', 0.617), ('eyeLookDownRight', 0.389), ('eyeSquintLeft', 0.384)]
+    crop box: (712,0)-(1093,346) 381x346 hair comps used=[2, 3]
+  face1: pose={'pitch': -9.6, 'yaw': 18.0, 'roll': -4.0} yaw
+    len mesh=180.2 hairline=203.2 (hair_mask, lines=5) cheek=146.6 (3d 150.3) cheekbone116/345=133.8 jaw172/397=117.8 jaw58/288=131.1 forehead103/332=104.4 temple54/284=125.8 forehead67/297=72.5 chin=27.9
+    jaw angle 172/397=127.1 58/288=129.3 auto=[172, 400] [126.7, 123.3]
+    ratios LW=1.386 (mesh 1.229) JC=0.804 FC=0.712 chinC=0.19 | rel-to-canonical LW=1.066 JC=1.037 FC=1.062 chin=1.127 dAng=-5.1
+    -> oval: medium length, widths within ~5% of canonical (LW=1.39 LW_rel=1.07 JC_rel=1.04 FC_rel=1.06 dAng=-5)
+    silhouette(multiclass): skin jaw/cheek/forehead=116/190/124 person cheek=190 (1.296x landmark cheek) hair widest above forehead=127 (0.866x) hair height above mesh top=39.0px
+    top blendshapes: [('browDownRight', 0.616), ('browDownLeft', 0.574), ('eyeLookDownLeft', 0.543), ('eyeLookDownRight', 0.515), ('eyeBlinkRight', 0.33), ('eyeBlinkLeft', 0.329)]
+    crop box: (141,0)-(468,298) 327x298 hair comps used=[1, 4, 5]
+
+=== insightface_t1.jpg 1280x886  faces=0 detector=0  t_ms lm=3 hair=51 multi=130 fd=3
+  hair: area=0.009 comps=3/14 largest=0.44 band=2.18 meanconf=0.74 border=[] IoU_vs_multiclass=0.00 multi_hair_area=0.079
+  multiclass fractions: {'background': 0.5276, 'hair': 0.079, 'body-skin': 0.1393, 'face-skin': 0.0598, 'clothes': 0.177, 'others': 0.0174}
+
+=== faceparsing_116_ori.png 512x512  faces=1 detector=1  t_ms lm=12 hair=29 multi=101 fd=3
+  hair: area=0.388 comps=1/3 largest=1.00 band=0.10 meanconf=0.97 border=['top', 'bottom'] IoU_vs_multiclass=0.97 multi_hair_area=0.394
+  multiclass fractions: {'background': 0.2138, 'hair': 0.3941, 'body-skin': 0.058, 'face-skin': 0.3269, 'clothes': 0.0072, 'others': 0.0}
+  face0: pose={'pitch': 12.3, 'yaw': 3.1, 'roll': 0.4} 
+    len mesh=322.1 hairline=380.1 (hair_mask, lines=5) cheek=266.5 (3d 267.0) cheekbone116/345=246.8 jaw172/397=204.9 jaw58/288=230.9 forehead103/332=201.1 temple54/284=237.3 forehead67/297=143.2 chin=45.0
+    jaw angle 172/397=142.0 58/288=143.4 auto=[176, 400] [133.8, 134.2]
+    ratios LW=1.426 (mesh 1.208) JC=0.769 FC=0.754 chinC=0.169 | rel-to-canonical LW=1.048 JC=0.992 FC=1.126 chin=0.999 dAng=9.8
+    -> oval: medium length, widths within ~5% of canonical (LW=1.43 LW_rel=1.05 JC_rel=0.99 FC_rel=1.13 dAng=+10)
+    silhouette(multiclass): skin jaw/cheek/forehead=204/281/251 person cheek=418 (1.568x landmark cheek) hair widest above forehead=360 (1.351x) hair height above mesh top=141.0px
+    top blendshapes: [('mouthSmileRight', 0.882), ('mouthSmileLeft', 0.842), ('mouthUpperUpRight', 0.783), ('mouthUpperUpLeft', 0.713), ('eyeSquintLeft', 0.473), ('eyeSquintRight', 0.413)]
+    crop box: (0,0)-(512,512) 512x512 hair comps used=[1]
+
+=== faceparsing_116_1.png 512x512  faces=1 detector=1  t_ms lm=12 hair=31 multi=114 fd=3
+  hair: area=0.295 comps=2/35 largest=0.98 band=0.38 meanconf=0.90 border=['top', 'bottom'] IoU_vs_multiclass=0.73 multi_hair_area=0.396
+  multiclass fractions: {'background': 0.2165, 'hair': 0.3964, 'body-skin': 0.0579, 'face-skin': 0.3258, 'clothes': 0.0005, 'others': 0.0028}
+  face0: pose={'pitch': 12.3, 'yaw': 3.2, 'roll': 0.4} 
+    len mesh=321.7 hairline=372.7 (hair_mask, lines=5) cheek=263.5 (3d 264.0) cheekbone116/345=245.2 jaw172/397=204.1 jaw58/288=229.6 forehead103/332=199.4 temple54/284=234.8 forehead67/297=142.3 chin=45.0
+    jaw angle 172/397=141.8 58/288=143.1 auto=[176, 400] [133.6, 133.8]
+    ratios LW=1.414 (mesh 1.221) JC=0.775 FC=0.757 chinC=0.171 | rel-to-canonical LW=1.059 JC=1.0 FC=1.129 chin=1.011 dAng=9.6
+    -> oval: medium length, widths within ~5% of canonical (LW=1.41 LW_rel=1.06 JC_rel=1.00 FC_rel=1.13 dAng=+10)
+    silhouette(multiclass): skin jaw/cheek/forehead=204/280/252 person cheek=417 (1.582x landmark cheek) hair widest above forehead=360 (1.366x) hair height above mesh top=141.0px
+    top blendshapes: [('mouthSmileRight', 0.875), ('mouthSmileLeft', 0.829), ('mouthUpperUpRight', 0.763), ('mouthUpperUpLeft', 0.685), ('eyeSquintLeft', 0.502), ('eyeSquintRight', 0.401)]
+    crop box: (0,0)-(512,512) 512x512 hair comps used=[1, 20]
+
+=== segmentation_input_rotation0.jpg 257x257  faces=0 detector=2  t_ms lm=17 hair=29 multi=94 fd=3
+  hair: area=0.137 comps=5/16 largest=0.94 band=1.41 meanconf=0.76 border=['bottom'] IoU_vs_multiclass=0.17 multi_hair_area=0.078
+  multiclass fractions: {'background': 0.5911, 'hair': 0.0779, 'body-skin': 0.0595, 'face-skin': 0.0355, 'clothes': 0.2181, 'others': 0.0178}
+
+=== barbershop_unproc_90.jpg 2592x3888  faces=1 detector=1  t_ms lm=14 hair=219 multi=521 fd=5
+  hair: area=0.167 comps=1/4 largest=1.00 band=0.30 meanconf=0.93 border=['top'] IoU_vs_multiclass=0.90 multi_hair_area=0.171
+  multiclass fractions: {'background': 0.2288, 'hair': 0.1711, 'body-skin': 0.1019, 'face-skin': 0.1036, 'clothes': 0.3934, 'others': 0.0013}
+  face0: pose={'pitch': 16.2, 'yaw': -8.6, 'roll': 2.7} pitch
+    len mesh=1138.3 hairline=1317.3 (hair_mask, lines=5) cheek=942.7 (3d 951.4) cheekbone116/345=877.3 jaw172/397=754.4 jaw58/288=841.9 forehead103/332=673.5 temple54/284=807.9 forehead67/297=474.1 chin=162.1
+    jaw angle 172/397=137.2 58/288=139.3 auto=[176, 400] [130.3, 132.4]
+    ratios LW=1.397 (mesh 1.207) JC=0.8 FC=0.714 chinC=0.172 | rel-to-canonical LW=1.047 JC=1.033 FC=1.066 chin=1.017 dAng=5.0
+    -> oval: medium length, widths within ~5% of canonical (LW=1.40 LW_rel=1.05 JC_rel=1.03 FC_rel=1.07 dAng=+5)
+    silhouette(multiclass): skin jaw/cheek/forehead=778/1065/749 person cheek=1763 (1.87x landmark cheek) hair widest above forehead=1440 (1.527x) hair height above mesh top=535.0px
+    top blendshapes: [('mouthSmileLeft', 0.98), ('mouthSmileRight', 0.97), ('browDownLeft', 0.808), ('browDownRight', 0.777), ('eyeSquintLeft', 0.735), ('eyeLookOutLeft', 0.52)]
+    crop box: (0,0)-(2592,2972) 2592x2972 hair comps used=[1]
+
+=== dlib_2008_001322.jpg 500x375  faces=3 detector=3  t_ms lm=34 hair=39 multi=98 fd=3
+  hair: area=0.037 comps=4/23 largest=0.91 band=1.67 meanconf=0.79 border=[] IoU_vs_multiclass=0.34 multi_hair_area=0.034
+  multiclass fractions: {'background': 0.5545, 'hair': 0.0339, 'body-skin': 0.0222, 'face-skin': 0.0957, 'clothes': 0.2937, 'others': 0.0}
+  face0: pose={'pitch': 2.1, 'yaw': -14.0, 'roll': 14.2} 
+    len mesh=89.2 hairline=118.2 (hair_mask, lines=3) cheek=76.3 (3d 77.2) cheekbone116/345=70.3 jaw172/397=65.4 jaw58/288=71.3 forehead103/332=56.4 temple54/284=66.6 forehead67/297=39.9 chin=16.3
+    jaw angle 172/397=134.6 58/288=136.8 auto=[176, 400] [125.7, 129.4]
+    ratios LW=1.548 (mesh 1.168) JC=0.856 FC=0.739 chinC=0.214 | rel-to-canonical LW=1.013 JC=1.105 FC=1.103 chin=1.263 dAng=2.4
+    -> oval: medium length, widths within ~5% of canonical (LW=1.55 LW_rel=1.01 JC_rel=1.11 FC_rel=1.10 dAng=+2)
+    silhouette(multiclass): skin jaw/cheek/forehead=70/86/70 person cheek=95 (1.245x landmark cheek) hair widest above forehead=94 (1.232x) hair height above mesh top=35.0px
+    top blendshapes: [('eyeSquintRight', 0.682), ('mouthSmileLeft', 0.652), ('eyeSquintLeft', 0.623), ('mouthSmileRight', 0.537), ('eyeLookInRight', 0.3), ('eyeLookOutLeft', 0.274)]
+    crop box: (225,100)-(487,363) 262x263 hair comps used=[4, 13]
+  face1: pose={'pitch': -6.2, 'yaw': 10.2, 'roll': -8.4} 
+    len mesh=85.2 hairline=100.2 (skin_end_damped, lines=0) cheek=66.6 (3d 67.0) cheekbone116/345=60.7 jaw172/397=54.1 jaw58/288=59.8 forehead103/332=47.2 temple54/284=56.6 forehead67/297=33.2 chin=13.6
+    jaw angle 172/397=134.1 58/288=136.9 auto=[176, 400] [128.1, 124.6]
+    ratios LW=1.504 (mesh 1.279) JC=0.812 FC=0.709 chinC=0.205 | rel-to-canonical LW=1.109 JC=1.048 FC=1.058 chin=1.211 dAng=1.9
+    -> oval-long: long face, balanced widths (LW=1.50 LW_rel=1.11 JC_rel=1.05 FC_rel=1.06 dAng=+2)
+    silhouette(multiclass): skin jaw/cheek/forehead=53/79/61 person cheek=79 (1.186x landmark cheek) hair widest above forehead=62 (0.93x) hair height above mesh top=31.0px
+    top blendshapes: [('eyeSquintLeft', 0.671), ('eyeSquintRight', 0.504), ('eyeLookInLeft', 0.191), ('eyeLookOutRight', 0.174), ('eyeBlinkLeft', 0.165), ('eyeBlinkRight', 0.148)]
+    crop box: (69,123)-(283,337) 214x214 hair comps used=[5, 13]
+  face2: pose={'pitch': 0.4, 'yaw': -8.8, 'roll': 2.6} 
+    len mesh=78.4 hairline=82.4 (hair_mask, lines=5) cheek=61.2 (3d 62.0) cheekbone116/345=55.0 jaw172/397=50.2 jaw58/288=55.4 forehead103/332=41.8 temple54/284=50.3 forehead67/297=29.4 chin=12.1
+    jaw angle 172/397=137.0 58/288=139.8 auto=[176, 400] [127.3, 129.4]
+    ratios LW=1.347 (mesh 1.282) JC=0.821 FC=0.684 chinC=0.199 | rel-to-canonical LW=1.112 JC=1.059 FC=1.02 chin=1.175 dAng=4.8
+    -> oblong: long face with wide/angular jaw (LW=1.35 LW_rel=1.11 JC_rel=1.06 FC_rel=1.02 dAng=+5)
+    silhouette(multiclass): skin jaw/cheek/forehead=52/71/17 person cheek=92 (1.504x landmark cheek) hair widest above forehead=71 (1.161x) hair height above mesh top=83.0px
+    top blendshapes: [('mouthSmileLeft', 0.914), ('mouthSmileRight', 0.894), ('eyeSquintLeft', 0.687), ('browDownLeft', 0.593), ('browDownRight', 0.582), ('eyeSquintRight', 0.516)]
+    crop box: (125,130)-(368,373) 243x243 hair comps used=[13]
+
+=== dlib_bald_guys.jpg 1986x1545  faces=2 detector=3  t_ms lm=32 hair=81 multi=165 fd=3
+  hair: area=0.000 comps=0/0 largest=0.00 band=0.00 meanconf=0.00 border=[] IoU_vs_multiclass=0.00 multi_hair_area=0.034
+  multiclass fractions: {'background': 0.5681, 'hair': 0.0338, 'body-skin': 0.1211, 'face-skin': 0.1763, 'clothes': 0.0789, 'others': 0.0218}
+  face0: pose={'pitch': 6.1, 'yaw': -3.6, 'roll': -11.0} 
+    len mesh=320.0 hairline=353.8 (skin_end_damped, lines=0) cheek=277.3 (3d 277.3) cheekbone116/345=249.2 jaw172/397=230.9 jaw58/288=255.8 forehead103/332=191.7 temple54/284=230.0 forehead67/297=134.4 chin=56.3
+    jaw angle 172/397=132.0 58/288=132.9 auto=[176, 400] [128.0, 128.4]
+    ratios LW=1.276 (mesh 1.154) JC=0.833 FC=0.691 chinC=0.203 | rel-to-canonical LW=1.001 JC=1.075 FC=1.032 chin=1.201 dAng=-0.2
+    -> triangle: jaw wider than canonical, forehead not (LW=1.28 LW_rel=1.00 JC_rel=1.07 FC_rel=1.03 dAng=-0)
+    silhouette(multiclass): skin jaw/cheek/forehead=233/316/232 person cheek=316 (1.14x landmark cheek) hair widest above forehead=242 (0.873x) hair height above mesh top=106.0px
+    top blendshapes: [('mouthSmileLeft', 0.921), ('mouthSmileRight', 0.874), ('eyeSquintLeft', 0.607), ('eyeSquintRight', 0.606), ('browDownLeft', 0.401), ('mouthUpperUpLeft', 0.398)]
+    crop box: (1351,46)-(1838,532) 487x486 hair comps used=[]
+  face1: pose={'pitch': 3.7, 'yaw': 9.7, 'roll': -12.0} 
+    len mesh=282.7 hairline=282.7 (skin_end_damped, lines=0) cheek=224.9 (3d 225.9) cheekbone116/345=198.8 jaw172/397=182.8 jaw58/288=201.2 forehead103/332=157.2 temple54/284=190.3 forehead67/297=109.7 chin=42.8
+    jaw angle 172/397=137.2 58/288=140.4 auto=[176, 400] [131.8, 125.5]
+    ratios LW=1.257 (mesh 1.257) JC=0.813 FC=0.699 chinC=0.19 | rel-to-canonical LW=1.091 JC=1.049 FC=1.044 chin=1.127 dAng=5.0
+    -> oval: medium length, widths within ~5% of canonical (LW=1.26 LW_rel=1.09 JC_rel=1.05 FC_rel=1.04 dAng=+5)
+    silhouette(multiclass): skin jaw/cheek/forehead=39/115/0 person cheek=115 (0.511x landmark cheek) hair widest above forehead=494 (2.197x) hair height above mesh top=802.0px
+    top blendshapes: [('mouthShrugLower', 0.699), ('browDownLeft', 0.641), ('browDownRight', 0.576), ('eyeSquintRight', 0.391), ('eyeSquintLeft', 0.307), ('eyeLookOutLeft', 0.187)]
+    crop box: (278,749)-(710,1181) 432x432 hair comps used=[]
+
+=== dlib_tom_cruise.jpg 565x800  faces=1 detector=1  t_ms lm=15 hair=45 multi=144 fd=3
+  hair: area=0.212 comps=1/4 largest=1.00 band=0.22 meanconf=0.95 border=['right'] IoU_vs_multiclass=0.92 multi_hair_area=0.208
+  multiclass fractions: {'background': 0.2385, 'hair': 0.2081, 'body-skin': 0.0222, 'face-skin': 0.4191, 'clothes': 0.1121, 'others': 0.0}
+  face0: pose={'pitch': 11.8, 'yaw': -2.6, 'roll': -5.6} 
+    len mesh=494.8 hairline=552.8 (hair_mask, lines=5) cheek=394.6 (3d 395.1) cheekbone116/345=360.9 jaw172/397=329.3 jaw58/288=367.1 forehead103/332=288.2 temple54/284=341.1 forehead67/297=204.3 chin=75.0
+    jaw angle 172/397=139.1 58/288=139.5 auto=[176, 400] [132.7, 129.7]
+    ratios LW=1.401 (mesh 1.254) JC=0.835 FC=0.73 chinC=0.19 | rel-to-canonical LW=1.088 JC=1.077 FC=1.09 chin=1.125 dAng=6.9
+    -> oval: medium length, widths within ~5% of canonical (LW=1.40 LW_rel=1.09 JC_rel=1.08 FC_rel=1.09 dAng=+7)
+    silhouette(multiclass): skin jaw/cheek/forehead=344/401/359 person cheek=461 (1.168x landmark cheek) hair widest above forehead=502 (1.272x) hair height above mesh top=232.0px
+    top blendshapes: [('mouthSmileRight', 0.968), ('mouthSmileLeft', 0.96), ('browDownLeft', 0.82), ('browDownRight', 0.816), ('eyeSquintLeft', 0.725), ('mouthUpperUpRight', 0.686)]
+    crop box: (0,0)-(565,800) 565x800 hair comps used=[1]
+
+=== facealign_aflw.jpg 450x450  faces=1 detector=1  t_ms lm=14 hair=30 multi=136 fd=4
+  hair: area=0.151 comps=2/7 largest=0.92 band=0.30 meanconf=0.93 border=[] IoU_vs_multiclass=0.75 multi_hair_area=0.144
+  multiclass fractions: {'background': 0.5629, 'hair': 0.1444, 'body-skin': 0.1763, 'face-skin': 0.1164, 'clothes': 0.0, 'others': 0.0}
+  face0: pose={'pitch': -16.1, 'yaw': -7.7, 'roll': -2.1} pitch
+    len mesh=182.2 hairline=215.2 (hair_mask, lines=5) cheek=157.7 (3d 159.0) cheekbone116/345=145.9 jaw172/397=136.8 jaw58/288=147.9 forehead103/332=105.4 temple54/284=128.0 forehead67/297=74.1 chin=29.9
+    jaw angle 172/397=117.9 58/288=123.7 auto=[150, 397] [112.0, 118.7]
+    ratios LW=1.364 (mesh 1.155) JC=0.867 FC=0.668 chinC=0.19 | rel-to-canonical LW=1.002 JC=1.119 FC=0.998 chin=1.123 dAng=-14.3
+    -> square: wide angular jaw at medium length (LW=1.36 LW_rel=1.00 JC_rel=1.12 FC_rel=1.00 dAng=-14)
+    silhouette(multiclass): skin jaw/cheek/forehead=136/126/70 person cheek=268 (1.699x landmark cheek) hair widest above forehead=256 (1.623x) hair height above mesh top=67.0px
+    top blendshapes: [('eyeLookOutLeft', 0.731), ('browOuterUpLeft', 0.566), ('browOuterUpRight', 0.565), ('eyeLookInRight', 0.306), ('mouthShrugUpper', 0.131), ('eyeLookUpLeft', 0.123)]
+    crop box: (0,60)-(416,450) 416x390 hair comps used=[1, 2]
+
+=== facenet_multiface.jpg 1200x630  faces=0 detector=0  t_ms lm=3 hair=39 multi=107 fd=2
+  hair: area=0.039 comps=2/8 largest=0.90 band=0.84 meanconf=0.84 border=[] IoU_vs_multiclass=0.25 multi_hair_area=0.108
+  multiclass fractions: {'background': 0.5076, 'hair': 0.1085, 'body-skin': 0.0773, 'face-skin': 0.0539, 'clothes': 0.2455, 'others': 0.0072}
+
+=== fr_johnsnow_test1.jpg 768x1154  faces=1 detector=1  t_ms lm=14 hair=44 multi=142 fd=2
+  hair: area=0.274 comps=2/53 largest=0.58 band=0.75 meanconf=0.86 border=[] IoU_vs_multiclass=0.04 multi_hair_area=0.013
+  multiclass fractions: {'background': 0.2683, 'hair': 0.0127, 'body-skin': 0.0232, 'face-skin': 0.046, 'clothes': 0.641, 'others': 0.0087}
+  face0: pose={'pitch': -2.0, 'yaw': 14.4, 'roll': 10.0} 
+    len mesh=188.9 hairline=236.9 (hair_mask, lines=5) cheek=172.5 (3d 178.6) cheekbone116/345=152.3 jaw172/397=144.4 jaw58/288=159.6 forehead103/332=115.0 temple54/284=140.5 forehead67/297=80.0 chin=34.2
+    jaw angle 172/397=127.4 58/288=129.5 auto=[58, 400] [123.9, 122.5]
+    ratios LW=1.373 (mesh 1.095) JC=0.837 FC=0.667 chinC=0.198 | rel-to-canonical LW=0.95 JC=1.08 FC=0.996 chin=1.173 dAng=-4.8
+    -> triangle: jaw wider than canonical, forehead not (LW=1.37 LW_rel=0.95 JC_rel=1.08 FC_rel=1.00 dAng=-5)
+    silhouette(multiclass): skin jaw/cheek/forehead=164/212/159 person cheek=219 (1.27x landmark cheek) hair widest above forehead=208 (1.206x) hair height above mesh top=86.0px
+    top blendshapes: [('eyeSquintLeft', 0.695), ('browDownLeft', 0.551), ('eyeSquintRight', 0.528), ('browDownRight', 0.473), ('mouthPucker', 0.354), ('eyeLookUpLeft', 0.34)]
+    crop box: (0,0)-(768,799) 768x799 hair comps used=[1, 3]
+
+=== fr_kit_with_rose.jpg 501x700  faces=2 detector=2  t_ms lm=24 hair=34 multi=108 fd=2
+  hair: area=0.078 comps=3/7 largest=0.60 band=0.49 meanconf=0.90 border=[] IoU_vs_multiclass=0.85 multi_hair_area=0.076
+  multiclass fractions: {'background': 0.3687, 'hair': 0.0758, 'body-skin': 0.0528, 'face-skin': 0.0449, 'clothes': 0.4418, 'others': 0.016}
+  face0: pose={'pitch': 11.6, 'yaw': -16.0, 'roll': 2.1} yaw
+    len mesh=107.4 hairline=127.4 (hair_mask, lines=5) cheek=87.4 (3d 90.3) cheekbone116/345=79.7 jaw172/397=70.8 jaw58/288=78.3 forehead103/332=62.2 temple54/284=74.2 forehead67/297=44.0 chin=16.1
+    jaw angle 172/397=137.0 58/288=139.7 auto=[176, 400] [127.0, 131.2]
+    ratios LW=1.458 (mesh 1.229) JC=0.811 FC=0.712 chinC=0.185 | rel-to-canonical LW=1.066 JC=1.046 FC=1.063 chin=1.093 dAng=4.8
+    -> oval: medium length, widths within ~5% of canonical (LW=1.46 LW_rel=1.07 JC_rel=1.05 FC_rel=1.06 dAng=+5)
+    silhouette(multiclass): skin jaw/cheek/forehead=70/103/74 person cheek=142 (1.625x landmark cheek) hair widest above forehead=146 (1.671x) hair height above mesh top=65.0px
+    top blendshapes: [('eyeLookInRight', 0.697), ('eyeLookOutLeft', 0.665), ('browDownRight', 0.517), ('eyeSquintLeft', 0.479), ('eyeSquintRight', 0.477), ('browDownLeft', 0.433)]
+    crop box: (171,6)-(432,267) 261x261 hair comps used=[1, 5]
+  face1: pose={'pitch': 18.7, 'yaw': 5.9, 'roll': 4.9} pitch
+    len mesh=92.8 hairline=105.8 (hair_mask, lines=5) cheek=78.1 (3d 78.3) cheekbone116/345=72.4 jaw172/397=62.4 jaw58/288=69.8 forehead103/332=56.8 temple54/284=67.1 forehead67/297=40.7 chin=13.8
+    jaw angle 172/397=140.8 58/288=141.5 auto=[176, 400] [136.8, 132.9]
+    ratios LW=1.354 (mesh 1.188) JC=0.798 FC=0.727 chinC=0.177 | rel-to-canonical LW=1.03 JC=1.03 FC=1.085 chin=1.048 dAng=8.6
+    -> oval: medium length, widths within ~5% of canonical (LW=1.35 LW_rel=1.03 JC_rel=1.03 FC_rel=1.09 dAng=+9)
+    silhouette(multiclass): skin jaw/cheek/forehead=63/69/49 person cheek=134 (1.715x landmark cheek) hair widest above forehead=113 (1.446x) hair height above mesh top=90.0px
+    top blendshapes: [('mouthSmileRight', 0.899), ('mouthSmileLeft', 0.871), ('mouthUpperUpRight', 0.706), ('browDownRight', 0.692), ('browDownLeft', 0.688), ('mouthUpperUpLeft', 0.53)]
+    crop box: (0,34)-(280,363) 280x329 hair comps used=[2]
+
+=== gfpgan_blake_lively.jpg 700x464  faces=2 detector=2  t_ms lm=22 hair=39 multi=105 fd=2
+  hair: area=0.132 comps=2/17 largest=0.85 band=0.55 meanconf=0.92 border=[] IoU_vs_multiclass=0.51 multi_hair_area=0.242
+  multiclass fractions: {'background': 0.3085, 'hair': 0.242, 'body-skin': 0.1311, 'face-skin': 0.1599, 'clothes': 0.121, 'others': 0.0375}
+  face0: pose={'pitch': -4.6, 'yaw': -9.3, 'roll': -10.5} 
+    len mesh=216.8 hairline=246.8 (hair_mask, lines=5) cheek=177.6 (3d 178.1) cheekbone116/345=163.8 jaw172/397=140.6 jaw58/288=156.9 forehead103/332=123.7 temple54/284=148.5 forehead67/297=87.0 chin=34.2
+    jaw angle 172/397=135.8 58/288=138.0 auto=[176, 400] [129.4, 130.2]
+    ratios LW=1.39 (mesh 1.221) JC=0.792 FC=0.697 chinC=0.193 | rel-to-canonical LW=1.059 JC=1.022 FC=1.04 chin=1.14 dAng=3.6
+    -> oval: medium length, widths within ~5% of canonical (LW=1.39 LW_rel=1.06 JC_rel=1.02 FC_rel=1.04 dAng=+4)
+    silhouette(multiclass): skin jaw/cheek/forehead=146/164/127 person cheek=263 (1.481x landmark cheek) hair widest above forehead=223 (1.256x) hair height above mesh top=84.0px
+    top blendshapes: [('mouthSmileLeft', 0.889), ('mouthUpperUpLeft', 0.881), ('mouthUpperUpRight', 0.876), ('mouthSmileRight', 0.875), ('eyeSquintRight', 0.691), ('eyeLookOutLeft', 0.543)]
+    crop box: (102,0)-(700,464) 598x464 hair comps used=[1, 9]
+  face1: pose={'pitch': 1.4, 'yaw': 6.7, 'roll': -25.1} 
+    len mesh=161.5 hairline=161.5 (skin_end_damped, lines=0) cheek=144.1 (3d 144.1) cheekbone116/345=130.2 jaw172/397=110.3 jaw58/288=123.5 forehead103/332=103.2 temple54/284=123.6 forehead67/297=72.7 chin=27.3
+    jaw angle 172/397=141.1 58/288=143.3 auto=[176, 400] [135.2, 134.1]
+    ratios LW=1.121 (mesh 1.121) JC=0.765 FC=0.716 chinC=0.189 | rel-to-canonical LW=0.972 JC=0.988 FC=1.069 chin=1.12 dAng=8.9
+    -> round: short face with soft jaw (LW=1.12 LW_rel=0.97 JC_rel=0.99 FC_rel=1.07 dAng=+9)
+    silhouette(multiclass): skin jaw/cheek/forehead=120/147/27 person cheek=309 (2.144x landmark cheek) hair widest above forehead=229 (1.589x) hair height above mesh top=128.0px
+    top blendshapes: [('mouthLowerDownRight', 0.904), ('mouthLowerDownLeft', 0.848), ('mouthSmileRight', 0.475), ('mouthUpperUpRight', 0.469), ('mouthSmileLeft', 0.419), ('browInnerUp', 0.292)]
+    crop box: (47,85)-(362,400) 315x315 hair comps used=[9]
+
+=== liveportrait_s0.jpg 600x704  faces=1 detector=1  t_ms lm=14 hair=51 multi=111 fd=3
+  hair: area=0.032 comps=3/5 largest=0.80 band=0.63 meanconf=0.89 border=['left'] IoU_vs_multiclass=0.59 multi_hair_area=0.020
+  multiclass fractions: {'background': 0.3355, 'hair': 0.0197, 'body-skin': 0.0342, 'face-skin': 0.0202, 'clothes': 0.5899, 'others': 0.0004}
+  face0: pose={'pitch': 18.3, 'yaw': -1.2, 'roll': -1.4} pitch
+    len mesh=106.3 hairline=119.3 (hair_mask, lines=5) cheek=87.0 (3d 87.0) cheekbone116/345=78.0 jaw172/397=66.1 jaw58/288=74.3 forehead103/332=62.8 temple54/284=74.6 forehead67/297=44.5 chin=14.9
+    jaw angle 172/397=141.7 58/288=144.1 auto=[176, 400] [133.8, 129.8]
+    ratios LW=1.372 (mesh 1.222) JC=0.76 FC=0.722 chinC=0.172 | rel-to-canonical LW=1.06 JC=0.981 FC=1.078 chin=1.015 dAng=9.5
+    -> oval: medium length, widths within ~5% of canonical (LW=1.37 LW_rel=1.06 JC_rel=0.98 FC_rel=1.08 dAng=+9)
+    silhouette(multiclass): skin jaw/cheek/forehead=67/100/68 person cheek=100 (1.15x landmark cheek) hair widest above forehead=123 (1.414x) hair height above mesh top=69.0px
+    top blendshapes: [('eyeSquintLeft', 0.352), ('eyeLookUpLeft', 0.339), ('eyeLookUpRight', 0.311), ('eyeSquintRight', 0.163), ('mouthPressRight', 0.088), ('eyeLookOutLeft', 0.069)]
+    crop box: (198,0)-(470,255) 272x255 hair comps used=[1]
+
+=== liveportrait_s1.jpg 1145x1145  faces=1 detector=1  t_ms lm=13 hair=46 multi=149 fd=3
+  hair: area=0.141 comps=1/1 largest=1.00 band=0.11 meanconf=0.97 border=[] IoU_vs_multiclass=0.96 multi_hair_area=0.139
+  multiclass fractions: {'background': 0.5752, 'hair': 0.1394, 'body-skin': 0.0492, 'face-skin': 0.0646, 'clothes': 0.1656, 'others': 0.006}
+  face0: pose={'pitch': 10.1, 'yaw': 0.2, 'roll': -4.2} 
+    len mesh=385.3 hairline=385.3 (hair_mask, lines=5) cheek=331.1 (3d 331.1) cheekbone116/345=301.3 jaw172/397=263.7 jaw58/288=291.5 forehead103/332=238.0 temple54/284=283.8 forehead67/297=167.9 chin=60.1
+    jaw angle 172/397=135.6 58/288=138.7 auto=[176, 400] [129.6, 128.9]
+    ratios LW=1.164 (mesh 1.164) JC=0.797 FC=0.719 chinC=0.182 | rel-to-canonical LW=1.009 JC=1.028 FC=1.073 chin=1.075 dAng=3.4
+    -> oval: medium length, widths within ~5% of canonical (LW=1.16 LW_rel=1.01 JC_rel=1.03 FC_rel=1.07 dAng=+3)
+    silhouette(multiclass): skin jaw/cheek/forehead=276/325/0 person cheek=535 (1.616x landmark cheek) hair widest above forehead=536 (1.619x) hair height above mesh top=221.0px
+    top blendshapes: [('browDownLeft', 0.663), ('eyeSquintLeft', 0.628), ('browDownRight', 0.619), ('mouthSmileLeft', 0.586), ('mouthSmileRight', 0.455), ('eyeSquintRight', 0.403)]
+    crop box: (86,29)-(997,940) 911x911 hair comps used=[1]
+
+=== liveportrait_s10.jpg 1092x1280  faces=1 detector=1  t_ms lm=13 hair=61 multi=131 fd=3
+  hair: area=0.124 comps=4/26 largest=0.95 band=0.76 meanconf=0.86 border=[] IoU_vs_multiclass=0.01 multi_hair_area=0.001
+  multiclass fractions: {'background': 0.5929, 'hair': 0.001, 'body-skin': 0.0043, 'face-skin': 0.0717, 'clothes': 0.2787, 'others': 0.0514}
+  face0: pose={'pitch': 19.3, 'yaw': -31.0, 'roll': -12.1} yawpitch
+    len mesh=372.9 hairline=387.9 (hair_mask, lines=5) cheek=284.4 (3d 342.1) cheekbone116/345=251.1 jaw172/397=232.2 jaw58/288=257.6 forehead103/332=200.4 temple54/284=243.2 forehead67/297=138.9 chin=49.9
+    jaw angle 172/397=143.2 58/288=145.7 auto=[176, 397] [135.8, 126.4]
+    ratios LW=1.364 (mesh 1.311) JC=0.816 FC=0.705 chinC=0.175 | rel-to-canonical LW=1.137 JC=1.053 FC=1.052 chin=1.038 dAng=11.0
+    -> oblong: long face with wide/angular jaw (LW=1.36 LW_rel=1.14 JC_rel=1.05 FC_rel=1.05 dAng=+11)
+    silhouette(multiclass): skin jaw/cheek/forehead=277/311/142 person cheek=458 (1.61x landmark cheek) hair widest above forehead=423 (1.487x) hair height above mesh top=-189.0px
+    top blendshapes: [('eyeLookOutLeft', 0.936), ('eyeLookInRight', 0.934), ('eyeLookUpLeft', 0.516), ('eyeLookUpRight', 0.509), ('browOuterUpRight', 0.385), ('browInnerUp', 0.298)]
+    crop box: (179,57)-(1092,979) 913x922 hair comps used=[1]
+
+=== liveportrait_s11.jpg 708x648  faces=1 detector=1  t_ms lm=13 hair=38 multi=123 fd=3
+  hair: area=0.044 comps=1/3 largest=1.00 band=0.24 meanconf=0.94 border=[] IoU_vs_multiclass=0.91 multi_hair_area=0.042
+  multiclass fractions: {'background': 0.7799, 'hair': 0.0419, 'body-skin': 0.0226, 'face-skin': 0.0488, 'clothes': 0.106, 'others': 0.0009}
+  face0: pose={'pitch': 6.8, 'yaw': -1.9, 'roll': -4.3} 
+    len mesh=155.7 hairline=168.7 (hair_mask, lines=5) cheek=141.9 (3d 142.0) cheekbone116/345=128.9 jaw172/397=106.7 jaw58/288=120.4 forehead103/332=106.3 temple54/284=126.6 forehead67/297=74.8 chin=22.7
+    jaw angle 172/397=135.2 58/288=137.5 auto=[176, 397] [133.7, 134.6]
+    ratios LW=1.189 (mesh 1.097) JC=0.752 FC=0.749 chinC=0.16 | rel-to-canonical LW=0.951 JC=0.97 FC=1.118 chin=0.948 dAng=3.0
+    -> round: short face with soft jaw (LW=1.19 LW_rel=0.95 JC_rel=0.97 FC_rel=1.12 dAng=+3)
+    silhouette(multiclass): skin jaw/cheek/forehead=109/172/129 person cheek=227 (1.6x landmark cheek) hair widest above forehead=173 (1.219x) hair height above mesh top=81.0px
+    top blendshapes: [('mouthPucker', 0.877), ('browOuterUpLeft', 0.553), ('eyeLookInRight', 0.553), ('browInnerUp', 0.477), ('eyeWideRight', 0.372), ('browOuterUpRight', 0.31)]
+    crop box: (170,137)-(526,492) 356x355 hair comps used=[1]
+
+=== liveportrait_s12.jpg 375x500  faces=1 detector=1  t_ms lm=15 hair=40 multi=141 fd=3
+  hair: area=0.060 comps=1/3 largest=1.00 band=0.19 meanconf=0.95 border=[] IoU_vs_multiclass=0.95 multi_hair_area=0.061
+  multiclass fractions: {'background': 0.4249, 'hair': 0.0606, 'body-skin': 0.0173, 'face-skin': 0.115, 'clothes': 0.3821, 'others': 0.0001}
+  face0: pose={'pitch': 1.2, 'yaw': -10.0, 'roll': 2.7} 
+    len mesh=158.4 hairline=180.4 (hair_mask, lines=5) cheek=127.9 (3d 130.0) cheekbone116/345=114.9 jaw172/397=101.6 jaw58/288=113.4 forehead103/332=90.3 temple54/284=108.6 forehead67/297=63.0 chin=21.8
+    jaw angle 172/397=130.8 58/288=133.9 auto=[176, 397] [124.6, 127.2]
+    ratios LW=1.411 (mesh 1.239) JC=0.794 FC=0.707 chinC=0.171 | rel-to-canonical LW=1.075 JC=1.025 FC=1.055 chin=1.011 dAng=-1.4
+    -> oval: medium length, widths within ~5% of canonical (LW=1.41 LW_rel=1.07 JC_rel=1.03 FC_rel=1.05 dAng=-1)
+    silhouette(multiclass): skin jaw/cheek/forehead=103/148/120 person cheek=158 (1.236x landmark cheek) hair widest above forehead=168 (1.314x) hair height above mesh top=78.0px
+    top blendshapes: [('eyeSquintLeft', 0.358), ('eyeLookInRight', 0.351), ('eyeLookOutLeft', 0.333), ('browDownLeft', 0.252), ('eyeSquintRight', 0.178), ('eyeBlinkLeft', 0.137)]
+    crop box: (13,0)-(367,346) 354x346 hair comps used=[1]
+
+=== liveportrait_s5.jpg 720x720  faces=1 detector=1  t_ms lm=13 hair=35 multi=104 fd=4
+  hair: area=0.040 comps=2/4 largest=0.98 band=0.36 meanconf=0.91 border=[] IoU_vs_multiclass=0.88 multi_hair_area=0.041
+  multiclass fractions: {'background': 0.6991, 'hair': 0.0414, 'body-skin': 0.0479, 'face-skin': 0.0365, 'clothes': 0.1699, 'others': 0.0053}
+  face0: pose={'pitch': 12.9, 'yaw': 0.3, 'roll': -0.3} 
+    len mesh=150.8 hairline=167.8 (hair_mask, lines=5) cheek=138.7 (3d 138.7) cheekbone116/345=126.3 jaw172/397=103.2 jaw58/288=116.8 forehead103/332=102.3 temple54/284=121.6 forehead67/297=72.4 chin=22.6
+    jaw angle 172/397=139.4 58/288=141.2 auto=[176, 400] [134.7, 134.6]
+    ratios LW=1.209 (mesh 1.087) JC=0.744 FC=0.737 chinC=0.163 | rel-to-canonical LW=0.943 JC=0.96 FC=1.101 chin=0.966 dAng=7.2
+    -> heart: forehead wider and jaw narrower than canonical (LW=1.21 LW_rel=0.94 JC_rel=0.96 FC_rel=1.10 dAng=+7)
+    silhouette(multiclass): skin jaw/cheek/forehead=102/165/79 person cheek=179 (1.29x landmark cheek) hair widest above forehead=200 (1.441x) hair height above mesh top=103.0px
+    top blendshapes: [('mouthPucker', 0.91), ('eyeLookUpLeft', 0.244), ('eyeLookUpRight', 0.239), ('mouthRollLower', 0.202), ('browDownLeft', 0.186), ('eyeSquintLeft', 0.185)]
+    crop box: (163,48)-(542,427) 379x379 hair comps used=[1, 2]
+
+=== liveportrait_s6.jpg 725x725  faces=1 detector=1  t_ms lm=15 hair=42 multi=134 fd=3
+  hair: area=0.010 comps=6/15 largest=0.44 band=1.87 meanconf=0.71 border=[] IoU_vs_multiclass=0.06 multi_hair_area=0.001
+  multiclass fractions: {'background': 0.6511, 'hair': 0.0006, 'body-skin': 0.0029, 'face-skin': 0.056, 'clothes': 0.2492, 'others': 0.0401}
+  face0: pose={'pitch': -3.9, 'yaw': -1.0, 'roll': 1.0} 
+    len mesh=188.9 hairline=193.4 (skin_end_damped, lines=0) cheek=160.1 (3d 160.1) cheekbone116/345=147.1 jaw172/397=129.6 jaw58/288=143.5 forehead103/332=114.2 temple54/284=135.9 forehead67/297=80.7 chin=30.4
+    jaw angle 172/397=131.7 58/288=134.2 auto=[176, 400] [129.0, 127.2]
+    ratios LW=1.208 (mesh 1.18) JC=0.809 FC=0.713 chinC=0.19 | rel-to-canonical LW=1.023 JC=1.044 FC=1.065 chin=1.123 dAng=-0.5
+    -> oval: medium length, widths within ~5% of canonical (LW=1.21 LW_rel=1.02 JC_rel=1.04 FC_rel=1.06 dAng=-0)
+    silhouette(multiclass): skin jaw/cheek/forehead=146/170/101 person cheek=188 (1.174x landmark cheek) hair widest above forehead=175 (1.093x) hair height above mesh top=-38.0px
+    top blendshapes: [('eyeSquintRight', 0.589), ('eyeSquintLeft', 0.485), ('browOuterUpLeft', 0.394), ('eyeLookDownLeft', 0.301), ('eyeLookDownRight', 0.287), ('mouthShrugLower', 0.287)]
+    crop box: (153,147)-(572,565) 419x418 hair comps used=[2, 3, 4, 7, 8, 14]
+
+=== liveportrait_s9.jpg 720x1280  faces=1 detector=1  t_ms lm=14 hair=45 multi=112 fd=3
+  hair: area=0.065 comps=2/6 largest=0.92 band=0.80 meanconf=0.86 border=[] IoU_vs_multiclass=0.58 multi_hair_area=0.074
+  multiclass fractions: {'background': 0.3497, 'hair': 0.0744, 'body-skin': 0.1199, 'face-skin': 0.0548, 'clothes': 0.3966, 'others': 0.0045}
+  face0: pose={'pitch': 19.9, 'yaw': -16.7, 'roll': -3.4} yawpitch
+    len mesh=224.0 hairline=282.0 (hair_mask, lines=5) cheek=191.3 (3d 200.8) cheekbone116/345=175.5 jaw172/397=157.1 jaw58/288=173.1 forehead103/332=136.6 temple54/284=163.9 forehead67/297=96.2 chin=34.7
+    jaw angle 172/397=136.9 58/288=140.2 auto=[176, 400] [128.3, 130.2]
+    ratios LW=1.474 (mesh 1.171) JC=0.821 FC=0.714 chinC=0.181 | rel-to-canonical LW=1.016 JC=1.059 FC=1.065 chin=1.074 dAng=4.7
+    -> oval: medium length, widths within ~5% of canonical (LW=1.47 LW_rel=1.02 JC_rel=1.06 FC_rel=1.07 dAng=+5)
+    silhouette(multiclass): skin jaw/cheek/forehead=180/200/188 person cheek=312 (1.631x landmark cheek) hair widest above forehead=281 (1.469x) hair height above mesh top=111.0px
+    top blendshapes: [('eyeLookOutLeft', 0.632), ('eyeLookInRight', 0.617), ('eyeSquintLeft', 0.483), ('eyeSquintRight', 0.431), ('eyeLookUpLeft', 0.28), ('eyeLookUpRight', 0.278)]
+    crop box: (67,48)-(718,699) 651x651 hair comps used=[1]
+
+=== openface_adams.jpg 800x1061  faces=1 detector=1  t_ms lm=15 hair=42 multi=117 fd=3
+  hair: area=0.313 comps=1/7 largest=1.00 band=0.20 meanconf=0.95 border=[] IoU_vs_multiclass=0.92 multi_hair_area=0.320
+  multiclass fractions: {'background': 0.2725, 'hair': 0.3195, 'body-skin': 0.1423, 'face-skin': 0.1408, 'clothes': 0.1246, 'others': 0.0003}
+  face0: pose={'pitch': 4.2, 'yaw': -1.9, 'roll': -6.3} 
+    len mesh=384.9 hairline=447.9 (hair_mask, lines=5) cheek=329.5 (3d 329.8) cheekbone116/345=295.4 jaw172/397=262.5 jaw58/288=291.9 forehead103/332=222.3 temple54/284=269.8 forehead67/297=155.8 chin=58.2
+    jaw angle 172/397=132.7 58/288=135.7 auto=[176, 400] [128.0, 128.2]
+    ratios LW=1.359 (mesh 1.168) JC=0.797 FC=0.675 chinC=0.177 | rel-to-canonical LW=1.013 JC=1.028 FC=1.007 chin=1.045 dAng=0.5
+    -> oval: medium length, widths within ~5% of canonical (LW=1.36 LW_rel=1.01 JC_rel=1.03 FC_rel=1.01 dAng=+1)
+    silhouette(multiclass): skin jaw/cheek/forehead=264/296/261 person cheek=564 (1.712x landmark cheek) hair widest above forehead=475 (1.442x) hair height above mesh top=181.0px
+    top blendshapes: [('browDownRight', 0.278), ('eyeSquintLeft', 0.278), ('browDownLeft', 0.271), ('eyeLookUpLeft', 0.229), ('eyeLookUpRight', 0.214), ('eyeSquintRight', 0.123)]
+    crop box: (0,0)-(800,1061) 800x1061 hair comps used=[1]
+
+=== openface_clapton2.jpg 400x400  faces=1 detector=1  t_ms lm=13 hair=40 multi=110 fd=4
+  hair: area=0.124 comps=1/3 largest=1.00 band=0.55 meanconf=0.89 border=[] IoU_vs_multiclass=0.75 multi_hair_area=0.124
+  multiclass fractions: {'background': 0.3936, 'hair': 0.1243, 'body-skin': 0.0221, 'face-skin': 0.1632, 'clothes': 0.2869, 'others': 0.0098}
+  face0: pose={'pitch': 0.8, 'yaw': 6.7, 'roll': 1.2} 
+    len mesh=170.5 hairline=211.5 (hair_mask, lines=5) cheek=146.9 (3d 149.1) cheekbone116/345=131.3 jaw172/397=120.1 jaw58/288=132.8 forehead103/332=100.7 temple54/284=121.6 forehead67/297=70.6 chin=28.1
+    jaw angle 172/397=132.4 58/288=134.9 auto=[58, 400] [129.6, 125.3]
+    ratios LW=1.44 (mesh 1.161) JC=0.818 FC=0.686 chinC=0.191 | rel-to-canonical LW=1.007 JC=1.055 FC=1.023 chin=1.132 dAng=0.2
+    -> triangle: jaw wider than canonical, forehead not (LW=1.44 LW_rel=1.01 JC_rel=1.06 FC_rel=1.02 dAng=+0)
+    silhouette(multiclass): skin jaw/cheek/forehead=123/36/131 person cheek=254 (1.729x landmark cheek) hair widest above forehead=200 (1.362x) hair height above mesh top=73.0px
+    top blendshapes: [('eyeSquintLeft', 0.471), ('eyeSquintRight', 0.416), ('browDownLeft', 0.401), ('browDownRight', 0.339), ('eyeLookOutRight', 0.277), ('eyeLookUpLeft', 0.27)]
+    crop box: (43,0)-(400,352) 357x352 hair comps used=[1]
+
+=== openface_lennon1.jpg 1400x1050  faces=1 detector=1  t_ms lm=14 hair=68 multi=118 fd=3
+  hair: area=0.336 comps=2/31 largest=0.50 band=0.35 meanconf=0.92 border=['top', 'left'] IoU_vs_multiclass=0.88 multi_hair_area=0.352
+  multiclass fractions: {'background': 0.2127, 'hair': 0.3517, 'body-skin': 0.0488, 'face-skin': 0.2811, 'clothes': 0.0904, 'others': 0.0154}
+  face0: pose={'pitch': 5.9, 'yaw': 0.6, 'roll': -0.6} 
+    len mesh=835.6 hairline=835.6 (hair_mask, lines=3) cheek=677.9 (3d 677.9) cheekbone116/345=603.6 jaw172/397=555.1 jaw58/288=612.6 forehead103/332=461.6 temple54/284=555.3 forehead67/297=327.5 chin=126.8
+    jaw angle 172/397=136.3 58/288=139.1 auto=[176, 400] [130.6, 130.3]
+    ratios LW=1.233 (mesh 1.233) JC=0.819 FC=0.681 chinC=0.187 | rel-to-canonical LW=1.069 JC=1.056 FC=1.016 chin=1.107 dAng=4.1
+    -> triangle: jaw wider than canonical, forehead not (LW=1.23 LW_rel=1.07 JC_rel=1.06 FC_rel=1.02 dAng=+4)
+    silhouette(multiclass): skin jaw/cheek/forehead=548/131/0 person cheek=1141 (1.683x landmark cheek) hair widest above forehead=1056 (1.558x) hair height above mesh top=124.0px
+    top blendshapes: [('eyeSquintRight', 0.69), ('eyeSquintLeft', 0.606), ('eyeLookUpLeft', 0.244), ('eyeLookUpRight', 0.24), ('mouthPressRight', 0.197), ('mouthPressLeft', 0.191)]
+    crop box: (0,0)-(1400,1050) 1400x1050 hair comps used=[1, 2]
+
+=== torchvision_person1.jpg 480x640  faces=0 detector=0  t_ms lm=3 hair=31 multi=96 fd=3
+  hair: area=0.021 comps=1/1 largest=1.00 band=0.58 meanconf=0.84 border=[] IoU_vs_multiclass=0.00 multi_hair_area=0.002
+  multiclass fractions: {'background': 0.8932, 'hair': 0.0015, 'body-skin': 0.0036, 'face-skin': 0.0027, 'clothes': 0.0797, 'others': 0.0192}
+
+=== barbershop_117.png 1024x1024  faces=1 detector=1  t_ms lm=15 hair=46 multi=125 fd=3
+  hair: area=0.423 comps=1/10 largest=1.00 band=0.24 meanconf=0.93 border=['top', 'bottom', 'left', 'right'] IoU_vs_multiclass=0.88 multi_hair_area=0.466
+  multiclass fractions: {'background': 0.1053, 'hair': 0.4662, 'body-skin': 0.042, 'face-skin': 0.3822, 'clothes': 0.0, 'others': 0.0042}
+  face0: pose={'pitch': -1.7, 'yaw': 2.2, 'roll': -0.4} 
+    len mesh=669.0 hairline=797.0 (hair_mask, lines=5) cheek=582.2 (3d 582.7) cheekbone116/345=519.4 jaw172/397=473.3 jaw58/288=526.3 forehead103/332=376.9 temple54/284=461.1 forehead67/297=263.8 chin=106.3
+    jaw angle 172/397=133.4 58/288=134.9 auto=[176, 400] [130.0, 131.1]
+    ratios LW=1.369 (mesh 1.149) JC=0.813 FC=0.647 chinC=0.183 | rel-to-canonical LW=0.997 JC=1.049 FC=0.966 chin=1.08 dAng=1.2
+    -> oval: medium length, widths within ~5% of canonical (LW=1.37 LW_rel=1.00 JC_rel=1.05 FC_rel=0.97 dAng=+1)
+    silhouette(multiclass): skin jaw/cheek/forehead=489/602/516 person cheek=1013 (1.74x landmark cheek) hair widest above forehead=907 (1.558x) hair height above mesh top=290.0px
+    top blendshapes: [('mouthSmileRight', 0.915), ('mouthSmileLeft', 0.912), ('mouthUpperUpLeft', 0.772), ('mouthUpperUpRight', 0.753), ('eyeSquintLeft', 0.591), ('eyeSquintRight', 0.375)]
+    crop box: (0,0)-(1024,1024) 1024x1024 hair comps used=[1]
+
+=== barbershop_15.png 1024x1024  faces=1 detector=1  t_ms lm=17 hair=59 multi=193 fd=3
+  hair: area=0.344 comps=1/2 largest=1.00 band=0.16 meanconf=0.97 border=['bottom', 'left'] IoU_vs_multiclass=0.93 multi_hair_area=0.328
+  multiclass fractions: {'background': 0.285, 'hair': 0.3276, 'body-skin': 0.0396, 'face-skin': 0.3476, 'clothes': 0.0, 'others': 0.0002}
+  face0: pose={'pitch': -6.6, 'yaw': -3.8, 'roll': -1.6} 
+    len mesh=657.3 hairline=807.3 (hair_mask, lines=5) cheek=543.2 (3d 544.8) cheekbone116/345=504.8 jaw172/397=451.3 jaw58/288=495.9 forehead103/332=379.4 temple54/284=456.6 forehead67/297=267.8 chin=109.7
+    jaw angle 172/397=132.6 58/288=134.8 auto=[176, 400] [128.4, 129.6]
+    ratios LW=1.486 (mesh 1.21) JC=0.831 FC=0.699 chinC=0.202 | rel-to-canonical LW=1.05 JC=1.072 FC=1.043 chin=1.196 dAng=0.4
+    -> triangle: jaw wider than canonical, forehead not (LW=1.49 LW_rel=1.05 JC_rel=1.07 FC_rel=1.04 dAng=+0)
+    silhouette(multiclass): skin jaw/cheek/forehead=457/545/467 person cheek=773 (1.423x landmark cheek) hair widest above forehead=704 (1.296x) hair height above mesh top=273.0px
+    top blendshapes: [('mouthSmileRight', 0.947), ('mouthSmileLeft', 0.937), ('mouthUpperUpRight', 0.897), ('mouthUpperUpLeft', 0.847), ('eyeLookDownRight', 0.645), ('eyeLookDownLeft', 0.62)]
+    crop box: (0,0)-(1024,1024) 1024x1024 hair comps used=[1]
+
+=== gfpgan_10045.png 783x1146  faces=0 detector=0  t_ms lm=3 hair=54 multi=111 fd=3
+  hair: area=0.024 comps=2/6 largest=0.99 band=0.96 meanconf=0.84 border=[] IoU_vs_multiclass=0.00 multi_hair_area=0.011
+  multiclass fractions: {'background': 0.5997, 'hair': 0.011, 'body-skin': 0.0345, 'face-skin': 0.0223, 'clothes': 0.3229, 'others': 0.0096}
+
+=== sadtalker_art_5.png 1024x1024  faces=1 detector=1  t_ms lm=17 hair=56 multi=159 fd=4
+  hair: area=0.294 comps=1/2 largest=1.00 band=0.18 meanconf=0.95 border=['top'] IoU_vs_multiclass=0.91 multi_hair_area=0.295
+  multiclass fractions: {'background': 0.2599, 'hair': 0.2951, 'body-skin': 0.0408, 'face-skin': 0.2277, 'clothes': 0.1765, 'others': 0.0}
+  face0: pose={'pitch': 12.9, 'yaw': 0.2, 'roll': 0.5} 
+    len mesh=521.1 hairline=613.1 (hair_mask, lines=5) cheek=463.5 (3d 463.5) cheekbone116/345=427.1 jaw172/397=333.3 jaw58/288=379.5 forehead103/332=356.7 temple54/284=421.5 forehead67/297=253.0 chin=74.1
+    jaw angle 172/397=143.9 58/288=146.1 auto=[176, 400] [134.8, 133.9]
+    ratios LW=1.323 (mesh 1.124) JC=0.719 FC=0.77 chinC=0.16 | rel-to-canonical LW=0.975 JC=0.928 FC=1.149 chin=0.946 dAng=11.7
+    -> heart: forehead wider and jaw narrower than canonical (LW=1.32 LW_rel=0.98 JC_rel=0.93 FC_rel=1.15 dAng=+12)
+    silhouette(multiclass): skin jaw/cheek/forehead=337/531/404 person cheek=826 (1.782x landmark cheek) hair widest above forehead=668 (1.441x) hair height above mesh top=193.0px
+    top blendshapes: [('mouthPucker', 0.954), ('eyeLookUpRight', 0.363), ('eyeLookUpLeft', 0.35), ('eyeSquintLeft', 0.349), ('eyeSquintRight', 0.167), ('mouthRollLower', 0.132)]
+    crop box: (0,0)-(1024,1024) 1024x1024 hair comps used=[1]
+
+=== sadtalker_people_0.png 474x474  faces=1 detector=1  t_ms lm=14 hair=46 multi=157 fd=3
+  hair: area=0.235 comps=1/3 largest=1.00 band=0.14 meanconf=0.96 border=['top', 'left'] IoU_vs_multiclass=0.96 multi_hair_area=0.237
+  multiclass fractions: {'background': 0.3358, 'hair': 0.2375, 'body-skin': 0.035, 'face-skin': 0.1138, 'clothes': 0.2779, 'others': 0.0}
+  face0: pose={'pitch': 14.5, 'yaw': -1.0, 'roll': 2.3} 
+    len mesh=180.2 hairline=204.2 (hair_mask, lines=5) cheek=148.2 (3d 148.2) cheekbone116/345=136.0 jaw172/397=115.0 jaw58/288=127.5 forehead103/332=109.4 temple54/284=129.7 forehead67/297=77.9 chin=25.7
+    jaw angle 172/397=138.8 58/288=142.5 auto=[176, 400] [130.2, 131.1]
+    ratios LW=1.378 (mesh 1.216) JC=0.776 FC=0.738 chinC=0.173 | rel-to-canonical LW=1.054 JC=1.001 FC=1.101 chin=1.026 dAng=6.6
+    -> oval: medium length, widths within ~5% of canonical (LW=1.38 LW_rel=1.05 JC_rel=1.00 FC_rel=1.10 dAng=+7)
+    silhouette(multiclass): skin jaw/cheek/forehead=115/164/127 person cheek=270 (1.822x landmark cheek) hair widest above forehead=230 (1.552x) hair height above mesh top=86.0px
+    top blendshapes: [('eyeSquintLeft', 0.399), ('browOuterUpLeft', 0.359), ('eyeLookUpLeft', 0.314), ('mouthSmileRight', 0.287), ('eyeLookUpRight', 0.266), ('mouthSmileLeft', 0.252)]
+    crop box: (0,0)-(474,474) 474x474 hair comps used=[1]
+
+wrote <scratchpad>/proto/out/results.json

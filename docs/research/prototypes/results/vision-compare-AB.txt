@@ -1,0 +1,32 @@
+
+== Compare vision-business-person-A.json vs vision-business-person-B.json ==
+face shape: A=oval (0.55)  B=oval (0.5)  agree=True
+A alternatives: ['heart', 'round']
+B alternatives: ['heart', 'oblong']
+hair.length: A='unknown (pulled back)'  B="unknown (pulled back; hair volume visible behind the viewer's right ear suggests a low bun or ponytail)"
+hair.texture: A='straight to very slightly wavy'  B='straight and sleek'
+hair.density: A='medium'  B='medium to medium-fine'
+hair.part: A="Side part, off-centre toward the viewer's left (subject's ri"  B="Side part on the viewer's left of centre, with the front sec"
+hair.color: A='Dark brown to near-black, uniform, no visible highlights or '  B='Near-black dark brown, uniform, glossy; no grey or highlight'
+hair.hairline: A='Even, slightly rounded, no visible recession; a few baby hai'  B='High, even, gently rounded, no recession.'
+request_better_photo: False False
+flags A: {'lighting': False, 'pose': False, 'resolution': False, 'occlusion': True}
+flags B: {'lighting': False, 'pose': False, 'resolution': False, 'occlusion': True}
+-- initial suggestions --
+        0.15  A:'Polished low ponytail with soft face-framing pieces'        B:'Sleek low chignon with a deep side part and a soft fron'
+        0.22  A:'Collarbone-length blunt cut (lob), worn down'               B:'Collarbone length with long layers and no fringe'
+        0.29  A:'Long layers with curtain bangs'                             B:'Collarbone length with long layers and no fringe'
+  MATCH 0.43  A:'Chin-length French bob'                                     B:'Chin-length A-line bob, longer at the front'
+        0.22  A:'Textured pixie with a longer swept top'                     B:'Cropped pixie with a long side-swept fringe'
+        0.10  A:'Current length, rich espresso with fine chocolate balay'    B:'Collarbone length with long layers and no fringe'
+  overlap: 1/6 A-items have a B counterpart (jaccard>=0.34)
+  boldness spread A=[1, 2, 3, 3, 4, 5] B=[1, 2, 3, 3, 4, 5]
+-- refined suggestions --
+        0.20  A:'Shoulder-grazing one-length cut, no layers'                 B:'One-length cut just above the shoulders, side part'
+        0.30  A:'Blunt chin-to-jaw bob (A4, slightly longer)'                B:'Jaw-length blunt bob, tucked behind the ears'
+        0.27  A:'Soft layered bob with internal taper, jaw length'           B:'Jaw-length blunt bob, tucked behind the ears'
+        0.27  A:'Bixie (bob-pixie hybrid), ear-to-jaw length'                B:'Jaw-length blunt bob, tucked behind the ears'
+        0.31  A:'Classic short pixie, tidy and tapered (A5, more conserv'    B:'Neat classic pixie, smooth side-swept top (B6, more con'
+  MATCH 0.45  A:'Shoulder-length cut kept pulled back (minimal change)'      B:'Trim to shoulder-blade length, keep the pulled-back sty'
+  overlap: 1/6 A-items have a B counterpart (jaccard>=0.34)
+  boldness spread A=[1, 2, 3, 3, 4, 5] B=[1, 2, 3, 4, 4, 5]

@@ -1,0 +1,198 @@
+{
+  "schema_version": "proto-0.1",
+  "image": "portrait.jpg",
+  "image_px": [820, 1024],
+  "run": "A",
+  "analyst": "claude-fable-5-1 viewing the image via the Read tool; stand-in for a production vision-LLM call",
+  "method_note": "Subjective visual judgement only. No landmarks, no measurements. Confidence values are self-reported and uncalibrated.",
+  "subject_description_policy": "features only; no identity, no ethnicity, no gender label",
+  "face": {
+    "shape": {
+      "label": "oblong (long oval)",
+      "confidence": 0.6,
+      "alternatives": [
+        {"label": "oval", "confidence": 0.3, "why": "proportions are close to oval; the broad smile widens the lower face in this frame"},
+        {"label": "rectangle", "confidence": 0.1, "why": "jaw has some definition but the corners are not square enough"}
+      ],
+      "reasoning": "Face is clearly longer than it is wide, forehead and jaw are similar widths, cheekbones are the widest point but only slightly, and the chin is rounded rather than pointed. The length-to-width ratio is what pushes this from oval to oblong."
+    },
+    "forehead": "Medium-high, fairly broad; the very short hair leaves it fully exposed. Hairline has mild temple recession with a slight peak at the centre.",
+    "jaw": "Defined but not angular; strong chin, visible jaw corners softened by the wide smile. Reads athletic rather than square.",
+    "cheekbones": "High and prominent, with hollows beneath them accentuated by the smile.",
+    "symmetry_note": "Ears sit slightly forward and are prominent; very short sides make them more visible. Worth considering in any suggestion."
+  },
+  "current_hair": {
+    "length": {"label": "very short (roughly 1/4 inch on top, shorter at the sides)", "visible": true, "note": "Tapered or faded sides; the top is a uniform close crop."},
+    "texture": {"label": "tightly coiled", "confidence": 0.85, "note": "Visible as dense, close-packed coil texture even at this length."},
+    "curl_pattern": "4A-4C range (coily); exact sub-type not determinable at this length",
+    "density": {"label": "medium-high", "confidence": 0.6, "note": "Even coverage on top; density appears to thin slightly at the temples."},
+    "part": "None (no part at this length)",
+    "color": "Predominantly dark brown-black with substantial grey salt-and-pepper through the sides and temples, lighter at the sides than on top.",
+    "hairline": "Mature hairline: mild recession at both temples, modestly receded overall, clean natural edge with no sharp line-up."
+  },
+  "glasses": {"wearing": false},
+  "facial_hair": {"present": false, "note": "Clean shaven."},
+  "expression_and_pose": "Wide open smile showing teeth, arms crossed, direct frontal pose, slight head tilt toward the viewer's left; an official-style portrait.",
+  "photo_quality": {
+    "lighting": {"flag": false, "note": "Professional, warm, soft key light with fill; no harsh shadows. Background (red drapes, flags, window) is busy and warm-toned; irrelevant for analysis, but a generator may bleed background colour into hair edges."},
+    "pose": {"flag": false, "note": "Frontal, eyes to camera; both ears fully visible. Ideal."},
+    "resolution": {"flag": false, "note": "820x1024; face roughly 250px wide. Adequate for analysis; marginal for high-fidelity hair generation at crop."},
+    "occlusion": {"flag": false, "note": "Nothing covers the face or hair."},
+    "overall_usable": true,
+    "request_better_photo": false,
+    "request_additional_photo": "no; the hair is short enough that a single frontal view shows everything relevant. A profile would help only for fade height decisions."
+  },
+  "suggestions": [
+    {
+      "id": "A1",
+      "name": "Low taper with a #2 top, grey left natural",
+      "boldness": 1,
+      "maintenance": "low",
+      "salon_frequency": "every 3-4 weeks",
+      "styling_time_minutes": 1,
+      "why_it_suits": "A refinement of what is already there. The low taper keeps width at the sides, which an oblong face needs so it does not look longer; the #2 guard on top adds a touch of height without exaggerating length.",
+      "what_could_go_wrong": "A taper that starts too high turns into a high fade and removes side width, which lengthens an already long face.",
+      "edit_instruction": "Edit only the hair. Keep the very short coily crop but make it a clean low taper at the sides and nape blending into a slightly fuller top about a quarter inch long, grey hairs left natural. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A low taper on the sides and nape, a #2 on top, keep the grey natural, no hard line-up."
+    },
+    {
+      "id": "A2",
+      "name": "Longer coily top with sponge-twist texture, tapered sides",
+      "boldness": 3,
+      "maintenance": "medium",
+      "salon_frequency": "every 3 weeks",
+      "styling_time_minutes": 5,
+      "why_it_suits": "Half to three-quarters of an inch on top with sponge-defined coils adds a soft, rounded silhouette that adds a little width above the ears, balancing the prominent ears and the long face without adding height.",
+      "what_could_go_wrong": "Twist sponges can cause breakage if used daily on dry hair; needs a leave-in. Looks untidy if the sides are not kept tapered.",
+      "edit_instruction": "Edit only the hair. Grow the top to about three-quarters of an inch of defined, sponge-twisted coils with a rounded shape, tapered short at the sides and back, salt-and-pepper colour kept natural. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Grow the top to about three-quarters of an inch, keep the sides tapered, and shape it so I can sponge-twist the top."
+    },
+    {
+      "id": "A3",
+      "name": "Mid skin fade with a crisp line-up",
+      "boldness": 3,
+      "maintenance": "medium-high",
+      "salon_frequency": "every 2 weeks",
+      "styling_time_minutes": 1,
+      "why_it_suits": "Sharpens everything: a straight line-up across the forehead and squared temples give the mature hairline a deliberate, architectural edge, and the fade reads polished.",
+      "what_could_go_wrong": "A hard line-up on a receding hairline has to be cut behind the recession, which can make the forehead look larger; and a fade grows out visibly in two weeks. Mid or high fades remove side width on an oblong face; keep it mid, not high.",
+      "edit_instruction": "Edit only the hair. Keep the very short coily top but add a mid skin fade on the sides and back and a crisp, straight line-up across the front hairline and squared temples, grey left natural. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A mid skin fade with a crisp line-up and squared temples; keep the top short and the grey natural."
+    },
+    {
+      "id": "A4",
+      "name": "Uniform buzz, one guard all over, grey embraced",
+      "boldness": 1,
+      "maintenance": "very low",
+      "salon_frequency": "every 4-6 weeks, or self-cut",
+      "styling_time_minutes": 0,
+      "why_it_suits": "A single #1 or #1.5 guard everywhere with a soft, natural edge needs no shaping, grows out evenly, and lets the salt-and-pepper read as intentional. Distinguished rather than tidy.",
+      "what_could_go_wrong": "No taper means the sides and top are the same length, which can look slightly boxy from the front; keep the guard short enough that it is near-skin.",
+      "edit_instruction": "Edit only the hair. Make the hair a uniform very short buzz, the same length all over, with a soft natural hairline and no fade, salt-and-pepper grey kept natural. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A #1.5 all over, no fade, no line-up, natural edges."
+    },
+    {
+      "id": "A5",
+      "name": "Short finger coils or mini twists on top, skin fade sides",
+      "boldness": 4,
+      "maintenance": "medium (styling), medium (salon)",
+      "salon_frequency": "every 3-4 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "An inch to an inch and a half of defined coils on top adds texture and a little height, which with a skin fade creates contrast and a modern silhouette; the grey through the coils reads striking.",
+      "what_could_go_wrong": "Requires growing out the top for two to three months first. Mini twists take time to install and need moisture; dryness shows fast. Adding height to an oblong face must be balanced by not fading the sides too high.",
+      "edit_instruction": "Edit only the hair. Grow the top to about one and a half inches of short, defined finger coils with natural salt-and-pepper colour, low skin fade at the sides and back. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Grow the top to about an inch and a half for finger coils, with a low skin fade on the sides."
+    },
+    {
+      "id": "A6",
+      "name": "360 waves with a shadow fade",
+      "boldness": 4,
+      "maintenance": "high (daily)",
+      "salon_frequency": "every 2-3 weeks",
+      "styling_time_minutes": 15,
+      "why_it_suits": "Coily hair at about a quarter inch is exactly the length for waves; the pattern adds visual interest without any height, which flatters a long face, and a shadow fade keeps side width.",
+      "what_could_go_wrong": "Waves need daily brushing, a durag at night and regular hot-towel sessions; this is the most demanding option by far. Grey hair is often coarser and may not lay as easily.",
+      "edit_instruction": "Edit only the hair. Keep the very short coily crop but render it as defined, glossy 360 waves radiating from the crown, with a soft shadow fade at the sides and back, salt-and-pepper colour kept. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Cut me for 360 waves with a shadow fade, and tell me the brushing routine."
+    }
+  ],
+  "refine": {
+    "reaction": "shorter and lower maintenance, keep it professional",
+    "interpretation": "The hair is already very short, so shorter means closer to the scalp on top and sides, and lower maintenance means fewer barber visits and no daily routine. Hard fades and line-ups are dropped because they need two-week upkeep; waves, twists and coils are dropped for daily effort. The best options are uniform or gently tapered cuts that grow out gracefully. Dropped A2, A3, A5, A6. Kept A1 and A4 with adjustments; added four low-upkeep variants.",
+    "dropped": ["A2", "A3", "A5", "A6"],
+    "adjusted_suggestions": [
+      {
+        "id": "R1",
+        "name": "Uniform #1 buzz, natural edges (A4, shorter)",
+        "boldness": 1,
+        "maintenance": "very low",
+        "salon_frequency": "every 5-6 weeks, or self-cut with clippers",
+        "styling_time_minutes": 0,
+        "why_it_suits": "Shortest practical option that still shows the coil texture and the grey; no shaping, nothing to grow out unevenly.",
+        "what_could_go_wrong": "Near-skin length shows the scalp, so any unevenness in density at the temples becomes visible.",
+        "edit_instruction": "Edit only the hair. Make the hair a uniform very close buzz, about an eighth of an inch everywhere, soft natural hairline, no fade, salt-and-pepper kept. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A #1 all over with natural edges, no fade or line-up."
+      },
+      {
+        "id": "R2",
+        "name": "Low scissor-taper, #1.5 top (A1, no clipper fade)",
+        "boldness": 1,
+        "maintenance": "low",
+        "salon_frequency": "every 4-5 weeks",
+        "styling_time_minutes": 0,
+        "why_it_suits": "A gentle taper done with clipper-over-comb or scissors grows out more gracefully than a blended fade, so it looks acceptable for a month rather than two weeks, and keeps side width for the long face.",
+        "what_could_go_wrong": "Less crisp than a fade; if the goal is a sharp look this will read softer.",
+        "edit_instruction": "Edit only the hair. Keep the very short coily crop with a soft, gradual low taper at the sides and nape, top slightly fuller than the sides, natural hairline, grey kept natural. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A soft low taper with a #1.5 on top, done so it grows out gracefully; no skin fade."
+      },
+      {
+        "id": "R3",
+        "name": "Skin-close sides, #1 top, no line-up",
+        "boldness": 2,
+        "maintenance": "low",
+        "salon_frequency": "every 4 weeks",
+        "styling_time_minutes": 0,
+        "why_it_suits": "Takes the sides to near skin for a sharper look but leaves the hairline natural so there is no line-up to maintain; the contrast is subtle enough to grow out quietly.",
+        "what_could_go_wrong": "Near-skin sides narrow the head slightly; on an oblong face keep the close zone below the temple.",
+        "edit_instruction": "Edit only the hair. Keep the very short coily crop with the sides and back cut near the skin below the temples, blending into a short top, natural soft hairline, no sharp line-up, grey kept. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Sides near-skin below the temple, a #1 on top, blended, natural hairline, no line-up."
+      },
+      {
+        "id": "R4",
+        "name": "Even #1 with the temples left slightly longer",
+        "boldness": 1,
+        "maintenance": "very low",
+        "salon_frequency": "every 5-6 weeks",
+        "styling_time_minutes": 0,
+        "why_it_suits": "A trick for a maturing hairline: leaving the temple zone a touch longer than the rest fills in the recession visually without any line-up or product.",
+        "what_could_go_wrong": "Subtle; most people will not notice the difference, which is the point but may feel like nothing changed.",
+        "edit_instruction": "Edit only the hair. Make the hair a uniform very short buzz, with the hair at the temples very slightly fuller so the temple recession looks softer, natural edges, grey kept. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A #1 all over, but leave the temples a touch longer to soften the recession."
+      },
+      {
+        "id": "R5",
+        "name": "Clean-shaven head (fully bald)",
+        "boldness": 5,
+        "maintenance": "low salon, medium home (shaving every 2-3 days)",
+        "salon_frequency": "none",
+        "styling_time_minutes": 3,
+        "why_it_suits": "The most decisive version of shorter. Strong cheekbones and a defined jaw carry it, and it removes the grey question entirely. Arguably lower maintenance only if the person is comfortable shaving at home.",
+        "what_could_go_wrong": "Exposes the full head shape and makes the prominent ears more visible; an oblong face with no hair reads longer. Sun protection becomes a daily thing.",
+        "edit_instruction": "Edit only the hair. Remove all head hair to a clean-shaven, smooth scalp with natural skin tone and subtle highlights consistent with the existing lighting. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Take it all the way down to a clean shave and show me how to keep it smooth at home."
+      },
+      {
+        "id": "R6",
+        "name": "Current cut, grey blended one shade darker (optional add-on)",
+        "boldness": 2,
+        "maintenance": "medium (colour every 4-6 weeks)",
+        "salon_frequency": "every 4-6 weeks",
+        "styling_time_minutes": 0,
+        "why_it_suits": "Not shorter, but included because professional sometimes means less grey; a translucent, one-shade-darker grey blend softens the temples without the obvious dyed look. Flagged as adding maintenance, so only if the grey is the concern.",
+        "what_could_go_wrong": "Contradicts lower maintenance; any colour needs repeating. Over-darkening looks flat and obviously coloured.",
+        "edit_instruction": "Edit only the hair colour. Keep the identical very short coily cut, but reduce the salt-and-pepper grey by roughly half so it reads as a subtle blend, with the remaining grey concentrated at the temples. Keep face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Only if I decide I want less grey: a translucent grey blend, one shade darker, nothing opaque."
+      }
+    ]
+  }
+}

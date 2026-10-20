@@ -1,0 +1,198 @@
+{
+  "schema_version": "proto-0.1",
+  "image": "business-person.png",
+  "image_px": [958, 1358],
+  "run": "A",
+  "analyst": "claude-fable-5-1 viewing the image via the Read tool; stand-in for a production vision-LLM call",
+  "method_note": "Subjective visual judgement only. No landmarks, no measurements. Confidence values are self-reported and uncalibrated.",
+  "subject_description_policy": "features only; no identity, no ethnicity, no gender label",
+  "face": {
+    "shape": {
+      "label": "oval",
+      "confidence": 0.55,
+      "alternatives": [
+        {"label": "heart", "confidence": 0.30, "why": "forehead reads slightly wider than the chin and the chin tapers to a soft point"},
+        {"label": "round", "confidence": 0.15, "why": "cheeks are full and the jaw is soft, but the face is clearly longer than wide"}
+      ],
+      "reasoning": "Face length is visibly greater than width, widest zone is around the cheekbones, the jaw curves rather than angles into the chin, and the chin is narrow but not sharp. That combination is the textbook oval profile; the slightly wider upper third is what keeps heart in play."
+    },
+    "forehead": "Medium height, slightly wide relative to the jaw; hairline sits fairly high and the pulled-back hair exposes the whole forehead, which makes it look larger than it probably is with hair down.",
+    "jaw": "Soft, rounded jawline with little angularity; chin is narrow and gently pointed. No strong jaw corners visible.",
+    "cheekbones": "Moderately prominent, sit high; the face is widest here. Cheeks have some fullness below the cheekbone.",
+    "symmetry_note": "Head is tilted slightly toward the viewer's left; no obvious asymmetry worth designing around."
+  },
+  "current_hair": {
+    "length": {"label": "unknown (pulled back)", "visible": false, "note": "Hair is scraped back into what looks like a low bun or ponytail; nothing behind the ears is visible. Could be anywhere from chin-length to very long. Ask for a side or back photo before suggesting length-dependent cuts."},
+    "texture": {"label": "straight to very slightly wavy", "confidence": 0.6, "note": "Front section lies flat and smooth with a glossy finish; one small flyaway at the crown. Smoothness may be product or heat, so natural texture is a guess."},
+    "curl_pattern": "1A-1B (straight); unverified because the hair is pulled tight",
+    "density": {"label": "medium", "confidence": 0.5, "note": "Scalp is not visible through the front section, but tension styling hides density. Low confidence."},
+    "part": "Side part, off-centre toward the viewer's left (subject's right), with the front swept across toward the viewer's right.",
+    "color": "Dark brown to near-black, uniform, no visible highlights or grey; high shine.",
+    "hairline": "Even, slightly rounded, no visible recession; a few baby hairs at the temples."
+  },
+  "glasses": {"wearing": false, "note": "Holds a pair of thin-rimmed glasses in one hand. Treat as 'sometimes wears glasses': frames will sit on the cheekbone line and interact with any fringe."},
+  "facial_hair": {"present": false},
+  "expression_and_pose": "Closed-mouth smile, chin slightly down, direct eye contact, arms folded; a formal corporate headshot.",
+  "photo_quality": {
+    "lighting": {"flag": false, "note": "Even, soft studio light with a white seamless background; no harsh shadows on the face."},
+    "pose": {"flag": false, "note": "Near-frontal with a mild head tilt; both ears partially visible. Good for analysis and for generation."},
+    "resolution": {"flag": false, "note": "958x1358; face spans roughly 300px wide, which is plenty."},
+    "occlusion": {"flag": true, "note": "Hair itself is largely hidden (pulled back). Face is unoccluded. Hand and glasses occlude nothing on the face."},
+    "overall_usable": true,
+    "request_better_photo": false,
+    "request_additional_photo": "yes: a side or back view with hair down, to establish length and natural texture before length-dependent suggestions are rendered"
+  },
+  "suggestions": [
+    {
+      "id": "A1",
+      "name": "Polished low ponytail with soft face-framing pieces",
+      "boldness": 1,
+      "maintenance": "low",
+      "salon_frequency": "every 10-12 weeks",
+      "styling_time_minutes": 5,
+      "why_it_suits": "Keeps the current sleek, professional silhouette but releases two or three soft pieces at the temples. On an oval face with a slightly wide forehead, a little hair at the hairline narrows the upper third and softens the exposed forehead without hiding the cheekbones.",
+      "what_could_go_wrong": "If the pieces are cut too short they become permanent flyaways that won't tuck back into the ponytail on tidy days.",
+      "edit_instruction": "Edit only the hair. Keep the sleek dark pulled-back style, but release two soft, slightly wispy face-framing strands on each side that fall from the temples to just below the cheekbone. Keep the side part. Keep hair colour, face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Keep my length and my pulled-back style, but cut a few soft face-framing pieces from the temples to cheekbone length so I can wear them out around a low ponytail."
+    },
+    {
+      "id": "A2",
+      "name": "Collarbone-length blunt cut (lob), worn down",
+      "boldness": 2,
+      "maintenance": "low",
+      "salon_frequency": "every 8-10 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "A one-length cut ending at the collarbone lengthens nothing and shortens nothing; it frames the lower half of an oval face and the weight at the ends balances the slightly wider forehead. Works with straight hair because the blunt line reads intentional.",
+      "what_could_go_wrong": "If the current length is shorter than collarbone this is a grow-out plan, not a cut. On fine hair a blunt line can look thin at the ends; ask for a slightly internal taper only if needed.",
+      "edit_instruction": "Edit only the hair. Replace the pulled-back style with straight, dark, glossy hair worn down in a blunt one-length cut that ends exactly at the collarbone, with the same side part and no bangs. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A blunt one-length cut to the collarbone, no layers, no bangs, keeping my side part."
+    },
+    {
+      "id": "A3",
+      "name": "Long layers with curtain bangs",
+      "boldness": 3,
+      "maintenance": "medium",
+      "salon_frequency": "every 6-8 weeks (bangs)",
+      "styling_time_minutes": 15,
+      "why_it_suits": "Curtain bangs split at the side part and sweep over the outer forehead, which is the single most direct fix for a forehead that reads wide; layers around the cheekbone add movement to straight hair without reducing length.",
+      "what_could_go_wrong": "Bangs plus glasses can fight each other: the fringe lands on the frame line. Straight hair needs a round brush or a quick blow-dry to get the curtain shape; air-dried they may hang flat.",
+      "edit_instruction": "Edit only the hair. Replace the pulled-back style with long, straight, dark hair worn down past the shoulders with soft layers, and add curtain bangs parted at the side part that sweep outward and end at the cheekbones. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Long layers starting at the cheekbone, plus curtain bangs cut to sweep from my side part to cheekbone length."
+    },
+    {
+      "id": "A4",
+      "name": "Chin-length French bob",
+      "boldness": 4,
+      "maintenance": "medium",
+      "salon_frequency": "every 6 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "A chin-length bob draws a horizontal line at the narrowest part of an oval face, which visually widens the jaw to balance the forehead. The cut relies on straight, glossy hair, which this appears to be.",
+      "what_could_go_wrong": "On a face that is actually heart-shaped the chin line can emphasise a narrow chin instead of balancing it; a slightly longer, jaw-to-chin length is the safer version. Requires committing to losing most of the length.",
+      "edit_instruction": "Edit only the hair. Replace the pulled-back style with a straight, dark, glossy chin-length bob with a blunt edge, slight inward bend at the ends, side part, no bangs. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A blunt chin-length bob with a side part and no bangs, cut so the ends sit just at my chin."
+    },
+    {
+      "id": "A5",
+      "name": "Textured pixie with a longer swept top",
+      "boldness": 5,
+      "maintenance": "medium-high (salon), low (daily)",
+      "salon_frequency": "every 4-6 weeks",
+      "styling_time_minutes": 5,
+      "why_it_suits": "Oval faces are the one shape that tolerates very short hair because nothing needs to be hidden or balanced; cheekbones and the soft jaw become the feature. A longer, side-swept top keeps some coverage over the forehead.",
+      "what_could_go_wrong": "This exposes the ears and the full neck, which some people find too severe for their own taste. Growing it out takes a year with awkward phases. Frequent trims are non-negotiable.",
+      "edit_instruction": "Edit only the hair. Replace the pulled-back style with a short, dark, textured pixie cut: tapered close at the nape and over the ears, with a longer piecey top section swept to the viewer's right from the existing side part, forehead partly covered. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A textured pixie, short at the nape and around the ears, with a longer side-swept top I can push over from my natural side part."
+    },
+    {
+      "id": "A6",
+      "name": "Current length, rich espresso with fine chocolate balayage",
+      "boldness": 3,
+      "maintenance": "medium-high (colour)",
+      "salon_frequency": "colour every 10-14 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "Changes colour, not cut, so the professional silhouette stays. A few fine, two-shades-lighter ribbons around the face catch light at the cheekbones and keep the near-black base from reading flat under office light.",
+      "what_could_go_wrong": "Too much lift on near-black hair goes orange; insist on subtle and cool-neutral. Colour does not photograph well when the hair is pulled tight, so the preview will undersell it.",
+      "edit_instruction": "Edit only the hair colour and nothing else. Keep the identical pulled-back style and part, but change the near-black base to a deep espresso brown with a few very fine, subtle, two-shades-lighter chocolate-brown ribbons through the front section near the face. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Keep my cut; take the base to a deep espresso and add a few fine, cool chocolate balayage ribbons around the face, nothing warm or brassy."
+    }
+  ],
+  "refine": {
+    "reaction": "shorter and lower maintenance, keep it professional",
+    "interpretation": "Two constraints: reduce length relative to the current (unknown but at least pulled-back-able) length, and cut both salon frequency and daily styling time. Professional rules out anything that needs daily heat to look tidy and anything that reads as a statement colour. Dropped A3 (bangs need 6-week trims and daily shaping), A6 (colour upkeep), A1 (not shorter). Kept and adjusted A2, A4, A5; added three one-length or low-trim options.",
+    "dropped": ["A1", "A3", "A6"],
+    "adjusted_suggestions": [
+      {
+        "id": "R1",
+        "name": "Shoulder-grazing one-length cut, no layers",
+        "boldness": 2,
+        "maintenance": "low",
+        "salon_frequency": "every 10-12 weeks",
+        "styling_time_minutes": 5,
+        "why_it_suits": "Shorter than a collarbone lob but still long enough to tie back on busy days; one length means no shaping needed when air-dried straight.",
+        "what_could_go_wrong": "Shoulder-length straight hair flips at the ends when it hits the shoulders; ask the stylist to cut just above or just below the shoulder line, not on it.",
+        "edit_instruction": "Edit only the hair. Replace the pulled-back style with straight dark hair worn down, cut to one length just above the shoulders, side part, no bangs, no layers. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "One-length cut just above the shoulders, no layers, no bangs, side part, so I can air-dry it or tie it back."
+      },
+      {
+        "id": "R2",
+        "name": "Blunt chin-to-jaw bob (A4, slightly longer)",
+        "boldness": 3,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 8 weeks",
+        "styling_time_minutes": 8,
+        "why_it_suits": "Same horizontal-line logic as the French bob, but ending between the jaw corner and the chin keeps it tuckable behind the ears and avoids the narrow-chin risk.",
+        "what_could_go_wrong": "Too short to tie back fully; on bad-hair days it has to be worn down or clipped.",
+        "edit_instruction": "Edit only the hair. Replace the pulled-back style with a straight, dark, glossy blunt bob that ends between the jawline and the chin, side part, no bangs, tucked behind one ear. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A blunt bob ending just above the chin, side part, no bangs, long enough to tuck behind my ears."
+      },
+      {
+        "id": "R3",
+        "name": "Soft layered bob with internal taper, jaw length",
+        "boldness": 3,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 8 weeks",
+        "styling_time_minutes": 8,
+        "why_it_suits": "A few invisible internal layers let straight hair fall into shape when air-dried, so it looks finished with no tools; jaw length frames the cheekbones.",
+        "what_could_go_wrong": "Over-layered bobs on straight hair look shaggy rather than professional; ask for internal, not visible, layering.",
+        "edit_instruction": "Edit only the hair. Replace the pulled-back style with a jaw-length dark bob, straight, with soft invisible layering so the ends curve gently inward, side part, no bangs. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A jaw-length bob with subtle internal layers so it falls into shape air-dried, side part, no bangs."
+      },
+      {
+        "id": "R4",
+        "name": "Bixie (bob-pixie hybrid), ear-to-jaw length",
+        "boldness": 4,
+        "maintenance": "medium",
+        "salon_frequency": "every 6-8 weeks",
+        "styling_time_minutes": 5,
+        "why_it_suits": "Halfway between A4 and A5: short enough to need almost no daily styling, long enough to soften the ears and nape. Oval face carries it easily.",
+        "what_could_go_wrong": "Awkward to grow out; neither a bob nor a pixie at the midpoint.",
+        "edit_instruction": "Edit only the hair. Replace the pulled-back style with a short, dark, softly layered cut that ends between the ear lobe and the jaw, side-swept front, no bangs, light texture through the ends. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A bixie: a soft layered cut between ear and jaw length, side-swept at the front, that I can wash and go."
+      },
+      {
+        "id": "R5",
+        "name": "Classic short pixie, tidy and tapered (A5, more conservative)",
+        "boldness": 5,
+        "maintenance": "medium (salon), very low (daily)",
+        "salon_frequency": "every 5-6 weeks",
+        "styling_time_minutes": 3,
+        "why_it_suits": "Shortest option; daily effort is near zero and the oval face does not need hair to balance it. A smoother, less piecey top than A5 keeps it conservative.",
+        "what_could_go_wrong": "Trim frequency is the highest in the set, so it is lower maintenance daily but higher maintenance in salon visits; worth saying plainly.",
+        "edit_instruction": "Edit only the hair. Replace the pulled-back style with a neat, short, dark pixie cut: closely tapered at the nape and sides, a smooth side-swept top no longer than the eyebrows, no spikes or heavy texture. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A classic short pixie, tapered at the nape and sides with a smooth side-swept top, nothing choppy."
+      },
+      {
+        "id": "R6",
+        "name": "Shoulder-length cut kept pulled back (minimal change)",
+        "boldness": 1,
+        "maintenance": "very low",
+        "salon_frequency": "every 12 weeks",
+        "styling_time_minutes": 3,
+        "why_it_suits": "If the actual length is very long, simply taking it to just below the shoulders makes the current ponytail or bun lighter and faster without changing the look at all.",
+        "what_could_go_wrong": "A bun needs roughly shoulder length or more; go shorter and the bun stops being an option.",
+        "edit_instruction": "No visible change to the hair in this front view: keep the identical sleek pulled-back style and part. Keep face, skin, expression, glasses, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Take my length to just below the shoulders, no layers, so my bun and ponytail are lighter but still work."
+      }
+    ]
+  }
+}

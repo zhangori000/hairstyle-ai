@@ -1,0 +1,32 @@
+
+== Compare vision-portrait-A.json vs vision-obama-A.json ==
+face shape: A=oblong (long oval) (0.6)  B=oval (0.5)  agree=False
+A alternatives: ['oval', 'rectangle']
+B alternatives: ['oblong', 'square']
+hair.length: A='very short (roughly 1/4 inch on top, shorter at the sides)'  B='very short (around a quarter inch on top, shorter and tapered at the sides)'
+hair.texture: A='tightly coiled'  B='tightly coiled'
+hair.density: A='medium-high'  B='medium-high'
+hair.part: A='None (no part at this length)'  B='None'
+hair.color: A='Predominantly dark brown-black with substantial grey salt-an'  B='Dark brown-black with noticeable salt-and-pepper grey, heavi'
+hair.hairline: A='Mature hairline: mild recession at both temples, modestly re'  B='Mature hairline with mild temple recession and a soft, natur'
+request_better_photo: False False
+flags A: {'lighting': False, 'pose': False, 'resolution': False, 'occlusion': False}
+flags B: {'lighting': False, 'pose': False, 'resolution': False, 'occlusion': False}
+-- initial suggestions --
+  MATCH 0.83  A:'Low taper with a #2 top, grey left natural'                 B:'Low taper, #2 on top, natural grey'
+        0.33  A:'Longer coily top with sponge-twist texture, tapered sid'    B:'Sponge-twisted top, three-quarter inch, tapered sides'
+  MATCH 0.62  A:'Mid skin fade with a crisp line-up'                         B:'Mid fade with a crisp line-up and squared temples'
+        0.20  A:'Uniform buzz, one guard all over, grey embraced'            B:'Uniform #1.5 buzz with natural edges'
+  MATCH 0.55  A:'Short finger coils or mini twists on top, skin fade sid'    B:'Short finger coils on top, low skin fade'
+        0.11  A:'360 waves with a shadow fade'                               B:'Mid fade with a crisp line-up and squared temples'
+  overlap: 3/6 A-items have a B counterpart (jaccard>=0.34)
+  boldness spread A=[1, 1, 3, 3, 4, 4] B=[1, 1, 2, 3, 3, 4]
+-- refined suggestions --
+  MATCH 0.80  A:'Uniform #1 buzz, natural edges (A4, shorter)'               B:'Uniform #1 buzz, natural edges'
+  MATCH 0.50  A:'Low scissor-taper, #1.5 top (A1, no clipper fade)'          B:'Soft low taper, #1.5 top, no skin fade'
+  MATCH 0.56  A:'Skin-close sides, #1 top, no line-up'                       B:'Near-skin sides below the temple, #1 top, no line-up'
+  MATCH 0.67  A:'Even #1 with the temples left slightly longer'              B:'Even #1 with temples left a touch longer'
+  MATCH 0.60  A:'Clean-shaven head (fully bald)'                             B:'Clean-shaven head'
+        0.00  A:'Current cut, grey blended one shade darker (optional ad'    B:'Uniform #1 buzz, natural edges'
+  overlap: 5/6 A-items have a B counterpart (jaccard>=0.34)
+  boldness spread A=[1, 1, 1, 2, 2, 5] B=[0, 1, 1, 1, 2, 5]

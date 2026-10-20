@@ -1,0 +1,199 @@
+{
+  "schema_version": "proto-0.1",
+  "image": "faceparsing_116_ori.png",
+  "image_px": [512, 512],
+  "run": "A",
+  "analyst": "claude-fable-5-1 viewing the image via the Read tool; stand-in for a production vision-LLM call",
+  "method_note": "Subjective visual judgement only. No landmarks, no measurements. Confidence values are self-reported and uncalibrated.",
+  "subject_description_policy": "features only; no identity, no ethnicity, no gender label",
+  "face": {
+    "shape": {
+      "label": "round",
+      "confidence": 0.5,
+      "alternatives": [
+        {"label": "oval", "confidence": 0.35, "why": "the face is a little longer than wide and the chin narrows slightly"},
+        {"label": "heart", "confidence": 0.15, "why": "forehead is broad relative to the small chin, but the cheeks are too full for a classic heart"}
+      ],
+      "reasoning": "Full cheeks, a soft, rounded jawline with no visible corners, a small chin and a width close to the length, with the smile pushing the cheeks outward. The open-mouth smile exaggerates roundness, so the oval alternative is plausible at rest. A neutral-expression photo would settle this."
+    },
+    "forehead": "Medium height, fairly broad; the side-swept front covers the outer edge of one side and the hairline is low-to-medium with a soft, slightly rounded edge.",
+    "jaw": "Soft and rounded, no defined corners; chin is small and gently rounded.",
+    "cheekbones": "Not prominent; the cheeks are full and the widest point is around mid-cheek rather than at the cheekbone.",
+    "symmetry_note": "Head is square to the camera with a very slight tilt; no asymmetry worth designing around."
+  },
+  "current_hair": {
+    "length": {"label": "long (past the shoulders, likely mid-back)", "visible": true, "note": "Only the front is visible in a 512px square crop; the ends are out of frame, so the exact length is inferred from the volume at the shoulders."},
+    "texture": {"label": "straight, smooth, possibly heat-styled", "confidence": 0.7, "note": "Glassy, flat-ironed look; natural texture may be slightly wavy."},
+    "curl_pattern": "1A-1B as styled; natural pattern unknown",
+    "density": {"label": "medium", "confidence": 0.6, "note": "Hair lies flat to the head with moderate volume at the sides; no scalp visible at the part."},
+    "part": "Off-centre side part, slightly to the viewer's left of centre; the heavier section falls to the viewer's right and the other side is tucked back behind the ear.",
+    "color": "Medium brown with warm, slightly auburn or chestnut tones, lighter at the mid-lengths; appears natural or subtly lightened. Flash makes it read lighter than it probably is.",
+    "hairline": "Low-to-medium, soft, slightly rounded; no recession; fine baby hairs at the temples."
+  },
+  "glasses": {"wearing": false},
+  "facial_hair": {"present": false},
+  "expression_and_pose": "Open, wide smile with teeth, head square to camera, eyes to lens; a casual event or step-and-repeat photo. A beaded necklace is visible.",
+  "photo_quality": {
+    "lighting": {"flag": true, "note": "Direct on-camera flash: flat lighting, slight specular shine on the forehead and nose, hard shadow behind the head, colour cast warm. Flash flattens contour cues and makes face-shape and hair-colour judgements less reliable."},
+    "pose": {"flag": false, "note": "Frontal, square to camera; good for analysis and generation. The wide smile changes the lower-face shape; a neutral-expression shot would improve face-shape confidence."},
+    "resolution": {"flag": true, "note": "512x512 with the face filling most of the frame (face roughly 300px wide). Fine for analysis; below the comfortable threshold for high-fidelity hair generation, and the hair ends are cropped out."},
+    "occlusion": {"flag": true, "note": "Hair ends and the full silhouette are cropped out of frame; nothing occludes the face. A colourful object intrudes at the right edge."},
+    "overall_usable": true,
+    "request_better_photo": true,
+    "request_better_photo_reason": "Ask for a higher-resolution photo in soft, indirect light, with a neutral expression and the full hair length in frame. Current photo is usable for a first pass but will limit preview quality.",
+    "request_additional_photo": "yes: full-length hair view (front or back) to confirm length and ends condition"
+  },
+  "suggestions": [
+    {
+      "id": "A1",
+      "name": "Long layers with soft face-framing pieces",
+      "boldness": 1,
+      "maintenance": "low",
+      "salon_frequency": "every 10-12 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "Keeps the length but adds face-framing layers that start just below the chin. On a round face, vertical lines beside the face slim the cheeks and draw the eye down; starting layers below the chin avoids adding width at the widest point.",
+      "what_could_go_wrong": "Layers that start at the cheek add volume exactly where the face is widest and make it rounder. Must start below the chin.",
+      "edit_instruction": "Edit only the hair. Keep the long, straight, medium-brown hair and the off-centre part, but add soft long layers and face-framing pieces that begin just below the chin and fall past the collarbone. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Keep my length, add long layers and face-framing pieces that start below my chin, nothing shorter than that around the face."
+    },
+    {
+      "id": "A2",
+      "name": "Collarbone lob with a soft bend at the ends",
+      "boldness": 3,
+      "maintenance": "low-medium",
+      "salon_frequency": "every 8-10 weeks",
+      "styling_time_minutes": 12,
+      "why_it_suits": "Ending the hair at the collarbone, well below the jaw, creates a vertical frame that elongates a round face; a slight bend at the ends avoids the severe look of a dead-straight blunt line.",
+      "what_could_go_wrong": "Cut too short, to the jaw or chin, a lob widens a round face. Straight hair may need a quick wrap or iron to hold the bend.",
+      "edit_instruction": "Edit only the hair. Shorten the hair to a collarbone-length lob, straight with a gentle inward bend at the ends, off-centre part kept, medium-brown colour kept, no bangs. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A lob to the collarbone, slightly longer in front than back, with just enough internal shaping that the ends bend inward."
+    },
+    {
+      "id": "A3",
+      "name": "Long hair with wispy curtain bangs",
+      "boldness": 3,
+      "maintenance": "medium",
+      "salon_frequency": "bang trim every 5-6 weeks",
+      "styling_time_minutes": 15,
+      "why_it_suits": "Curtain bangs parted at the existing side part create a diagonal across the broad forehead and a narrower, taller frame around the eyes, which slims a round face. Wispy, not heavy, so they do not cut the face horizontally.",
+      "what_could_go_wrong": "A heavy, straight-across fringe shortens a round face and makes it rounder; it must be a parted, feathered curtain. Straight hair tends to drop; they need a round brush most mornings.",
+      "edit_instruction": "Edit only the hair. Keep the long, straight, medium-brown hair and the off-centre part, and add wispy curtain bangs parted at the existing part that sweep outward and end at the cheekbones. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Wispy curtain bangs parted at my natural part, ending at the cheekbone, keeping the rest long."
+    },
+    {
+      "id": "A4",
+      "name": "Shoulder-length shag with wispy bangs",
+      "boldness": 4,
+      "maintenance": "medium",
+      "salon_frequency": "every 8 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "A shag adds texture and lift at the crown, which adds height to a round face; the shattered ends and wispy fringe create diagonals that break up the roundness. Straight hair needs some texturising product to show the layers.",
+      "what_could_go_wrong": "On very straight, smooth hair the shag can look like uneven layers rather than deliberate texture; the stylist must texturise, and daily product is needed. Highest styling demand in this set.",
+      "edit_instruction": "Edit only the hair. Replace the long straight style with a shoulder-length shag: heavy choppy layers, lift at the crown, piecey wispy bangs, textured ends, medium-brown colour kept, off-centre part kept. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A shoulder-length shag with crown layers, wispy bangs and texturised ends."
+    },
+    {
+      "id": "A5",
+      "name": "Blunt chin-length bob",
+      "boldness": 5,
+      "maintenance": "medium",
+      "salon_frequency": "every 6 weeks",
+      "styling_time_minutes": 8,
+      "why_it_suits": "Included as the bold option: a clean, straight, chin-length bob suits straight hair perfectly and makes a strong, modern statement. It will accentuate the round face rather than slim it, which can be a feature if the goal is youthful and bold rather than elongating.",
+      "what_could_go_wrong": "This is the shape most classic advice warns against for a round face because the horizontal line at the chin widens it. The honest framing is: choose this for the look, not for balance.",
+      "edit_instruction": "Edit only the hair. Replace the long style with a blunt, straight, chin-length bob with a clean horizontal edge, off-centre part kept, medium-brown colour kept, no bangs. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A blunt chin-length bob, straight, no layers, no bangs, off-centre part."
+    },
+    {
+      "id": "A6",
+      "name": "Current cut with a warm honey balayage",
+      "boldness": 2,
+      "maintenance": "medium (colour)",
+      "salon_frequency": "colour every 12-16 weeks",
+      "styling_time_minutes": 10,
+      "why_it_suits": "The warm auburn-brown base lends itself to a hand-painted honey balayage concentrated at the mid-lengths and around the face; lighter pieces beside the face create vertical highlights that slim a round face without any cut.",
+      "what_could_go_wrong": "Flash lighting in this photo already brightens the hair, so the preview may exaggerate how light it will look. Brassiness is the usual risk on warm bases; toner needed.",
+      "edit_instruction": "Edit only the hair colour. Keep the identical long straight style and part, but add soft, hand-painted honey-blonde balayage ribbons from the mid-lengths to the ends, brighter around the face, with the roots kept medium brown. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Keep my cut; a soft honey balayage from the mid-lengths down, brightest around the face, roots left natural."
+    }
+  ],
+  "refine": {
+    "reaction": "shorter and lower maintenance, keep it professional",
+    "interpretation": "Shorter than the current mid-back length, fewer salon visits, no daily tools, and no statement colour. Bangs and shag are dropped (trims and daily shaping); colour dropped. The collarbone lob is promoted; the chin bob is kept as the shortest option but with a round-face caveat; the set adds one-length shoulder and collarbone cuts. Dropped A3, A4, A6, and A1 (not shorter).",
+    "dropped": ["A1", "A3", "A4", "A6"],
+    "adjusted_suggestions": [
+      {
+        "id": "R1",
+        "name": "One-length collarbone lob (A2, simplified)",
+        "boldness": 2,
+        "maintenance": "low",
+        "salon_frequency": "every 10 weeks",
+        "styling_time_minutes": 5,
+        "why_it_suits": "Shorter, elongating, and ties back for work; one length means no shaping, and straight hair at this length air-dries acceptably.",
+        "what_could_go_wrong": "Dead-straight blunt ends can look severe; a tiny amount of point-cutting at the ends softens them without becoming layers.",
+        "edit_instruction": "Edit only the hair. Shorten the hair to a one-length collarbone lob, straight, off-centre part kept, medium-brown colour kept, no bangs, no layers. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A one-length cut to the collarbone, no layers, no bangs, ends point-cut very lightly."
+      },
+      {
+        "id": "R2",
+        "name": "Shoulder-length cut with long, below-chin layers",
+        "boldness": 2,
+        "maintenance": "low",
+        "salon_frequency": "every 10 weeks",
+        "styling_time_minutes": 5,
+        "why_it_suits": "Just shorter than the lob; long layers starting below the chin keep the slimming vertical lines and allow a quick ponytail or bun.",
+        "what_could_go_wrong": "Ends that land exactly on the shoulder flip outward; cut just above or below the shoulder.",
+        "edit_instruction": "Edit only the hair. Shorten the hair to shoulder length with long, subtle layers that begin below the chin, straight, off-centre part kept, medium-brown colour kept, no bangs. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Shoulder length with long layers that start below the chin, nothing shorter around the face."
+      },
+      {
+        "id": "R3",
+        "name": "Jaw-to-chin bob, slightly longer at the front",
+        "boldness": 4,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 8 weeks",
+        "styling_time_minutes": 8,
+        "why_it_suits": "A graduated bob that is a little longer at the front than at the back pulls the line forward and down, which softens the round-face concern of a blunt bob while still being much shorter.",
+        "what_could_go_wrong": "Too short to tie back; shorter at the back exposes the neck.",
+        "edit_instruction": "Edit only the hair. Replace the long style with a straight bob that ends just above the chin at the front and slightly shorter at the back, off-centre part kept, medium-brown colour kept, no bangs. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A bob just above the chin in front, a touch shorter at the back, no bangs."
+      },
+      {
+        "id": "R4",
+        "name": "Blunt chin bob, kept as the short extreme (A5)",
+        "boldness": 5,
+        "maintenance": "medium",
+        "salon_frequency": "every 6 weeks",
+        "styling_time_minutes": 8,
+        "why_it_suits": "The shortest professional cut that still reads polished on straight hair. Kept with the same caveat: it widens a round face, so it is a style choice, not a balancing one.",
+        "what_could_go_wrong": "Needs the most frequent trims in the set to keep the line clean; and the round-face widening effect.",
+        "edit_instruction": "Edit only the hair. Replace the long style with a blunt, straight, chin-length bob, clean horizontal edge, off-centre part kept, medium-brown colour kept, no bangs. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A blunt chin-length bob, no layers, no bangs."
+      },
+      {
+        "id": "R5",
+        "name": "Collarbone lob with a side-swept long fringe (minimal bangs)",
+        "boldness": 3,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 8-10 weeks",
+        "styling_time_minutes": 6,
+        "why_it_suits": "A compromise for someone who liked the curtain-bang idea: one long, cheekbone-to-jaw side-swept piece that grows out into the lob without a dedicated trim schedule, still adding a diagonal across the forehead.",
+        "what_could_go_wrong": "Falls into the eyes until it reaches the jaw; needs pinning for a few weeks.",
+        "edit_instruction": "Edit only the hair. Shorten the hair to a collarbone lob and add one long side-swept fringe from the off-centre part that falls across the forehead to the jawline, straight, medium-brown colour kept. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A collarbone lob with a long side-swept fringe that I can grow out into the length."
+      },
+      {
+        "id": "R6",
+        "name": "Mid-back to below-shoulder trim, one length (least change)",
+        "boldness": 1,
+        "maintenance": "very low",
+        "salon_frequency": "every 12 weeks",
+        "styling_time_minutes": 5,
+        "why_it_suits": "If the length is longer than it looks, a few inches off to just below the shoulder blades removes weight and drying time without changing the look; the most conservative reading of shorter.",
+        "what_could_go_wrong": "May feel like no change at all.",
+        "edit_instruction": "Edit only the hair. Keep the identical long straight style, part and colour, but shorten the ends to just below the shoulder blades, one length. Keep face, skin, expression, clothing, necklace, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Take a few inches off to just below my shoulder blades, one length, no layers."
+      }
+    ]
+  }
+}

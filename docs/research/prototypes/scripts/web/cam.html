@@ -1,0 +1,210 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>hairstyle-ai browser proto</title>
+<style>
+ body{margin:0;padding:8px;background:#111;color:#eee;font:12px/1.4 monospace}
+ .row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start}
+ canvas,video{background:#000;max-width:640px}
+ #status{margin:6px 0;color:#9f9}
+ #log{white-space:pre-wrap;max-height:260px;overflow:auto;color:#aaa}
+</style></head>
+<body>
+<div class="row">
+ <div>IMAGE mode (img + landmarks + hair)<br><canvas id="imgCanvas"></canvas></div>
+ <div>getUserMedia stream<br><video id="video" autoplay muted playsinline></video></div>
+ <div>VIDEO mode overlay (landmarks + hair mask)<br><canvas id="out"></canvas></div>
+</div>
+<div id="status">booting</div>
+<pre id="log"></pre>
+<script type="module">
+import { FilesetResolver, FaceLandmarker, ImageSegmenter, DrawingUtils } from './node_modules/@mediapipe/tasks-vision/vision_bundle.mjs';
+
+const q = new URLSearchParams(location.search);
+const P = {
+  delegate: q.get('delegate') || 'CPU',          // CPU | GPU
+  models: q.get('models') || 'remote',           // remote (storage.googleapis.com) | local (./models)
+  frames: +(q.get('frames') || 60),              // frames per video sub-loop
+  w: +(q.get('w') || 640), h: +(q.get('h') || 480), // getUserMedia constraint hint
+  worker: q.get('worker') !== '0',               // also run landmarker in a Web Worker
+  seg: q.get('seg') !== '0',                     // also run hair segmenter
+  snaps: q.get('snaps') !== '0',                 // ask driver for screenshots
+  imgLong: +(q.get('imglong') || 1024),          // IMAGE-mode still long side
+};
+const R = { params: P, env: {}, phases: {}, errors: [] };
+window.__results = R;
+
+const URLS = {
+  remote: { lm: 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',
+            hair: 'https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/latest/hair_segmenter.tflite' },
+  local:  { lm: './models/face_landmarker.task', hair: './models/hair_segmenter.tflite' },
+};
+const WASM_DIR = './node_modules/@mediapipe/tasks-vision/wasm';
+
+const logEl = document.getElementById('log');
+const log = (...a) => { const s = a.map(x => typeof x === 'string' ? x : JSON.stringify(x)).join(' '); console.log(s); logEl.textContent += s + '\n'; };
+const status = s => { document.getElementById('status').textContent = s; window.__phase = s; log('[phase]', s); };
+const stats = arr => { if (!arr || !arr.length) return null; const a = [...arr].sort((x, y) => x - y); const p = f => a[Math.min(a.length - 1, Math.floor(f * a.length))]; const mean = a.reduce((s, x) => s + x, 0) / a.length; return { n: a.length, mean: +mean.toFixed(1), median: +p(0.5).toFixed(1), p90: +p(0.9).toFixed(1), min: +a[0].toFixed(1), max: +a[a.length - 1].toFixed(1) }; };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function snap(name) { if (!P.snaps) return; window.__snapRequest = name; while (window.__snapDone !== name) await sleep(20); window.__snapRequest = null; }
+// main-thread responsiveness probe: how late does a 16 ms timer fire while inference runs?
+function jitterProbe() { const d = []; let last = performance.now(); const id = setInterval(() => { const n = performance.now(); d.push(n - last - 16); last = n; }, 16); return () => { clearInterval(id); return stats(d); }; }
+async function fetchModel(url) { const t = performance.now(); const r = await fetch(url, { cache: 'no-store' }); if (!r.ok) throw new Error('fetch ' + url + ' -> ' + r.status); const b = new Uint8Array(await r.arrayBuffer()); return { buf: b, ms: +(performance.now() - t).toFixed(0), bytes: b.byteLength }; }
+function nextVideoFrame(video) { return new Promise(r => { if (video.requestVideoFrameCallback) video.requestVideoFrameCallback((now, meta) => r(meta)); else requestAnimationFrame(() => r(null)); }); }
+
+// Hair mask -> RGBA overlay on a 2D canvas (CPU path). Returns ms spent converting + drawing.
+const maskCanvas = document.createElement('canvas'); const maskCtx = maskCanvas.getContext('2d', { willReadFrequently: true });
+let maskRGBA = null;
+function drawHairOverlay(ctx, mask, W, H) {
+  const t = performance.now();
+  const mw = mask.width, mh = mask.height; const f = mask.getAsFloat32Array();
+  if (!maskRGBA || maskRGBA.length !== mw * mh * 4) { maskRGBA = new Uint8ClampedArray(mw * mh * 4); maskCanvas.width = mw; maskCanvas.height = mh; }
+  let hairPx = 0;
+  for (let i = 0, j = 0; i < f.length; i++, j += 4) { const c = f[i]; if (c > 0.5) hairPx++; maskRGBA[j] = 255; maskRGBA[j + 1] = 40; maskRGBA[j + 2] = 200; maskRGBA[j + 3] = c > 0.3 ? Math.min(255, c * 200) | 0 : 0; }
+  maskCtx.putImageData(new ImageData(maskRGBA, mw, mh), 0, 0);
+  ctx.drawImage(maskCanvas, 0, 0, W, H);
+  return { ms: performance.now() - t, maskW: mw, maskH: mh, hairFrac: hairPx / f.length };
+}
+
+async function main() {
+  R.env = { ua: navigator.userAgent, hw: navigator.hardwareConcurrency, webgpu: !!navigator.gpu, sab: typeof SharedArrayBuffer !== 'undefined', coi: crossOriginIsolated, webgl2: !!document.createElement('canvas').getContext('webgl2'), rvfc: 'requestVideoFrameCallback' in HTMLVideoElement.prototype, deviceMemory: navigator.deviceMemory };
+  // ---------- Phase A: init ----------
+  status('A: init wasm + models (' + P.models + ', ' + P.delegate + ')');
+  const A = R.phases.init = {};
+  let t = performance.now();
+  const fileset = await FilesetResolver.forVisionTasks(WASM_DIR);
+  A.fileset_ms = +(performance.now() - t).toFixed(0);
+  const lmFetch = await fetchModel(URLS[P.models].lm); A.lm_fetch_ms = lmFetch.ms; A.lm_bytes = lmFetch.bytes;
+  t = performance.now();
+  const lmImg = await FaceLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetBuffer: lmFetch.buf, delegate: P.delegate }, runningMode: 'IMAGE', numFaces: 1, outputFaceBlendshapes: true, outputFacialTransformationMatrixes: true });
+  A.lm_create_image_ms = +(performance.now() - t).toFixed(0);
+  let hairFetch = null, hairImg = null;
+  if (P.seg) {
+    hairFetch = await fetchModel(URLS[P.models].hair); A.hair_fetch_ms = hairFetch.ms; A.hair_bytes = hairFetch.bytes;
+    t = performance.now();
+    hairImg = await ImageSegmenter.createFromOptions(fileset, { baseOptions: { modelAssetBuffer: hairFetch.buf, delegate: P.delegate }, runningMode: 'IMAGE', outputConfidenceMasks: true, outputCategoryMask: false });
+    A.hair_create_image_ms = +(performance.now() - t).toFixed(0);
+  }
+  // which wasm variant did the loader pick?
+  A.wasm_entries = performance.getEntriesByType('resource').filter(e => /wasm|\.task|\.tflite/.test(e.name)).map(e => ({ name: e.name.split('/').pop(), bytes: e.transferSize || e.encodedBodySize, ms: +e.duration.toFixed(0) }));
+  A.total_init_ms = +performance.now().toFixed(0);
+  log('init', A);
+
+  // ---------- Phase B: IMAGE mode on <img> ----------
+  status('B: IMAGE mode on still');
+  const B = R.phases.image = {};
+  const im = new Image(); im.src = 'img/business-person.png'; await im.decode();
+  const s = P.imgLong / Math.max(im.naturalWidth, im.naturalHeight);
+  const ic = document.getElementById('imgCanvas'); ic.width = Math.round(im.naturalWidth * s); ic.height = Math.round(im.naturalHeight * s);
+  const ictx = ic.getContext('2d'); ictx.drawImage(im, 0, 0, ic.width, ic.height);
+  B.input = ic.width + 'x' + ic.height;
+  const tsI = [], tsH = []; let lmRes = null, hairRes = null;
+  for (let i = 0; i < 6; i++) { t = performance.now(); lmRes = lmImg.detect(ic); tsI.push(performance.now() - t); }
+  B.lm_first_ms = +tsI[0].toFixed(1); B.lm_ms = stats(tsI.slice(1));
+  B.faces = lmRes.faceLandmarks.length; B.landmarks = lmRes.faceLandmarks[0]?.length; B.blendshapes = lmRes.faceBlendshapes[0]?.categories.length; B.matrix = !!lmRes.facialTransformationMatrixes?.[0];
+  if (hairImg) { for (let i = 0; i < 6; i++) { t = performance.now(); if (hairRes) hairRes.close(); hairRes = hairImg.segment(ic); tsH.push(performance.now() - t); } B.hair_first_ms = +tsH[0].toFixed(1); B.hair_ms = stats(tsH.slice(1)); }
+  // draw overlays
+  const du = new DrawingUtils(ictx);
+  if (hairRes) { B.hair_overlay = drawHairOverlay(ictx, hairRes.confidenceMasks[1], ic.width, ic.height); B.hair_overlay.ms = +B.hair_overlay.ms.toFixed(1); B.hair_overlay.hairFrac = +B.hair_overlay.hairFrac.toFixed(4); hairRes.close(); }
+  if (lmRes.faceLandmarks[0]) { du.drawConnectors(lmRes.faceLandmarks[0], FaceLandmarker.FACE_LANDMARKS_TESSELATION, { color: 'rgba(0,255,0,0.35)', lineWidth: 0.5 }); du.drawConnectors(lmRes.faceLandmarks[0], FaceLandmarker.FACE_LANDMARKS_FACE_OVAL, { color: '#ff0', lineWidth: 2 }); }
+  log('image', B); await snap('image_overlay');
+  lmImg.close(); if (hairImg) hairImg.close();
+
+  // ---------- Phase C: getUserMedia (fake camera) + VIDEO mode ----------
+  status('C: getUserMedia');
+  const C = R.phases.video = {};
+  const video = document.getElementById('video');
+  t = performance.now();
+  const stream = await navigator.mediaDevices.getUserMedia({ video: { width: { ideal: P.w }, height: { ideal: P.h } }, audio: false });
+  video.srcObject = stream; await video.play();
+  await nextVideoFrame(video);
+  C.gum_to_first_frame_ms = +(performance.now() - t).toFixed(0);
+  const track = stream.getVideoTracks()[0]; const st = track.getSettings();
+  C.track = { label: track.label, w: st.width, h: st.height, fps: st.frameRate }; C.videoSize = video.videoWidth + 'x' + video.videoHeight;
+  const W = video.videoWidth, H = video.videoHeight;
+  const out = document.getElementById('out'); out.width = W; out.height = H; const octx = out.getContext('2d'); const duV = new DrawingUtils(octx);
+  // raw camera frame rate without inference
+  { const ts = []; let last = performance.now(); for (let i = 0; i < 30; i++) { await nextVideoFrame(video); const n = performance.now(); ts.push(n - last); last = n; } C.raw_frame_interval_ms = stats(ts); }
+  log('camera', C);
+
+  t = performance.now();
+  const lmVid = await FaceLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetBuffer: lmFetch.buf, delegate: P.delegate }, runningMode: 'VIDEO', numFaces: 1, outputFaceBlendshapes: true, outputFacialTransformationMatrixes: true });
+  C.lm_create_video_ms = +(performance.now() - t).toFixed(0);
+  let hairVid = null;
+  if (P.seg) { t = performance.now(); hairVid = await ImageSegmenter.createFromOptions(fileset, { baseOptions: { modelAssetBuffer: hairFetch.buf, delegate: P.delegate }, runningMode: 'VIDEO', outputConfidenceMasks: true, outputCategoryMask: false }); C.hair_create_video_ms = +(performance.now() - t).toFixed(0); }
+
+  // sub-loop runner: mode = 'lm' | 'hair' | 'both'
+  async function loop(mode, n, drawOverlay) {
+    status('C: video loop ' + mode + ' x' + n);
+    const lmT = [], hairT = [], ovT = [], frameT = [], noseX = [], noseY = [], hairFrac = []; let faces = 0, lost = 0;
+    const stopJitter = jitterProbe();
+    let last = performance.now(); const t0 = last;
+    for (let i = 0; i < n; i++) {
+      await nextVideoFrame(video);
+      const now = performance.now(); frameT.push(now - last); last = now;
+      const ts = Math.round(now);
+      let res = null, seg = null;
+      if (mode !== 'hair') { const a = performance.now(); res = lmVid.detectForVideo(video, ts); lmT.push(performance.now() - a); if (res.faceLandmarks[0]) { faces++; const nz = res.faceLandmarks[0][1]; noseX.push(nz.x * W); noseY.push(nz.y * H); } else lost++; }
+      if (mode !== 'lm' && hairVid) { const a = performance.now(); seg = hairVid.segmentForVideo(video, ts); hairT.push(performance.now() - a); }
+      if (drawOverlay) {
+        const a = performance.now();
+        octx.drawImage(video, 0, 0, W, H);
+        if (seg) { const o = drawHairOverlay(octx, seg.confidenceMasks[1], W, H); hairFrac.push(o.hairFrac * 100); }
+        if (res && res.faceLandmarks[0]) { duV.drawConnectors(res.faceLandmarks[0], FaceLandmarker.FACE_LANDMARKS_FACE_OVAL, { color: '#ff0', lineWidth: 2 }); duV.drawLandmarks(res.faceLandmarks[0], { color: 'rgba(0,255,0,0.6)', radius: 1, lineWidth: 0 }); }
+        ovT.push(performance.now() - a);
+      }
+      if (seg) seg.close();
+      if (drawOverlay && i === Math.floor(n / 2)) await snap('video_' + mode + '_overlay');
+    }
+    const wall = performance.now() - t0;
+    const r = { mode, n, overlay: drawOverlay, wall_ms: +wall.toFixed(0), fps: +(n / wall * 1000).toFixed(1), frame_interval_ms: stats(frameT), lm_ms: stats(lmT), lm_first_ms: lmT[0] && +lmT[0].toFixed(1), hair_ms: stats(hairT), hair_first_ms: hairT[0] && +hairT[0].toFixed(1), overlay_ms: stats(ovT), faces, lost, main_thread_timer_lateness_ms: stopJitter() };
+    if (noseX.length > 2) r.nose_track = { x0: +noseX[0].toFixed(1), x1: +noseX[noseX.length - 1].toFixed(1), y0: +noseY[0].toFixed(1), y1: +noseY[noseY.length - 1].toFixed(1), dx_per_frame: +((noseX[noseX.length - 1] - noseX[0]) / (noseX.length - 1)).toFixed(3) };
+    if (hairFrac.length) r.hair_pct = stats(hairFrac);
+    log('loop', r); return r;
+  }
+  C.loops = [];
+  C.loops.push(await loop('lm', P.frames, true));
+  if (hairVid) C.loops.push(await loop('hair', P.frames, true));
+  if (hairVid) C.loops.push(await loop('both', P.frames, true));
+  if (hairVid) C.loops.push(await loop('both', P.frames, false));   // inference only, no compositing
+  // ---------- Phase C2: WebGL compositing via DrawingUtils.drawConfidenceMask ----------
+  if (hairVid) {
+    status('C2: drawConfidenceMask (WebGL path)');
+    try {
+      const glCanvas = document.createElement('canvas'); glCanvas.width = W; glCanvas.height = H; const gl = glCanvas.getContext('webgl2');
+      const duGL = new DrawingUtils(octx, gl); const ts = [], tsSeg = [];
+      for (let i = 0; i < Math.min(P.frames, 30); i++) {
+        await nextVideoFrame(video); const now = Math.round(performance.now());
+        let a = performance.now(); const seg = hairVid.segmentForVideo(video, now); tsSeg.push(performance.now() - a);
+        a = performance.now(); duGL.drawConfidenceMask(seg.confidenceMasks[1], [0, 0, 0, 0], [255, 40, 200, 160]); octx.drawImage(video, 0, 0, W, H); octx.drawImage(glCanvas, 0, 0, W, H); ts.push(performance.now() - a); seg.close();
+      }
+      C.gl_overlay = { draw_ms: stats(ts), seg_ms: stats(tsSeg) }; log('gl_overlay', C.gl_overlay); await snap('video_gl_overlay');
+    } catch (e) { C.gl_overlay = { error: String(e && e.message || e) }; R.errors.push('gl_overlay: ' + e); log('gl_overlay error', String(e)); }
+  }
+  lmVid.close(); if (hairVid) hairVid.close();
+
+  // ---------- Phase D: landmarker in a Web Worker (ImageBitmap transfer) ----------
+  if (P.worker) {
+    status('D: worker landmarker');
+    const D = R.phases.worker = {};
+    try {
+      const worker = new Worker('./worker.js');
+      const call = (msg, transfer) => new Promise((res, rej) => { const id = Math.random(); const h = e => { if (e.data.id !== id) return; worker.removeEventListener('message', h); e.data.error ? rej(new Error(e.data.error)) : res(e.data); }; worker.addEventListener('message', h); worker.postMessage({ id, ...msg }, transfer || []); });
+      t = performance.now();
+      const init = await call({ type: 'init', wasmDir: new URL(WASM_DIR, location.href).href, model: lmFetch.buf.slice().buffer, delegate: P.delegate }, []);
+      D.init_ms = +(performance.now() - t).toFixed(0); D.init_detail = init.detail;
+      const rt = [], inner = [], bm = []; const stopJitter = jitterProbe(); let faces = 0; const t0 = performance.now();
+      for (let i = 0; i < P.frames; i++) {
+        await nextVideoFrame(video);
+        let a = performance.now(); const bitmap = await createImageBitmap(video); bm.push(performance.now() - a);
+        a = performance.now(); const r = await call({ type: 'detect', bitmap, ts: Math.round(a) }, [bitmap]); rt.push(performance.now() - a); inner.push(r.ms); if (r.faces) faces++;
+      }
+      D.n = P.frames; D.fps = +(P.frames / (performance.now() - t0) * 1000).toFixed(1); D.createImageBitmap_ms = stats(bm); D.roundtrip_ms = stats(rt); D.worker_inference_ms = stats(inner); D.faces = faces; D.main_thread_timer_lateness_ms = stopJitter();
+      worker.terminate();
+    } catch (e) { D.error = String(e && e.stack || e); R.errors.push('worker: ' + e); }
+    log('worker', D);
+  }
+  stream.getTracks().forEach(tr => tr.stop());
+  status('done');
+}
+main().catch(e => { R.errors.push(String(e && e.stack || e)); log('FATAL', String(e && e.stack || e)); }).finally(() => { window.__done = true; });
+</script>
+</body></html>

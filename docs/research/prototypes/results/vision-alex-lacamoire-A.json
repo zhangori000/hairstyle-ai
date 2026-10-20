@@ -1,0 +1,199 @@
+{
+  "schema_version": "proto-0.1",
+  "image": "alex-lacamoire.png",
+  "image_px": [424, 394],
+  "run": "A",
+  "analyst": "claude-fable-5-1 viewing the image via the Read tool; stand-in for a production vision-LLM call",
+  "method_note": "Subjective visual judgement only. No landmarks, no measurements. Confidence values are self-reported and uncalibrated. This image is blurry and low resolution, so every call below carries extra uncertainty.",
+  "subject_description_policy": "features only; no identity, no ethnicity, no gender label",
+  "face": {
+    "shape": {
+      "label": "oblong (long oval)",
+      "confidence": 0.45,
+      "alternatives": [
+        {"label": "oval", "confidence": 0.35, "why": "the visible upper face is oval; the beard hides the true jaw and chin"},
+        {"label": "rectangle", "confidence": 0.2, "why": "the beard squares off the lower face, but whether the jaw underneath is square is not visible"}
+      ],
+      "reasoning": "The face reads tall: a medium-high forehead plus a full beard that extends the visual length. Cheekbones are moderate, the upper face is oval, and the lower third is fully hidden by beard, so the jaw call is really a call about the beard shape. Low confidence for that reason and because of the blur."
+    },
+    "forehead": "Medium-high; curls fall over the top third so the hairline is partially hidden. Where visible at the temples the hairline appears to sit back somewhat, suggesting a mature or naturally high hairline, but blur makes this uncertain.",
+    "jaw": "Not visible: covered by a full beard. The beard outline is rounded-square. No jaw judgement is possible from this photo.",
+    "cheekbones": "Moderate, with the smile lifting the cheeks; not a dominant feature.",
+    "symmetry_note": "Head is tilted and turned slightly toward the viewer's left (a mild three-quarter angle); the curls fall asymmetrically, heavier on the viewer's left."
+  },
+  "current_hair": {
+    "length": {"label": "medium (roughly 3-5 inches, curls reaching the ears and the top of the forehead)", "visible": true, "note": "Length is estimated from curl reach; stretched length is probably considerably longer than it looks."},
+    "texture": {"label": "curly, well-defined loose curls to ringlets", "confidence": 0.8, "note": "Distinct spiral curls visible despite blur."},
+    "curl_pattern": "3A-3B (loose to springy curls); possibly 3C in places",
+    "density": {"label": "high", "confidence": 0.65, "note": "Full, voluminous mass with no scalp visible; blur inflates apparent volume slightly."},
+    "part": "None visible; curls are worn naturally with no defined part, volume roughly even with a slight lean to the viewer's left.",
+    "color": "Dark brown to near-black, uniform; warm highlights are the lighting, not colour.",
+    "hairline": "Partially hidden; appears to sit high at the temples with curls covering it. Uncertain."
+  },
+  "glasses": {"wearing": false},
+  "facial_hair": {"present": true, "style": "Full beard, short-to-medium length, dark, dense, connected to a moustache; neatly shaped. Hides the jawline and chin entirely.", "note": "Suggestions below change only head hair; beard is kept identical in every edit instruction."},
+  "expression_and_pose": "Broad open smile with teeth, head tilted and slightly turned, eyes toward the viewer's left of the lens; appears to be a frame from video or a candid at an event.",
+  "photo_quality": {
+    "lighting": {"flag": true, "note": "Dim, warm, low-contrast tungsten-style lighting with a dark background; shadows under the curls merge with the hair, so the hair outline is hard to read. Colour cast is strong."},
+    "pose": {"flag": true, "note": "Head tilt plus a slight three-quarter turn; the smile is wide. Usable but not ideal; a square-on, neutral shot would be better for face-shape and hairline."},
+    "resolution": {"flag": true, "note": "424x394 and visibly soft, consistent with a video frame or an upscaled thumbnail. The face is only about 180px wide. Below the comfortable threshold for both analysis and generation."},
+    "occlusion": {"flag": true, "note": "Beard hides the jaw and chin; curls hide the hairline and forehead edge."},
+    "overall_usable": true,
+    "request_better_photo": true,
+    "request_better_photo_reason": "Blurry, low-resolution, dimly lit and angled. A sharp, front-facing photo in daylight or soft indoor light, at least 1000px on the short side, would substantially improve both the analysis and any rendered preview. Analysis below is provisional.",
+    "request_additional_photo": "yes: a sharp frontal photo and, if possible, one with the hair pushed back to show the hairline"
+  },
+  "suggestions": [
+    {
+      "id": "A1",
+      "name": "Defined curls at the current length with a tidy perimeter",
+      "boldness": 1,
+      "maintenance": "low-medium",
+      "salon_frequency": "every 8-10 weeks",
+      "styling_time_minutes": 5,
+      "why_it_suits": "Keeps the volume and the natural look but cleans the perimeter around the ears and neck and uses a curl cream for definition. The round silhouette of the curls adds width beside the face, which a long face benefits from.",
+      "what_could_go_wrong": "If the stylist cuts the curls dry and evenly it works; a wet cut on curls like these shrinks unevenly and ends up shorter than intended.",
+      "edit_instruction": "Edit only the head hair. Keep the dark, voluminous 3A-3B curls at the same length but make them more defined and glossy, with a neat, slightly tidied outline around the ears and at the temples. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A dry cut to tidy the perimeter around the ears and neck, keep the length and volume, and recommend a curl cream for definition."
+    },
+    {
+      "id": "A2",
+      "name": "Curly taper: short tapered sides and back, 3-4 inches of curl on top",
+      "boldness": 2,
+      "maintenance": "medium",
+      "salon_frequency": "every 4-5 weeks",
+      "styling_time_minutes": 5,
+      "why_it_suits": "The most common professional shape for this curl type. Tapering the sides reduces the roundness of the overall silhouette while the top keeps the curl character; with a long face the taper should stay low so some side width remains.",
+      "what_could_go_wrong": "A high taper or skin fade removes all side width and, with the full beard, makes the head look like a tall column. Ask for a low taper only.",
+      "edit_instruction": "Edit only the head hair. Give the dark curly hair a low taper: sides and back cut short and blended, while the top keeps about three to four inches of defined 3A-3B curls with natural volume. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A low curly taper: short blended sides and back, keep three to four inches of curl on top, nothing above the temple on the fade."
+    },
+    {
+      "id": "A3",
+      "name": "Short curly crop with a curly fringe",
+      "boldness": 3,
+      "maintenance": "medium",
+      "salon_frequency": "every 5-6 weeks",
+      "styling_time_minutes": 3,
+      "why_it_suits": "Shorter overall, with the curls on top pushed forward onto the forehead. A fringe of curls shortens the visible forehead, which reduces the length of a long face, and it hides the possibly high hairline.",
+      "what_could_go_wrong": "Curls shrink; the fringe has to be cut long enough that it sits at mid-forehead after drying, not above the hairline. Can read youthful rather than professional if too short at the sides.",
+      "edit_instruction": "Edit only the head hair. Cut the dark curly hair into a short textured crop, about two inches on top with the curls falling forward onto the upper forehead as a soft curly fringe, sides and back short and tapered. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A short curly crop, about two inches on top, cut so the curls fall forward as a fringe to mid-forehead, sides tapered."
+    },
+    {
+      "id": "A4",
+      "name": "Curly undercut with a disconnected long top",
+      "boldness": 4,
+      "maintenance": "medium-high",
+      "salon_frequency": "every 3-4 weeks",
+      "styling_time_minutes": 8,
+      "why_it_suits": "Keeps most of the curl mass on top and removes the sides entirely for a sharp contrast. Dramatic and modern; the beard and the top curls frame the face top and bottom.",
+      "what_could_go_wrong": "This is the shape that most elongates an already long face: no side width, tall top, full beard. Honest framing: choose it for the look, knowing it will make the face read longer.",
+      "edit_instruction": "Edit only the head hair. Shave the sides and back close in a clean undercut, leaving the top as a full, long section of dark defined 3A-3B curls that sits high and slightly forward. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A disconnected undercut: sides and back clipped close, the top left long and curly."
+    },
+    {
+      "id": "A5",
+      "name": "Grown-out curls, swept back off the face",
+      "boldness": 4,
+      "maintenance": "medium (daily product)",
+      "salon_frequency": "every 10-12 weeks (shape only)",
+      "styling_time_minutes": 10,
+      "why_it_suits": "The longer direction: let the curls grow to five to seven inches and wear them pushed back with a curl cream or light gel, which exposes the forehead but adds width at the sides and back. Works in a professional setting if the sides are kept neat.",
+      "what_could_go_wrong": "Pushing the curls back exposes the hairline and forehead, which may be the opposite of what someone with a high hairline wants. Needs daily product and a wash-day routine.",
+      "edit_instruction": "Edit only the head hair. Lengthen the dark curly hair to about six inches, worn swept back and up off the forehead with defined, slightly glossy 3A-3B curls and natural volume at the sides and back. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "Let me grow the curls out, shape them so I can wear them pushed back, and keep the sides from getting wide."
+    },
+    {
+      "id": "A6",
+      "name": "Close buzz (#2) with a low taper",
+      "boldness": 5,
+      "maintenance": "low",
+      "salon_frequency": "every 4 weeks",
+      "styling_time_minutes": 0,
+      "why_it_suits": "The opposite extreme: remove the curl volume entirely. With the full beard, a close crop reads clean and deliberate. Zero daily effort.",
+      "what_could_go_wrong": "Removes the main feature that balances the long face, and exposes the hairline fully. If the hairline is receding, this makes it obvious. Preview against a better photo before committing.",
+      "edit_instruction": "Edit only the head hair. Replace the curly hair with a very short dark buzz cut, about a quarter inch, with a low taper at the sides and nape and a natural hairline. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+      "stylist_handoff": "A #2 buzz all over with a low taper and natural edges."
+    }
+  ],
+  "refine": {
+    "reaction": "shorter and lower maintenance, keep it professional",
+    "interpretation": "Shorter than the current medium curly length; fewer barber visits or no daily styling; professional. The undercut and the grow-out are dropped (long or high-upkeep); A1 is dropped as not shorter. The curly taper and the crop are kept and made shorter; the buzz is kept; two more low-effort short curly shapes are added. Across the set, side width is preserved because the face is long and the beard adds length.",
+    "dropped": ["A1", "A4", "A5"],
+    "adjusted_suggestions": [
+      {
+        "id": "R1",
+        "name": "Low curly taper with 2 inches on top (A2, shorter)",
+        "boldness": 2,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 5-6 weeks",
+        "styling_time_minutes": 3,
+        "why_it_suits": "Shorter top keeps a hint of curl texture and still rounds the silhouette; a low taper grows out more gracefully than a fade.",
+        "what_could_go_wrong": "At two inches, 3A-3B curls spring up to about an inch; ask the stylist to cut dry and judge the dried length.",
+        "edit_instruction": "Edit only the head hair. Cut the dark curly hair to about two inches of short defined curls on top with a low, soft taper at the sides and back and a natural hairline. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A low taper with about two inches of curl on top, cut dry."
+      },
+      {
+        "id": "R2",
+        "name": "Short scissor-cut curls, one length all over, about 1.5 inches",
+        "boldness": 2,
+        "maintenance": "low",
+        "salon_frequency": "every 6-8 weeks",
+        "styling_time_minutes": 2,
+        "why_it_suits": "No fade to maintain, so it looks the same for two months; the curls stay short and springy with a light leave-in. The even length keeps side width.",
+        "what_could_go_wrong": "An even length with no taper can look slightly round or helmet-like if the hair is very dense; a light taper at the nape fixes it.",
+        "edit_instruction": "Edit only the head hair. Cut the dark curly hair to a short, even length of about an inch and a half all over, with soft defined curls, a natural hairline and no fade. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Scissor-cut the curls to about an inch and a half all over, no fade, just a light clean-up at the nape."
+      },
+      {
+        "id": "R3",
+        "name": "Short curly crop with a soft curly fringe (A3, slightly shorter)",
+        "boldness": 3,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 6 weeks",
+        "styling_time_minutes": 3,
+        "why_it_suits": "Still hides the forehead and shortens the visible face length; cut slightly shorter at the sides for a tidy professional outline.",
+        "what_could_go_wrong": "The fringe needs to be cut to dried length; if too short it reads as a child's cut.",
+        "edit_instruction": "Edit only the head hair. Cut the dark curly hair into a short crop with about an inch and a half of curl on top falling slightly forward as a soft fringe, sides and back short and tapered. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A short curly crop with a soft curly fringe to upper forehead, sides tapered."
+      },
+      {
+        "id": "R4",
+        "name": "#3 buzz with a low taper (A6, slightly longer)",
+        "boldness": 4,
+        "maintenance": "very low",
+        "salon_frequency": "every 4-5 weeks",
+        "styling_time_minutes": 0,
+        "why_it_suits": "A touch longer than a #2 so a hint of curl texture remains and the hairline is slightly softened; zero styling.",
+        "what_could_go_wrong": "Still exposes the hairline; the combination of very short hair and a full beard shifts visual weight downward, so some people trim the beard shorter at the same time.",
+        "edit_instruction": "Edit only the head hair. Replace the curly hair with a short dark buzz cut of about three-eighths of an inch showing faint curl texture, with a low taper at the sides and nape and a natural hairline. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "A #3 all over with a low taper and natural edges."
+      },
+      {
+        "id": "R5",
+        "name": "Short curls on top with a classic clipper-over-comb taper, side-swept",
+        "boldness": 3,
+        "maintenance": "low-medium",
+        "salon_frequency": "every 5-6 weeks",
+        "styling_time_minutes": 4,
+        "why_it_suits": "A conservative office shape: about two inches of curl on top pushed to one side with a little cream, sides tapered with scissors rather than a fade so it grows out quietly.",
+        "what_could_go_wrong": "Curls do not hold a side sweep without product; on a no-product day it reverts to R1.",
+        "edit_instruction": "Edit only the head hair. Cut the dark curly hair to about two inches of defined curls on top, swept to the viewer's right with light hold, sides and back tapered neatly with a soft natural edge. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Two inches of curl on top I can sweep to one side, scissor-tapered sides, nothing faded."
+      },
+      {
+        "id": "R6",
+        "name": "Medium-short curls, perimeter only trimmed (least change)",
+        "boldness": 1,
+        "maintenance": "low",
+        "salon_frequency": "every 8 weeks",
+        "styling_time_minutes": 3,
+        "why_it_suits": "Takes about an inch off everywhere and tidies the perimeter, so it is shorter and neater but still clearly the same curly look; the gentlest reading of the request.",
+        "what_could_go_wrong": "May not read as shorter in a preview because curls spring back; the difference is mostly in the outline.",
+        "edit_instruction": "Edit only the head hair. Reduce the dark curly hair by about an inch overall so the curls sit above the ears and at the top of the forehead, with a neat outline, same curl definition and volume. Keep the beard, face, skin, expression, clothing, pose, lighting and background exactly identical.",
+        "stylist_handoff": "Take about an inch off all over and tidy the outline, keep the curls natural."
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><title>gl share test</title><style>body{background:#111;color:#eee;font:12px monospace}</style></head>
+<body><video id="video" autoplay muted playsinline style="display:none"></video><canvas id="out"></canvas><pre id="log"></pre>
+<script type="module">
+import { FilesetResolver, ImageSegmenter, DrawingUtils } from './node_modules/@mediapipe/tasks-vision/vision_bundle.mjs';
+const q = new URLSearchParams(location.search); const delegate = q.get('delegate') || 'GPU'; const share = q.get('share') !== '0'; const force = q.get('force') === '1'; const N = +(q.get('n') || 12);
+const R = { params: { delegate, share }, phases: {}, errors: [] }; window.__results = R;
+const log = (...a) => { const s = a.map(x => typeof x === 'string' ? x : JSON.stringify(x)).join(' '); console.log(s); document.getElementById('log').textContent += s + '\n'; };
+const stats = arr => { const a = [...arr].sort((x, y) => x - y); return { n: a.length, median: +a[Math.floor(a.length / 2)].toFixed(1), min: +a[0].toFixed(1), max: +a[a.length - 1].toFixed(1) }; };
+const sleep = ms => new Promise(r => setTimeout(r, ms)); async function snap(n) { window.__snapRequest = n; while (window.__snapDone !== n) await sleep(20); window.__snapRequest = null; }
+const nextFrame = v => new Promise(r => v.requestVideoFrameCallback(() => r()));
+(async () => {
+  try {
+    const video = document.getElementById('video'); const stream = await navigator.mediaDevices.getUserMedia({ video: { width: { ideal: 640 }, height: { ideal: 480 } } }); video.srcObject = stream; await video.play(); await nextFrame(video);
+    const W = video.videoWidth, H = video.videoHeight; const out = document.getElementById('out'); out.width = W; out.height = H; const octx = out.getContext('2d');
+    const glCanvas = document.createElement('canvas'); glCanvas.width = W; glCanvas.height = H;
+    const fileset = await FilesetResolver.forVisionTasks('./node_modules/@mediapipe/tasks-vision/wasm');
+    const opts = { baseOptions: { modelAssetPath: './models/hair_segmenter.tflite', delegate }, runningMode: 'VIDEO', outputConfidenceMasks: true };
+    if (share) opts.canvas = glCanvas;                       // the fix under test: task renders on OUR canvas's WebGL context
+    const seg = await ImageSegmenter.createFromOptions(fileset, opts);
+    const gl = glCanvas.getContext('webgl2'); const du = new DrawingUtils(octx, gl);
+    const segT = [], drawT = [], total = []; let sum = 0; const wall0 = performance.now();
+    for (let i = 0; i < N; i++) {
+      await nextFrame(video); const t0 = performance.now(); const r = seg.segmentForVideo(video, Math.round(t0)); const t1 = performance.now();
+      du.drawConfidenceMask(r.confidenceMasks[1], [0, 0, 0, 0], [255, 40, 200, 160]); octx.drawImage(video, 0, 0, W, H); octx.drawImage(glCanvas, 0, 0, W, H); const t2 = performance.now();
+      if (force) octx.getImageData(0, 0, 1, 1); const t3 = performance.now(); r.close(); segT.push(t1 - t0); drawT.push(t2 - t1); total.push(t3 - t0);
+    }
+    // did anything magenta land on the output canvas? count pixels where R>200 && G<120 && B>150
+    const px = octx.getImageData(0, 0, W, H).data; let n = 0; for (let i = 0; i < px.length; i += 4) if (px[i] > 200 && px[i + 1] < 120 && px[i + 2] > 150) n++;
+    R.phases = { n: N, force_sync: force, wall_ms: +(performance.now() - wall0).toFixed(0), fps: +(N / (performance.now() - wall0) * 1000).toFixed(1), seg_ms: stats(segT), draw_ms: stats(drawT), frame_total_ms: stats(total), magenta_pixels: n, magenta_pct: +(n / (W * H) * 100).toFixed(2) };
+    log('result', R.phases); await snap('gl_share_' + delegate + (share ? '_shared' : '_separate'));
+    seg.close(); stream.getTracks().forEach(t => t.stop());
+  } catch (e) { R.errors.push(String(e && e.stack || e)); log('FATAL', String(e)); }
+  window.__done = true;
+})();
+</script></body></html>

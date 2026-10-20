@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>hairstyle-ai worker proto</title>
+<style>body{margin:0;padding:8px;background:#111;color:#eee;font:12px/1.4 monospace}.row{display:flex;gap:8px;flex-wrap:wrap}canvas,video{background:#000;max-width:640px}#status{margin:6px 0;color:#9f9}#log{white-space:pre-wrap;max-height:260px;overflow:auto;color:#aaa}</style></head>
+<body><div class="row"><div>getUserMedia<br><video id="video" autoplay muted playsinline></video></div><div>worker overlay (face oval + hair alpha)<br><canvas id="out"></canvas></div></div>
+<div id="status">booting</div><pre id="log"></pre>
+<script type="module">
+const q = new URLSearchParams(location.search);
+const P = { delegate: q.get('delegate') || 'CPU', frames: +(q.get('frames') || 60), w: +(q.get('w') || 640), h: +(q.get('h') || 480), segW: +(q.get('segw') || 0), segH: +(q.get('segh') || 0) };
+const R = { params: P, env: {}, phases: {}, errors: [] }; window.__results = R;
+const WASM_DIR = './node_modules/@mediapipe/tasks-vision/wasm';
+const logEl = document.getElementById('log'); const log = (...a) => { const s = a.map(x => typeof x === 'string' ? x : JSON.stringify(x)).join(' '); console.log(s); logEl.textContent += s + '\n'; };
+const status = s => { document.getElementById('status').textContent = s; window.__phase = s; log('[phase]', s); };
+const stats = arr => { if (!arr || !arr.length) return null; const a = [...arr].sort((x, y) => x - y); const p = f => a[Math.min(a.length - 1, Math.floor(f * a.length))]; const mean = a.reduce((s, x) => s + x, 0) / a.length; return { n: a.length, mean: +mean.toFixed(1), median: +p(0.5).toFixed(1), p90: +p(0.9).toFixed(1), min: +a[0].toFixed(1), max: +a[a.length - 1].toFixed(1) }; };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function snap(name) { window.__snapRequest = name; while (window.__snapDone !== name) await sleep(20); window.__snapRequest = null; }
+function jitterProbe() { const d = []; let last = performance.now(); const id = setInterval(() => { const n = performance.now(); d.push(n - last - 16); last = n; }, 16); return () => { clearInterval(id); return stats(d); }; }
+function nextVideoFrame(video) { return new Promise(r => video.requestVideoFrameCallback(() => r())); }
+async function fetchBuf(u) { const r = await fetch(u); return new Uint8Array(await r.arrayBuffer()); }
+async function main() {
+  // WebGPU probe (tasks-vision 1.1.1 has no WebGPU delegate option; this just records whether the browser exposes an adapter here)
+  let adapter = null; try { adapter = navigator.gpu ? await navigator.gpu.requestAdapter() : null; } catch (e) { adapter = 'error:' + e.message; }
+  R.env = { ua: navigator.userAgent, hw: navigator.hardwareConcurrency, webgpu_api: !!navigator.gpu, webgpu_adapter: adapter ? (typeof adapter === 'string' ? adapter : (adapter.info ? JSON.stringify(adapter.info) : 'adapter(no info)')) : null, webgl2: !!document.createElement('canvas').getContext('webgl2') };
+  const gl = document.createElement('canvas').getContext('webgl2'); if (gl) { const dbg = gl.getExtension('WEBGL_debug_renderer_info'); R.env.webgl_renderer = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER); }
+  log('env', R.env);
+  status('camera');
+  const video = document.getElementById('video');
+  const stream = await navigator.mediaDevices.getUserMedia({ video: { width: { ideal: P.w }, height: { ideal: P.h } }, audio: false }); video.srcObject = stream; await video.play(); await nextVideoFrame(video);
+  const W = video.videoWidth, H = video.videoHeight; const out = document.getElementById('out'); out.width = W; out.height = H; const octx = out.getContext('2d');
+  const maskCanvas = document.createElement('canvas'); const maskCtx = maskCanvas.getContext('2d'); let rgba = null;
+  status('worker init');
+  const [lmBuf, hairBuf] = await Promise.all([fetchBuf('./models/face_landmarker.task'), fetchBuf('./models/hair_segmenter.tflite')]);
+  const worker = new Worker('./worker2.js');
+  const call = (msg, transfer) => new Promise((res, rej) => { const id = Math.random(); const h = e => { if (e.data.id !== id) return; worker.removeEventListener('message', h); e.data.error ? rej(new Error(e.data.error)) : res(e.data); }; worker.addEventListener('message', h); worker.postMessage({ id, ...msg }, transfer || []); });
+  let t = performance.now();
+  const init = await call({ type: 'init', wasmDir: new URL(WASM_DIR, location.href).href, lm: lmBuf.buffer, hair: hairBuf.buffer, delegate: P.delegate }, [lmBuf.buffer, hairBuf.buffer]);
+  R.phases.init = { worker_init_ms: +(performance.now() - t).toFixed(0), ...init.detail }; log('init', R.phases.init);
+  async function loop(name, doLm, doHair) {
+    status('loop ' + name);
+    const rt = [], lmT = [], hairT = [], bmT = [], drawT = [], frameT = []; let faces = 0; const stop = jitterProbe(); let last = performance.now(); const t0 = last;
+    for (let i = 0; i < P.frames; i++) {
+      await nextVideoFrame(video); const now = performance.now(); frameT.push(now - last); last = now;
+      let a = performance.now();
+      const bitmap = P.segW ? await createImageBitmap(video, { resizeWidth: P.segW, resizeHeight: P.segH, resizeQuality: 'low' }) : await createImageBitmap(video);
+      bmT.push(performance.now() - a);
+      a = performance.now(); const r = await call({ type: 'frame', bitmap, ts: Math.round(a), lm: doLm, hair: doHair }, [bitmap]); rt.push(performance.now() - a);
+      lmT.push(r.lm_ms); hairT.push(r.hair_ms); if (r.faces) faces++;
+      a = performance.now();
+      octx.drawImage(video, 0, 0, W, H);
+      if (r.alpha) { if (!rgba || rgba.length !== r.mw * r.mh * 4) { rgba = new Uint8ClampedArray(r.mw * r.mh * 4); maskCanvas.width = r.mw; maskCanvas.height = r.mh; } for (let k = 0, j = 0; k < r.alpha.length; k++, j += 4) { rgba[j] = 255; rgba[j + 1] = 40; rgba[j + 2] = 200; rgba[j + 3] = r.alpha[k]; } maskCtx.putImageData(new ImageData(rgba, r.mw, r.mh), 0, 0); octx.drawImage(maskCanvas, 0, 0, W, H); }
+      if (r.oval) { octx.strokeStyle = '#ff0'; octx.lineWidth = 2; octx.beginPath(); r.oval.forEach(([x, y], k) => k ? octx.lineTo(x * W, y * H) : octx.moveTo(x * W, y * H)); octx.closePath(); octx.stroke(); }
+      drawT.push(performance.now() - a);
+      if (i === Math.floor(P.frames / 2)) await snap('worker_' + name);
+    }
+    const wall = performance.now() - t0;
+    const res = { name, n: P.frames, fps: +(P.frames / wall * 1000).toFixed(1), frame_interval_ms: stats(frameT), createImageBitmap_ms: stats(bmT), roundtrip_ms: stats(rt), worker_lm_ms: doLm ? stats(lmT) : null, worker_hair_ms: doHair ? stats(hairT) : null, main_draw_ms: stats(drawT), faces, main_thread_timer_lateness_ms: stop(), seg_input: P.segW ? P.segW + 'x' + P.segH : W + 'x' + H };
+    log('loop', res); return res;
+  }
+  R.phases.loops = [];
+  R.phases.loops.push(await loop('lm', true, false));
+  R.phases.loops.push(await loop('hair', false, true));
+  R.phases.loops.push(await loop('both', true, true));
+  worker.terminate(); stream.getTracks().forEach(tr => tr.stop()); status('done');
+}
+main().catch(e => { R.errors.push(String(e && e.stack || e)); log('FATAL', String(e && e.stack || e)); }).finally(() => { window.__done = true; });
+</script></body></html>

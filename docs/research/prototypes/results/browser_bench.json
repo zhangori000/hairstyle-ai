@@ -1,0 +1,91 @@
+{
+ "chromium": "141.0.7390.37",
+ "gpuFlags": [],
+ "total_wall_ms": 79877,
+ "results": [
+  {
+   "delegate": "CPU",
+   "wasm_fileset_ms": 8,
+   "landmarker_create_ms": 409,
+   "hair_create_ms": 215,
+   "multi_create_ms": 684,
+   "input": "451x640",
+   "n_faces": 1,
+   "n_landmarks": 478,
+   "n_blendshapes": 52,
+   "has_matrix": true,
+   "landmarker_ms": {
+    "median": 50.7,
+    "min": 41.4
+   },
+   "hair_ms": {
+    "median": 78.9,
+    "min": 75.1
+   },
+   "hair_frac": 0.0286,
+   "multi_ms": {
+    "median": 540.7,
+    "min": 466.5
+   },
+   "classes": {
+    "0": 129908,
+    "1": 8190,
+    "2": 16516,
+    "3": 16152,
+    "4": 117874
+   },
+   "hw_threads": 4,
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+   "video_landmarker_ms": {
+    "first": 238.6,
+    "median": 33.9
+   },
+   "video_hair_ms": {
+    "first": 276.3,
+    "median": 76.1
+   }
+  },
+  {
+   "delegate": "GPU",
+   "wasm_fileset_ms": 0,
+   "landmarker_create_ms": 497,
+   "hair_create_ms": 200,
+   "multi_create_ms": 358,
+   "input": "451x640",
+   "n_faces": 1,
+   "n_landmarks": 478,
+   "n_blendshapes": 52,
+   "has_matrix": true,
+   "landmarker_ms": {
+    "median": 271.2,
+    "min": 237.2
+   },
+   "hair_ms": {
+    "median": 426,
+    "min": 314.2
+   },
+   "hair_frac": 0.0286,
+   "multi_ms": {
+    "median": 3159.7,
+    "min": 3078.1
+   },
+   "classes": {
+    "0": 130124,
+    "1": 8156,
+    "2": 16412,
+    "3": 16081,
+    "4": 117867
+   },
+   "hw_threads": 4,
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+   "video_landmarker_ms": {
+    "first": 2485.3,
+    "median": 615.5
+   },
+   "video_hair_ms": {
+    "first": 657.6,
+    "median": 5.4
+   }
+  }
+ ]
+}

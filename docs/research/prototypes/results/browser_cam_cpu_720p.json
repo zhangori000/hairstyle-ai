@@ -1,0 +1,428 @@
+{
+ "name": "cpu_720p",
+ "chromium": "141.0.7390.37",
+ "playwright_core": "1.64.1",
+ "tasks_vision": "1.1.1",
+ "remote_via_curl": [],
+ "args": [
+  "--use-fake-ui-for-media-stream",
+  "--use-fake-device-for-media-stream",
+  "--autoplay-policy=no-user-gesture-required",
+  "--use-file-for-fake-video-capture=face_1280x720.y4m"
+ ],
+ "proxy": false,
+ "url": "/cam.html?delegate=CPU&models=local&frames=60&w=1280&h=720",
+ "wall_ms": 60934,
+ "rss": {
+  "processes": 11,
+  "total_rss_mb": 1877,
+  "renderer_rss_mb": 1080
+ },
+ "screenshots": [
+  "<scratchpad>/proto/out/browser_cpu_720p_image_overlay.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_image_overlay_canvas.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_lm_overlay.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_lm_overlay_canvas.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_hair_overlay.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_hair_overlay_canvas.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_both_overlay.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_both_overlay_canvas.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_gl_overlay.png",
+  "<scratchpad>/proto/out/browser_cpu_720p_video_gl_overlay_canvas.png"
+ ],
+ "results": {
+  "params": {
+   "delegate": "CPU",
+   "models": "local",
+   "frames": 60,
+   "w": 1280,
+   "h": 720,
+   "worker": true,
+   "seg": true,
+   "snaps": true,
+   "imgLong": 1024
+  },
+  "env": {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+   "hw": 4,
+   "webgpu": true,
+   "sab": false,
+   "coi": false,
+   "webgl2": true,
+   "rvfc": true,
+   "deviceMemory": 8
+  },
+  "phases": {
+   "init": {
+    "fileset_ms": 3,
+    "lm_fetch_ms": 51,
+    "lm_bytes": 3758596,
+    "lm_create_image_ms": 458,
+    "hair_fetch_ms": 10,
+    "hair_bytes": 781618,
+    "hair_create_image_ms": 224,
+    "wasm_entries": [
+     {
+      "name": "face_landmarker.task",
+      "bytes": 3758896,
+      "ms": 20
+     },
+     {
+      "name": "vision_wasm_internal.js",
+      "bytes": 334428,
+      "ms": 5
+     },
+     {
+      "name": "vision_wasm_internal.wasm",
+      "bytes": 13520222,
+      "ms": 62
+     },
+     {
+      "name": "hair_segmenter.tflite",
+      "bytes": 781918,
+      "ms": 4
+     },
+     {
+      "name": "vision_wasm_internal.wasm",
+      "bytes": 13520222,
+      "ms": 55
+     }
+    ],
+    "total_init_ms": 820
+   },
+   "image": {
+    "input": "722x1024",
+    "lm_first_ms": 300.5,
+    "lm_ms": {
+     "n": 5,
+     "mean": 59.9,
+     "median": 61.8,
+     "p90": 64,
+     "min": 48.9,
+     "max": 64
+    },
+    "faces": 1,
+    "landmarks": 478,
+    "blendshapes": 52,
+    "matrix": true,
+    "hair_first_ms": 201.3,
+    "hair_ms": {
+     "n": 5,
+     "mean": 99.6,
+     "median": 100.2,
+     "p90": 112.9,
+     "min": 83.2,
+     "max": 112.9
+    },
+    "hair_overlay": {
+     "ms": 17.8,
+     "maskW": 722,
+     "maskH": 1024,
+     "hairFrac": 0.0286
+    }
+   },
+   "video": {
+    "gum_to_first_frame_ms": 149,
+    "track": {
+     "label": "<scratchpad>/proto/web/cam/face_1280x720.y4m",
+     "w": 1280,
+     "h": 720,
+     "fps": 30
+    },
+    "videoSize": "1280x720",
+    "raw_frame_interval_ms": {
+     "n": 30,
+     "mean": 33.2,
+     "median": 33.4,
+     "p90": 42,
+     "min": 24.3,
+     "max": 42.6
+    },
+    "lm_create_video_ms": 258,
+    "hair_create_video_ms": 213,
+    "loops": [
+     {
+      "mode": "lm",
+      "n": 60,
+      "overlay": true,
+      "wall_ms": 6607,
+      "fps": 9.1,
+      "frame_interval_ms": {
+       "n": 60,
+       "mean": 108.4,
+       "median": 91.6,
+       "p90": 117.6,
+       "min": 23.9,
+       "max": 806.7
+      },
+      "lm_ms": {
+       "n": 60,
+       "mean": 87,
+       "median": 81.9,
+       "p90": 103.3,
+       "min": 63.7,
+       "max": 261.6
+      },
+      "lm_first_ms": 261.6,
+      "hair_ms": null,
+      "overlay_ms": {
+       "n": 60,
+       "mean": 5.7,
+       "median": 4.8,
+       "p90": 8.4,
+       "min": 3.7,
+       "max": 24.3
+      },
+      "faces": 60,
+      "lost": 0,
+      "main_thread_timer_lateness_ms": {
+       "n": 99,
+       "mean": 49.7,
+       "median": 59.3,
+       "p90": 102,
+       "min": -15.1,
+       "max": 271.5
+      },
+      "nose_track": {
+       "x0": 615.3,
+       "x1": 607.9,
+       "y0": 366.9,
+       "y1": 364.9,
+       "dx_per_frame": -0.125
+      }
+     },
+     {
+      "mode": "hair",
+      "n": 60,
+      "overlay": true,
+      "wall_ms": 10501,
+      "fps": 5.7,
+      "frame_interval_ms": {
+       "n": 60,
+       "mean": 172.4,
+       "median": 165.7,
+       "p90": 196.5,
+       "min": 9.9,
+       "max": 793.8
+      },
+      "lm_ms": null,
+      "hair_ms": {
+       "n": 60,
+       "mean": 138.4,
+       "median": 137.4,
+       "p90": 166.8,
+       "min": 107.2,
+       "max": 205.4
+      },
+      "hair_first_ms": 204.3,
+      "overlay_ms": {
+       "n": 60,
+       "mean": 22.1,
+       "median": 23.3,
+       "p90": 32.1,
+       "min": 9.8,
+       "max": 51.3
+      },
+      "faces": 0,
+      "lost": 0,
+      "main_thread_timer_lateness_ms": {
+       "n": 94,
+       "mean": 94,
+       "median": 121.6,
+       "p90": 236.1,
+       "min": -12.9,
+       "max": 334.6
+      },
+      "hair_pct": {
+       "n": 60,
+       "mean": 3.3,
+       "median": 3.3,
+       "p90": 3.9,
+       "min": 2.5,
+       "max": 4
+      }
+     },
+     {
+      "mode": "both",
+      "n": 60,
+      "overlay": true,
+      "wall_ms": 14693,
+      "fps": 4.1,
+      "frame_interval_ms": {
+       "n": 60,
+       "mean": 240.9,
+       "median": 229.4,
+       "p90": 281.1,
+       "min": 7.1,
+       "max": 846
+      },
+      "lm_ms": {
+       "n": 60,
+       "mean": 79.6,
+       "median": 78.8,
+       "p90": 92.9,
+       "min": 61.4,
+       "max": 113
+      },
+      "lm_first_ms": 72.7,
+      "hair_ms": {
+       "n": 60,
+       "mean": 132.5,
+       "median": 127.6,
+       "p90": 160.8,
+       "min": 99.3,
+       "max": 217.8
+      },
+      "hair_first_ms": 114.6,
+      "overlay_ms": {
+       "n": 60,
+       "mean": 16.5,
+       "median": 15.8,
+       "p90": 25.2,
+       "min": 11,
+       "max": 29.9
+      },
+      "faces": 60,
+      "lost": 0,
+      "main_thread_timer_lateness_ms": {
+       "n": 95,
+       "mean": 136.1,
+       "median": 184.6,
+       "p90": 261.7,
+       "min": -13,
+       "max": 495.5
+      },
+      "nose_track": {
+       "x0": 628.2,
+       "x1": 591.3,
+       "y0": 361.9,
+       "y1": 365.4,
+       "dx_per_frame": -0.625
+      },
+      "hair_pct": {
+       "n": 60,
+       "mean": 3.3,
+       "median": 3.3,
+       "p90": 3.8,
+       "min": 2.5,
+       "max": 3.9
+      }
+     },
+     {
+      "mode": "both",
+      "n": 60,
+      "overlay": false,
+      "wall_ms": 12994,
+      "fps": 4.6,
+      "frame_interval_ms": {
+       "n": 60,
+       "mean": 213.4,
+       "median": 213.8,
+       "p90": 253.9,
+       "min": 7.7,
+       "max": 298.5
+      },
+      "lm_ms": {
+       "n": 60,
+       "mean": 80.9,
+       "median": 79.8,
+       "p90": 93.5,
+       "min": 64,
+       "max": 131.3
+      },
+      "lm_first_ms": 92.8,
+      "hair_ms": {
+       "n": 60,
+       "mean": 134.6,
+       "median": 131.9,
+       "p90": 156.3,
+       "min": 107,
+       "max": 198.1
+      },
+      "hair_first_ms": 130.1,
+      "overlay_ms": null,
+      "faces": 60,
+      "lost": 0,
+      "main_thread_timer_lateness_ms": {
+       "n": 59,
+       "mean": 201,
+       "median": 197.7,
+       "p90": 236,
+       "min": 158.4,
+       "max": 282.6
+      },
+      "nose_track": {
+       "x0": 633.5,
+       "x1": 631,
+       "y0": 361.9,
+       "y1": 364.3,
+       "dx_per_frame": -0.041
+      }
+     }
+    ],
+    "gl_overlay": {
+     "draw_ms": {
+      "n": 30,
+      "mean": 53.7,
+      "median": 47,
+      "p90": 82.1,
+      "min": 38.1,
+      "max": 99.3
+     },
+     "seg_ms": {
+      "n": 30,
+      "mean": 143.3,
+      "median": 139.9,
+      "p90": 171.6,
+      "min": 113.5,
+      "max": 267.9
+     }
+    }
+   },
+   "worker": {
+    "init_ms": 534,
+    "init_detail": {
+     "fileset_ms": 1,
+     "create_ms": 499,
+     "offscreen": true
+    },
+    "n": 60,
+    "fps": 14.4,
+    "createImageBitmap_ms": {
+     "n": 60,
+     "mean": 7.4,
+     "median": 6.8,
+     "p90": 10.2,
+     "min": 5.1,
+     "max": 19.9
+    },
+    "roundtrip_ms": {
+     "n": 60,
+     "mean": 38.1,
+     "median": 34.7,
+     "p90": 44.5,
+     "min": 29.4,
+     "max": 135.8
+    },
+    "worker_inference_ms": {
+     "n": 60,
+     "mean": 37.5,
+     "median": 34,
+     "p90": 43.9,
+     "min": 28.9,
+     "max": 135.3
+    },
+    "faces": 60,
+    "main_thread_timer_lateness_ms": {
+     "n": 259,
+     "mean": 0.1,
+     "median": 0,
+     "p90": 0.8,
+     "min": -13.9,
+     "max": 18.2
+    }
+   }
+  },
+  "errors": []
+ }
+}

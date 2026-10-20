@@ -1,0 +1,6893 @@
+{
+ "cpu": "4",
+ "model_load_ms": {
+  "face_landmarker": 74.97303099989949,
+  "hair_segmenter": 22.099035999417538,
+  "selfie_multiclass": 40.58717100087961,
+  "face_detector": 4.541438999694947
+ },
+ "results": [
+  {
+   "image": "portrait.jpg",
+   "width": 820,
+   "height": 1024,
+   "timings_ms": {
+    "face_landmarker": 13.9,
+    "hair_segmenter": 45.3,
+    "selfie_multiclass": 112.9,
+    "face_detector": 3.1,
+    "face_landmarker_min": 12.2,
+    "hair_segmenter_min": 44.1,
+    "selfie_multiclass_min": 109.4,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0137,
+    "n_components_total": 2,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.48,
+    "mean_conf_inside": 0.902,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.818,
+    "multiclass_hair_area_fraction": 0.0132,
+    "multiclass_class_fractions": {
+     "background": 0.4912,
+     "hair": 0.0132,
+     "body-skin": 0.0209,
+     "face-skin": 0.0576,
+     "clothes": 0.4148,
+     "others": 0.0023
+    }
+   },
+   "face_detector": [
+    {
+     "x": 283,
+     "y": 115,
+     "w": 234,
+     "h": 234,
+     "score": 0.922
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 3.9,
+      "yaw": 1.8,
+      "roll": 0.9
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.96
+      ],
+      [
+       "mouthSmileRight",
+       0.934
+      ],
+      [
+       "browDownLeft",
+       0.839
+      ],
+      [
+       "browDownRight",
+       0.818
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.763
+      ],
+      [
+       "mouthUpperUpRight",
+       0.756
+      ]
+     ],
+     "px": {
+      "mesh_length": 245.6,
+      "face_length_hairline": 276.6,
+      "hairline_offset_from_mesh_top": 31.0,
+      "cheek_width_234_454": 189.3,
+      "cheek_width_3d": 189.4,
+      "cheekbone_width_116_345": 174.1,
+      "jaw_width_172_397": 151.7,
+      "jaw_width_3d": 151.7,
+      "jaw2_width_58_288": 168.5,
+      "forehead_width_103_332": 138.5,
+      "forehead_width_3d": 138.5,
+      "temple_width_54_284": 166.2,
+      "forehead2_width_67_297": 96.7,
+      "chin_width_148_377": 37.2,
+      "eye_outer_dist": 116.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 139.0,
+      "at_58_288": 140.6,
+      "left_172": 138.8,
+      "right_397": 139.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.3,
+       130.0
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.461,
+      "LW_mesh": 1.297,
+      "JC": 0.801,
+      "FC": 0.731,
+      "chinC": 0.196,
+      "LW_rel": 1.125,
+      "JC_rel": 1.034,
+      "FC_rel": 1.092,
+      "chinC_rel": 1.162,
+      "jaw_angle_delta": 6.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 153,
+      "sil_person_jaw": 153,
+      "sil_skin_cheek": 242,
+      "sil_person_cheek": 242,
+      "sil_skin_forehead": 159,
+      "sil_person_forehead": 216,
+      "sil_hair_widest_above_forehead": 209,
+      "hair_height_above_mesh_top": 80.0,
+      "sil_skin_jaw_over_cheek": 0.632,
+      "sil_skin_forehead_over_cheek": 0.657,
+      "sil_person_cheek_over_landmark_cheek": 1.278,
+      "sil_hair_widest_over_cheek": 1.104
+     },
+     "shape": "oval-long",
+     "shape_reasons": [
+      "long face, balanced widths (LW=1.46 LW_rel=1.13 JC_rel=1.03 FC_rel=1.09 dAng=+7)"
+     ],
+     "crop_box": {
+      "x0": 159,
+      "y0": 0,
+      "x1": 644,
+      "y1": 457,
+      "w": 485,
+      "h": 457,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       307.04291343688965,
+       102.20686340332031,
+       498.7399446964264,
+       347.7549743652344
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/portrait_landmarks.png",
+    "<scratchpad>/proto/out/portrait_hair.png",
+    "<scratchpad>/proto/out/portrait_multiclass.png",
+    "<scratchpad>/proto/out/portrait_cropbox.png",
+    "<scratchpad>/proto/out/portrait_crop.png",
+    "<scratchpad>/proto/out/portrait_sheet.png"
+   ]
+  },
+  {
+   "image": "business-person.png",
+   "width": 958,
+   "height": 1358,
+   "timings_ms": {
+    "face_landmarker": 13.0,
+    "hair_segmenter": 53.8,
+    "selfie_multiclass": 136.2,
+    "face_detector": 2.9,
+    "face_landmarker_min": 12.0,
+    "hair_segmenter_min": 46.9,
+    "selfie_multiclass_min": 122.8,
+    "face_detector_min": 2.3
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0286,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.15,
+    "mean_conf_inside": 0.965,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.951,
+    "multiclass_hair_area_fraction": 0.0287,
+    "multiclass_class_fractions": {
+     "background": 0.4492,
+     "hair": 0.0287,
+     "body-skin": 0.0572,
+     "face-skin": 0.0559,
+     "clothes": 0.409,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 372,
+     "y": 212,
+     "w": 251,
+     "h": 251,
+     "score": 0.976
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 18.1,
+      "yaw": 4.9,
+      "roll": 5.2
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.649
+      ],
+      [
+       "mouthSmileRight",
+       0.549
+      ],
+      [
+       "eyeSquintLeft",
+       0.497
+      ],
+      [
+       "eyeLookUpLeft",
+       0.289
+      ],
+      [
+       "eyeSquintRight",
+       0.277
+      ],
+      [
+       "eyeLookUpRight",
+       0.261
+      ]
+     ],
+     "px": {
+      "mesh_length": 280.4,
+      "face_length_hairline": 344.4,
+      "hairline_offset_from_mesh_top": 64.0,
+      "cheek_width_234_454": 246.8,
+      "cheek_width_3d": 248.1,
+      "cheekbone_width_116_345": 226.3,
+      "jaw_width_172_397": 202.0,
+      "jaw_width_3d": 202.9,
+      "jaw2_width_58_288": 223.1,
+      "forehead_width_103_332": 175.6,
+      "forehead_width_3d": 176.5,
+      "temple_width_54_284": 209.4,
+      "forehead2_width_67_297": 124.3,
+      "chin_width_148_377": 43.8,
+      "eye_outer_dist": 163.5
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 132.1,
+      "at_58_288": 134.7,
+      "left_172": 130.1,
+      "right_397": 134.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.9,
+       127.4
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.395,
+      "LW_mesh": 1.136,
+      "JC": 0.818,
+      "FC": 0.712,
+      "chinC": 0.178,
+      "LW_rel": 0.985,
+      "JC_rel": 1.056,
+      "FC_rel": 1.062,
+      "chinC_rel": 1.051,
+      "jaw_angle_delta": -0.1
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 209,
+      "sil_person_jaw": 212,
+      "sil_skin_cheek": 294,
+      "sil_person_cheek": 294,
+      "sil_skin_forehead": 187,
+      "sil_person_forehead": 318,
+      "sil_hair_widest_above_forehead": 310,
+      "hair_height_above_mesh_top": 156.0,
+      "sil_skin_jaw_over_cheek": 0.711,
+      "sil_skin_forehead_over_cheek": 0.636,
+      "sil_person_cheek_over_landmark_cheek": 1.191,
+      "sil_hair_widest_over_cheek": 1.256
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.40 LW_rel=0.99 JC_rel=1.06 FC_rel=1.06 dAng=-0)"
+     ],
+     "crop_box": {
+      "x0": 161,
+      "y0": 0,
+      "x1": 817,
+      "y1": 607,
+      "w": 656,
+      "h": 607,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       366.5449130535126,
+       177.27898386120796,
+       617.8607033491135,
+       458.6279376745224
+      ]
+     },
+     "pose_warning": "pitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/business-person_landmarks.png",
+    "<scratchpad>/proto/out/business-person_hair.png",
+    "<scratchpad>/proto/out/business-person_multiclass.png",
+    "<scratchpad>/proto/out/business-person_cropbox.png",
+    "<scratchpad>/proto/out/business-person_crop.png",
+    "<scratchpad>/proto/out/business-person_sheet.png"
+   ]
+  },
+  {
+   "image": "obama.jpg",
+   "width": 910,
+   "height": 1137,
+   "timings_ms": {
+    "face_landmarker": 14.8,
+    "hair_segmenter": 42.2,
+    "selfie_multiclass": 112.4,
+    "face_detector": 2.6,
+    "face_landmarker_min": 14.3,
+    "hair_segmenter_min": 41.3,
+    "selfie_multiclass_min": 107.6,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0158,
+    "n_components_total": 1,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.412,
+    "mean_conf_inside": 0.906,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.857,
+    "multiclass_hair_area_fraction": 0.0159,
+    "multiclass_class_fractions": {
+     "background": 0.4485,
+     "hair": 0.0159,
+     "body-skin": 0.0255,
+     "face-skin": 0.0696,
+     "clothes": 0.4376,
+     "others": 0.0029
+    }
+   },
+   "face_detector": [
+    {
+     "x": 352,
+     "y": 145,
+     "w": 279,
+     "h": 279,
+     "score": 0.925
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 3.6,
+      "yaw": 1.0,
+      "roll": 1.0
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.953
+      ],
+      [
+       "mouthSmileRight",
+       0.932
+      ],
+      [
+       "browDownLeft",
+       0.844
+      ],
+      [
+       "browDownRight",
+       0.832
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.781
+      ],
+      [
+       "mouthUpperUpRight",
+       0.781
+      ]
+     ],
+     "px": {
+      "mesh_length": 297.9,
+      "face_length_hairline": 337.9,
+      "hairline_offset_from_mesh_top": 40.0,
+      "cheek_width_234_454": 231.6,
+      "cheek_width_3d": 231.7,
+      "cheekbone_width_116_345": 212.0,
+      "jaw_width_172_397": 185.8,
+      "jaw_width_3d": 185.9,
+      "jaw2_width_58_288": 206.3,
+      "forehead_width_103_332": 168.7,
+      "forehead_width_3d": 168.8,
+      "temple_width_54_284": 202.4,
+      "forehead2_width_67_297": 117.8,
+      "chin_width_148_377": 45.5,
+      "eye_outer_dist": 142.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 138.3,
+      "at_58_288": 140.0,
+      "left_172": 138.3,
+      "right_397": 138.4,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.0,
+       130.0
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.459,
+      "LW_mesh": 1.286,
+      "JC": 0.802,
+      "FC": 0.728,
+      "chinC": 0.196,
+      "LW_rel": 1.116,
+      "JC_rel": 1.035,
+      "FC_rel": 1.087,
+      "chinC_rel": 1.161,
+      "jaw_angle_delta": 6.1
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 189,
+      "sil_person_jaw": 189,
+      "sil_skin_cheek": 293,
+      "sil_person_cheek": 293,
+      "sil_skin_forehead": 192,
+      "sil_person_forehead": 264,
+      "sil_hair_widest_above_forehead": 258,
+      "hair_height_above_mesh_top": 98.0,
+      "sil_skin_jaw_over_cheek": 0.645,
+      "sil_skin_forehead_over_cheek": 0.655,
+      "sil_person_cheek_over_landmark_cheek": 1.265,
+      "sil_hair_widest_over_cheek": 1.114
+     },
+     "shape": "oval-long",
+     "shape_reasons": [
+      "long face, balanced widths (LW=1.46 LW_rel=1.12 JC_rel=1.04 FC_rel=1.09 dAng=+6)"
+     ],
+     "crop_box": {
+      "x0": 187,
+      "y0": 0,
+      "x1": 778,
+      "y1": 557,
+      "w": 591,
+      "h": 557,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       375.3030449151993,
+       125.19532388448715,
+       609.6767461299896,
+       423.08125296235085
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/obama_landmarks.png",
+    "<scratchpad>/proto/out/obama_hair.png",
+    "<scratchpad>/proto/out/obama_multiclass.png",
+    "<scratchpad>/proto/out/obama_cropbox.png",
+    "<scratchpad>/proto/out/obama_crop.png",
+    "<scratchpad>/proto/out/obama_sheet.png"
+   ]
+  },
+  {
+   "image": "biden.jpg",
+   "width": 970,
+   "height": 2204,
+   "timings_ms": {
+    "face_landmarker": 14.8,
+    "hair_segmenter": 66.2,
+    "selfie_multiclass": 127.3,
+    "face_detector": 2.2,
+    "face_landmarker_min": 12.4,
+    "hair_segmenter_min": 56.9,
+    "selfie_multiclass_min": 118.4,
+    "face_detector_min": 2.2
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0092,
+    "n_components_total": 4,
+    "n_components_significant": 3,
+    "largest_component_fraction": 0.632,
+    "ambiguous_band_fraction_of_hair": 1.168,
+    "mean_conf_inside": 0.822,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.363,
+    "multiclass_hair_area_fraction": 0.0101,
+    "multiclass_class_fractions": {
+     "background": 0.2899,
+     "hair": 0.0101,
+     "body-skin": 0.0139,
+     "face-skin": 0.0513,
+     "clothes": 0.6248,
+     "others": 0.0099
+    }
+   },
+   "face_detector": [
+    {
+     "x": 416,
+     "y": 238,
+     "w": 338,
+     "h": 338,
+     "score": 0.858
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 2.5,
+      "yaw": 11.5,
+      "roll": -8.2
+     },
+     "top_blendshapes": [
+      [
+       "browDownLeft",
+       0.698
+      ],
+      [
+       "mouthPressRight",
+       0.684
+      ],
+      [
+       "browDownRight",
+       0.64
+      ],
+      [
+       "mouthPressLeft",
+       0.578
+      ],
+      [
+       "eyeLookDownLeft",
+       0.475
+      ],
+      [
+       "eyeLookDownRight",
+       0.47
+      ]
+     ],
+     "px": {
+      "mesh_length": 337.3,
+      "face_length_hairline": 461.3,
+      "hairline_offset_from_mesh_top": 124.0,
+      "cheek_width_234_454": 273.1,
+      "cheek_width_3d": 279.1,
+      "cheekbone_width_116_345": 248.2,
+      "jaw_width_172_397": 218.1,
+      "jaw_width_3d": 222.8,
+      "jaw2_width_58_288": 243.3,
+      "forehead_width_103_332": 194.8,
+      "forehead_width_3d": 198.7,
+      "temple_width_54_284": 233.9,
+      "forehead2_width_67_297": 136.2,
+      "chin_width_148_377": 50.2,
+      "eye_outer_dist": 168.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 133.3,
+      "at_58_288": 135.3,
+      "left_172": 132.4,
+      "right_397": 134.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       131.8,
+       123.1
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.689,
+      "LW_mesh": 1.235,
+      "JC": 0.799,
+      "FC": 0.714,
+      "chinC": 0.184,
+      "LW_rel": 1.071,
+      "JC_rel": 1.031,
+      "FC_rel": 1.065,
+      "chinC_rel": 1.088,
+      "jaw_angle_delta": 1.1
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 0,
+      "sil_person_jaw": 267,
+      "sil_skin_cheek": 337,
+      "sil_person_cheek": 337,
+      "sil_skin_forehead": 252,
+      "sil_person_forehead": 368,
+      "sil_hair_widest_above_forehead": 361,
+      "hair_height_above_mesh_top": 133.0,
+      "sil_skin_jaw_over_cheek": 0.0,
+      "sil_skin_forehead_over_cheek": 0.748,
+      "sil_person_cheek_over_landmark_cheek": 1.234,
+      "sil_hair_widest_over_cheek": 1.322
+     },
+     "shape": "oval-long",
+     "shape_reasons": [
+      "long face, balanced widths (LW=1.69 LW_rel=1.07 JC_rel=1.03 FC_rel=1.06 dAng=+1)"
+     ],
+     "crop_box": {
+      "x0": 180,
+      "y0": 0,
+      "x1": 968,
+      "y1": 744,
+      "w": 788,
+      "h": 744,
+      "hair_components": [
+       1,
+       2,
+       4
+      ],
+      "face_bbox": [
+       425.94856292009354,
+       223.6501290500164,
+       711.5508544445038,
+       566.2756764888763
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/biden_landmarks.png",
+    "<scratchpad>/proto/out/biden_hair.png",
+    "<scratchpad>/proto/out/biden_multiclass.png",
+    "<scratchpad>/proto/out/biden_cropbox.png",
+    "<scratchpad>/proto/out/biden_crop.png",
+    "<scratchpad>/proto/out/biden_sheet.png"
+   ]
+  },
+  {
+   "image": "alex-lacamoire.png",
+   "width": 424,
+   "height": 394,
+   "timings_ms": {
+    "face_landmarker": 13.4,
+    "hair_segmenter": 38.9,
+    "selfie_multiclass": 109.0,
+    "face_detector": 2.6,
+    "face_landmarker_min": 12.2,
+    "hair_segmenter_min": 38.3,
+    "selfie_multiclass_min": 93.3,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1508,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 0.999,
+    "ambiguous_band_fraction_of_hair": 0.31,
+    "mean_conf_inside": 0.936,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.892,
+    "multiclass_hair_area_fraction": 0.1427,
+    "multiclass_class_fractions": {
+     "background": 0.569,
+     "hair": 0.1427,
+     "body-skin": 0.0294,
+     "face-skin": 0.1724,
+     "clothes": 0.0865,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 179,
+     "y": 151,
+     "w": 159,
+     "h": 159,
+     "score": 0.957
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 2.8,
+      "yaw": 8.7,
+      "roll": 3.0
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.943
+      ],
+      [
+       "mouthSmileLeft",
+       0.921
+      ],
+      [
+       "mouthUpperUpRight",
+       0.725
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.632
+      ],
+      [
+       "eyeSquintRight",
+       0.608
+      ],
+      [
+       "eyeSquintLeft",
+       0.592
+      ]
+     ],
+     "px": {
+      "mesh_length": 177.4,
+      "face_length_hairline": 217.4,
+      "hairline_offset_from_mesh_top": 40.0,
+      "cheek_width_234_454": 150.9,
+      "cheek_width_3d": 152.9,
+      "cheekbone_width_116_345": 134.2,
+      "jaw_width_172_397": 126.0,
+      "jaw_width_3d": 127.4,
+      "jaw2_width_58_288": 140.6,
+      "forehead_width_103_332": 100.4,
+      "forehead_width_3d": 101.7,
+      "temple_width_54_284": 121.8,
+      "forehead2_width_67_297": 70.2,
+      "chin_width_148_377": 27.7,
+      "eye_outer_dist": 86.2
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 133.9,
+      "at_58_288": 135.3,
+      "left_172": 129.4,
+      "right_397": 138.4,
+      "auto_gonion": [
+       58,
+       400
+      ],
+      "auto_gonion_angle": [
+       127.8,
+       122.8
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.441,
+      "LW_mesh": 1.176,
+      "JC": 0.835,
+      "FC": 0.665,
+      "chinC": 0.183,
+      "LW_rel": 1.02,
+      "JC_rel": 1.078,
+      "FC_rel": 0.993,
+      "chinC_rel": 1.085,
+      "jaw_angle_delta": 1.7
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 149,
+      "sil_person_jaw": 179,
+      "sil_skin_cheek": 148,
+      "sil_person_cheek": 239,
+      "sil_skin_forehead": 115,
+      "sil_person_forehead": 255,
+      "sil_hair_widest_above_forehead": 247,
+      "hair_height_above_mesh_top": 87.0,
+      "sil_skin_jaw_over_cheek": 1.007,
+      "sil_skin_forehead_over_cheek": 0.777,
+      "sil_person_cheek_over_landmark_cheek": 1.584,
+      "sil_hair_widest_over_cheek": 1.637
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.44 LW_rel=1.02 JC_rel=1.08 FC_rel=0.99 dAng=+2)"
+     ],
+     "crop_box": {
+      "x0": 31,
+      "y0": 8,
+      "x1": 424,
+      "y1": 394,
+      "w": 393,
+      "h": 386,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       165.60867404937744,
+       138.2260292172432,
+       325.0860185623169,
+       315.8674030303955
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/alex-lacamoire_landmarks.png",
+    "<scratchpad>/proto/out/alex-lacamoire_hair.png",
+    "<scratchpad>/proto/out/alex-lacamoire_multiclass.png",
+    "<scratchpad>/proto/out/alex-lacamoire_cropbox.png",
+    "<scratchpad>/proto/out/alex-lacamoire_crop.png",
+    "<scratchpad>/proto/out/alex-lacamoire_sheet.png"
+   ]
+  },
+  {
+   "image": "two_people.jpg",
+   "width": 1126,
+   "height": 661,
+   "timings_ms": {
+    "face_landmarker": 19.4,
+    "hair_segmenter": 43.4,
+    "selfie_multiclass": 117.2,
+    "face_detector": 2.6,
+    "face_landmarker_min": 19.3,
+    "hair_segmenter_min": 42.5,
+    "selfie_multiclass_min": 103.9,
+    "face_detector_min": 2.2
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0045,
+    "n_components_total": 5,
+    "n_components_significant": 5,
+    "largest_component_fraction": 0.665,
+    "ambiguous_band_fraction_of_hair": 2.42,
+    "mean_conf_inside": 0.762,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.292,
+    "multiclass_hair_area_fraction": 0.0128,
+    "multiclass_class_fractions": {
+     "background": 0.4037,
+     "hair": 0.0128,
+     "body-skin": 0.0284,
+     "face-skin": 0.0804,
+     "clothes": 0.4699,
+     "others": 0.0047
+    }
+   },
+   "face_detector": [
+    {
+     "x": 784,
+     "y": 88,
+     "w": 170,
+     "h": 170,
+     "score": 0.936
+    },
+    {
+     "x": 230,
+     "y": 57,
+     "w": 174,
+     "h": 174,
+     "score": 0.919
+    }
+   ],
+   "n_faces_landmarker": 2,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 1.0,
+      "yaw": 4.8,
+      "roll": -7.4
+     },
+     "top_blendshapes": [
+      [
+       "browDownLeft",
+       0.687
+      ],
+      [
+       "mouthPressLeft",
+       0.65
+      ],
+      [
+       "browDownRight",
+       0.64
+      ],
+      [
+       "mouthPressRight",
+       0.617
+      ],
+      [
+       "eyeLookDownRight",
+       0.389
+      ],
+      [
+       "eyeSquintLeft",
+       0.384
+      ]
+     ],
+     "px": {
+      "mesh_length": 178.2,
+      "face_length_hairline": 212.0,
+      "hairline_offset_from_mesh_top": 45.0,
+      "cheek_width_234_454": 145.2,
+      "cheek_width_3d": 148.7,
+      "cheekbone_width_116_345": 131.4,
+      "jaw_width_172_397": 116.3,
+      "jaw_width_3d": 118.9,
+      "jaw2_width_58_288": 129.7,
+      "forehead_width_103_332": 103.4,
+      "forehead_width_3d": 105.7,
+      "temple_width_54_284": 124.5,
+      "forehead2_width_67_297": 72.3,
+      "chin_width_148_377": 26.1,
+      "eye_outer_dist": 88.9
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 131.4,
+      "at_58_288": 133.7,
+      "left_172": 130.0,
+      "right_397": 132.7,
+      "auto_gonion": [
+       172,
+       400
+      ],
+      "auto_gonion_angle": [
+       130.0,
+       122.6
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.459,
+      "LW_mesh": 1.227,
+      "JC": 0.801,
+      "FC": 0.712,
+      "chinC": 0.179,
+      "LW_rel": 1.064,
+      "JC_rel": 1.033,
+      "FC_rel": 1.063,
+      "chinC_rel": 1.062,
+      "jaw_angle_delta": -0.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 116,
+      "sil_person_jaw": 139,
+      "sil_skin_cheek": 180,
+      "sil_person_cheek": 180,
+      "sil_skin_forehead": 146,
+      "sil_person_forehead": 194,
+      "sil_hair_widest_above_forehead": 192,
+      "hair_height_above_mesh_top": 71.0,
+      "sil_skin_jaw_over_cheek": 0.644,
+      "sil_skin_forehead_over_cheek": 0.811,
+      "sil_person_cheek_over_landmark_cheek": 1.239,
+      "sil_hair_widest_over_cheek": 1.322
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.46 LW_rel=1.06 JC_rel=1.03 FC_rel=1.06 dAng=-1)"
+     ],
+     "crop_box": {
+      "x0": 712,
+      "y0": 0,
+      "x1": 1093,
+      "y1": 346,
+      "w": 381,
+      "h": 346,
+      "hair_components": [
+       2,
+       3
+      ],
+      "face_bbox": [
+       787.7055516242981,
+       72.55164650082588,
+       941.0833411216736,
+       253.5118465423584
+      ]
+     },
+     "pose_warning": ""
+    },
+    {
+     "face_index": 1,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -9.6,
+      "yaw": 18.0,
+      "roll": -4.0
+     },
+     "top_blendshapes": [
+      [
+       "browDownRight",
+       0.616
+      ],
+      [
+       "browDownLeft",
+       0.574
+      ],
+      [
+       "eyeLookDownLeft",
+       0.543
+      ],
+      [
+       "eyeLookDownRight",
+       0.515
+      ],
+      [
+       "eyeBlinkRight",
+       0.33
+      ],
+      [
+       "eyeBlinkLeft",
+       0.329
+      ]
+     ],
+     "px": {
+      "mesh_length": 180.2,
+      "face_length_hairline": 203.2,
+      "hairline_offset_from_mesh_top": 23.0,
+      "cheek_width_234_454": 146.6,
+      "cheek_width_3d": 150.3,
+      "cheekbone_width_116_345": 133.8,
+      "jaw_width_172_397": 117.8,
+      "jaw_width_3d": 120.6,
+      "jaw2_width_58_288": 131.1,
+      "forehead_width_103_332": 104.4,
+      "forehead_width_3d": 106.7,
+      "temple_width_54_284": 125.8,
+      "forehead2_width_67_297": 72.5,
+      "chin_width_148_377": 27.9,
+      "eye_outer_dist": 91.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 127.1,
+      "at_58_288": 129.3,
+      "left_172": 126.7,
+      "right_397": 127.4,
+      "auto_gonion": [
+       172,
+       400
+      ],
+      "auto_gonion_angle": [
+       126.7,
+       123.3
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.386,
+      "LW_mesh": 1.229,
+      "JC": 0.804,
+      "FC": 0.712,
+      "chinC": 0.19,
+      "LW_rel": 1.066,
+      "JC_rel": 1.037,
+      "FC_rel": 1.062,
+      "chinC_rel": 1.127,
+      "jaw_angle_delta": -5.1
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 116,
+      "sil_person_jaw": 132,
+      "sil_skin_cheek": 190,
+      "sil_person_cheek": 190,
+      "sil_skin_forehead": 124,
+      "sil_person_forehead": 151,
+      "sil_hair_widest_above_forehead": 127,
+      "hair_height_above_mesh_top": 39.0,
+      "sil_skin_jaw_over_cheek": 0.611,
+      "sil_skin_forehead_over_cheek": 0.653,
+      "sil_person_cheek_over_landmark_cheek": 1.296,
+      "sil_hair_widest_over_cheek": 0.866
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.39 LW_rel=1.07 JC_rel=1.04 FC_rel=1.06 dAng=-5)"
+     ],
+     "crop_box": {
+      "x0": 141,
+      "y0": 0,
+      "x1": 468,
+      "y1": 298,
+      "w": 327,
+      "h": 298,
+      "hair_components": [
+       1,
+       4,
+       5
+      ],
+      "face_bbox": [
+       234.05746626853943,
+       43.0774422287941,
+       384.6575742959976,
+       224.65054768323898
+      ]
+     },
+     "pose_warning": "yaw"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/two_people_landmarks.png",
+    "<scratchpad>/proto/out/two_people_hair.png",
+    "<scratchpad>/proto/out/two_people_multiclass.png",
+    "<scratchpad>/proto/out/two_people_cropbox.png",
+    "<scratchpad>/proto/out/two_people_crop.png",
+    "<scratchpad>/proto/out/two_people_sheet.png"
+   ]
+  },
+  {
+   "image": "insightface_t1.jpg",
+   "width": 1280,
+   "height": 886,
+   "timings_ms": {
+    "face_landmarker": 2.9,
+    "hair_segmenter": 50.5,
+    "selfie_multiclass": 130.0,
+    "face_detector": 2.9,
+    "face_landmarker_min": 2.3,
+    "hair_segmenter_min": 49.2,
+    "selfie_multiclass_min": 120.7,
+    "face_detector_min": 2.3
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0088,
+    "n_components_total": 14,
+    "n_components_significant": 3,
+    "largest_component_fraction": 0.439,
+    "ambiguous_band_fraction_of_hair": 2.18,
+    "mean_conf_inside": 0.74,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.0,
+    "multiclass_hair_area_fraction": 0.079,
+    "multiclass_class_fractions": {
+     "background": 0.5276,
+     "hair": 0.079,
+     "body-skin": 0.1393,
+     "face-skin": 0.0598,
+     "clothes": 0.177,
+     "others": 0.0174
+    }
+   },
+   "face_detector": [],
+   "n_faces_landmarker": 0,
+   "faces": [],
+   "outputs": [
+    "<scratchpad>/proto/out/insightface_t1_landmarks.png",
+    "<scratchpad>/proto/out/insightface_t1_hair.png",
+    "<scratchpad>/proto/out/insightface_t1_multiclass.png",
+    "<scratchpad>/proto/out/insightface_t1_cropbox.png",
+    "<scratchpad>/proto/out/insightface_t1_crop.png",
+    "<scratchpad>/proto/out/insightface_t1_sheet.png"
+   ]
+  },
+  {
+   "image": "faceparsing_116_ori.png",
+   "width": 512,
+   "height": 512,
+   "timings_ms": {
+    "face_landmarker": 11.5,
+    "hair_segmenter": 29.4,
+    "selfie_multiclass": 101.1,
+    "face_detector": 3.1,
+    "face_landmarker_min": 10.6,
+    "hair_segmenter_min": 28.5,
+    "selfie_multiclass_min": 99.2,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.3879,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.098,
+    "mean_conf_inside": 0.974,
+    "touches_border": {
+     "top": true,
+     "bottom": true,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.966,
+    "multiclass_hair_area_fraction": 0.3941,
+    "multiclass_class_fractions": {
+     "background": 0.2138,
+     "hair": 0.3941,
+     "body-skin": 0.058,
+     "face-skin": 0.3269,
+     "clothes": 0.0072,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 98,
+     "y": 154,
+     "w": 304,
+     "h": 304,
+     "score": 0.959
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 12.3,
+      "yaw": 3.1,
+      "roll": 0.4
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.882
+      ],
+      [
+       "mouthSmileLeft",
+       0.842
+      ],
+      [
+       "mouthUpperUpRight",
+       0.783
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.713
+      ],
+      [
+       "eyeSquintLeft",
+       0.473
+      ],
+      [
+       "eyeSquintRight",
+       0.413
+      ]
+     ],
+     "px": {
+      "mesh_length": 322.1,
+      "face_length_hairline": 380.1,
+      "hairline_offset_from_mesh_top": 58.0,
+      "cheek_width_234_454": 266.5,
+      "cheek_width_3d": 267.0,
+      "cheekbone_width_116_345": 246.8,
+      "jaw_width_172_397": 204.9,
+      "jaw_width_3d": 205.2,
+      "jaw2_width_58_288": 230.9,
+      "forehead_width_103_332": 201.1,
+      "forehead_width_3d": 201.4,
+      "temple_width_54_284": 237.3,
+      "forehead2_width_67_297": 143.2,
+      "chin_width_148_377": 45.0,
+      "eye_outer_dist": 175.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 142.0,
+      "at_58_288": 143.4,
+      "left_172": 141.4,
+      "right_397": 142.6,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       133.8,
+       134.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.426,
+      "LW_mesh": 1.208,
+      "JC": 0.769,
+      "FC": 0.754,
+      "chinC": 0.169,
+      "LW_rel": 1.048,
+      "JC_rel": 0.992,
+      "FC_rel": 1.126,
+      "chinC_rel": 0.999,
+      "jaw_angle_delta": 9.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 204,
+      "sil_person_jaw": 478,
+      "sil_skin_cheek": 281,
+      "sil_person_cheek": 418,
+      "sil_skin_forehead": 251,
+      "sil_person_forehead": 369,
+      "sil_hair_widest_above_forehead": 360,
+      "hair_height_above_mesh_top": 141.0,
+      "sil_skin_jaw_over_cheek": 0.726,
+      "sil_skin_forehead_over_cheek": 0.893,
+      "sil_person_cheek_over_landmark_cheek": 1.568,
+      "sil_hair_widest_over_cheek": 1.351
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.43 LW_rel=1.05 JC_rel=0.99 FC_rel=1.13 dAng=+10)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 512,
+      "y1": 512,
+      "w": 512,
+      "h": 512,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       115.02940368652344,
+       141.20767211914062,
+       385.1717224121094,
+       463.2664794921875
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/faceparsing_116_ori_landmarks.png",
+    "<scratchpad>/proto/out/faceparsing_116_ori_hair.png",
+    "<scratchpad>/proto/out/faceparsing_116_ori_multiclass.png",
+    "<scratchpad>/proto/out/faceparsing_116_ori_cropbox.png",
+    "<scratchpad>/proto/out/faceparsing_116_ori_crop.png",
+    "<scratchpad>/proto/out/faceparsing_116_ori_sheet.png"
+   ]
+  },
+  {
+   "image": "faceparsing_116_1.png",
+   "width": 512,
+   "height": 512,
+   "timings_ms": {
+    "face_landmarker": 12.0,
+    "hair_segmenter": 30.8,
+    "selfie_multiclass": 114.2,
+    "face_detector": 2.8,
+    "face_landmarker_min": 11.7,
+    "hair_segmenter_min": 29.6,
+    "selfie_multiclass_min": 102.8,
+    "face_detector_min": 2.4
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.2951,
+    "n_components_total": 35,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.983,
+    "ambiguous_band_fraction_of_hair": 0.384,
+    "mean_conf_inside": 0.901,
+    "touches_border": {
+     "top": true,
+     "bottom": true,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.732,
+    "multiclass_hair_area_fraction": 0.3964,
+    "multiclass_class_fractions": {
+     "background": 0.2165,
+     "hair": 0.3964,
+     "body-skin": 0.0579,
+     "face-skin": 0.3258,
+     "clothes": 0.0005,
+     "others": 0.0028
+    }
+   },
+   "face_detector": [
+    {
+     "x": 98,
+     "y": 153,
+     "w": 304,
+     "h": 304,
+     "score": 0.961
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 12.3,
+      "yaw": 3.2,
+      "roll": 0.4
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.875
+      ],
+      [
+       "mouthSmileLeft",
+       0.829
+      ],
+      [
+       "mouthUpperUpRight",
+       0.763
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.685
+      ],
+      [
+       "eyeSquintLeft",
+       0.502
+      ],
+      [
+       "eyeSquintRight",
+       0.401
+      ]
+     ],
+     "px": {
+      "mesh_length": 321.7,
+      "face_length_hairline": 372.7,
+      "hairline_offset_from_mesh_top": 51.0,
+      "cheek_width_234_454": 263.5,
+      "cheek_width_3d": 264.0,
+      "cheekbone_width_116_345": 245.2,
+      "jaw_width_172_397": 204.1,
+      "jaw_width_3d": 204.5,
+      "jaw2_width_58_288": 229.6,
+      "forehead_width_103_332": 199.4,
+      "forehead_width_3d": 199.7,
+      "temple_width_54_284": 234.8,
+      "forehead2_width_67_297": 142.3,
+      "chin_width_148_377": 45.0,
+      "eye_outer_dist": 175.7
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 141.8,
+      "at_58_288": 143.1,
+      "left_172": 141.1,
+      "right_397": 142.4,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       133.6,
+       133.8
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.414,
+      "LW_mesh": 1.221,
+      "JC": 0.775,
+      "FC": 0.757,
+      "chinC": 0.171,
+      "LW_rel": 1.059,
+      "JC_rel": 1.0,
+      "FC_rel": 1.129,
+      "chinC_rel": 1.011,
+      "jaw_angle_delta": 9.6
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 204,
+      "sil_person_jaw": 476,
+      "sil_skin_cheek": 280,
+      "sil_person_cheek": 417,
+      "sil_skin_forehead": 252,
+      "sil_person_forehead": 369,
+      "sil_hair_widest_above_forehead": 360,
+      "hair_height_above_mesh_top": 141.0,
+      "sil_skin_jaw_over_cheek": 0.729,
+      "sil_skin_forehead_over_cheek": 0.9,
+      "sil_person_cheek_over_landmark_cheek": 1.582,
+      "sil_hair_widest_over_cheek": 1.366
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.41 LW_rel=1.06 JC_rel=1.00 FC_rel=1.13 dAng=+10)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 512,
+      "y1": 512,
+      "w": 512,
+      "h": 512,
+      "hair_components": [
+       1,
+       20
+      ],
+      "face_bbox": [
+       117.03435516357422,
+       141.87359619140625,
+       383.7611389160156,
+       463.5757141113281
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/faceparsing_116_1_landmarks.png",
+    "<scratchpad>/proto/out/faceparsing_116_1_hair.png",
+    "<scratchpad>/proto/out/faceparsing_116_1_multiclass.png",
+    "<scratchpad>/proto/out/faceparsing_116_1_cropbox.png",
+    "<scratchpad>/proto/out/faceparsing_116_1_crop.png",
+    "<scratchpad>/proto/out/faceparsing_116_1_sheet.png"
+   ]
+  },
+  {
+   "image": "segmentation_input_rotation0.jpg",
+   "width": 257,
+   "height": 257,
+   "timings_ms": {
+    "face_landmarker": 16.6,
+    "hair_segmenter": 29.3,
+    "selfie_multiclass": 94.5,
+    "face_detector": 2.6,
+    "face_landmarker_min": 16.4,
+    "hair_segmenter_min": 29.2,
+    "selfie_multiclass_min": 94.1,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1374,
+    "n_components_total": 16,
+    "n_components_significant": 5,
+    "largest_component_fraction": 0.937,
+    "ambiguous_band_fraction_of_hair": 1.405,
+    "mean_conf_inside": 0.761,
+    "touches_border": {
+     "top": false,
+     "bottom": true,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.171,
+    "multiclass_hair_area_fraction": 0.0779,
+    "multiclass_class_fractions": {
+     "background": 0.5911,
+     "hair": 0.0779,
+     "body-skin": 0.0595,
+     "face-skin": 0.0355,
+     "clothes": 0.2181,
+     "others": 0.0178
+    }
+   },
+   "face_detector": [
+    {
+     "x": 111,
+     "y": 167,
+     "w": 37,
+     "h": 37,
+     "score": 0.709
+    },
+    {
+     "x": 32,
+     "y": 35,
+     "w": 35,
+     "h": 35,
+     "score": 0.629
+    }
+   ],
+   "n_faces_landmarker": 0,
+   "faces": [],
+   "outputs": [
+    "<scratchpad>/proto/out/segmentation_input_rotation0_landmarks.png",
+    "<scratchpad>/proto/out/segmentation_input_rotation0_hair.png",
+    "<scratchpad>/proto/out/segmentation_input_rotation0_multiclass.png",
+    "<scratchpad>/proto/out/segmentation_input_rotation0_cropbox.png",
+    "<scratchpad>/proto/out/segmentation_input_rotation0_crop.png",
+    "<scratchpad>/proto/out/segmentation_input_rotation0_sheet.png"
+   ]
+  },
+  {
+   "image": "barbershop_unproc_90.jpg",
+   "width": 2592,
+   "height": 3888,
+   "timings_ms": {
+    "face_landmarker": 14.2,
+    "hair_segmenter": 218.8,
+    "selfie_multiclass": 520.8,
+    "face_detector": 5.2,
+    "face_landmarker_min": 13.1,
+    "hair_segmenter_min": 195.4,
+    "selfie_multiclass_min": 502.9,
+    "face_detector_min": 3.0
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1673,
+    "n_components_total": 4,
+    "n_components_significant": 1,
+    "largest_component_fraction": 0.998,
+    "ambiguous_band_fraction_of_hair": 0.3,
+    "mean_conf_inside": 0.934,
+    "touches_border": {
+     "top": true,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.896,
+    "multiclass_hair_area_fraction": 0.1711,
+    "multiclass_class_fractions": {
+     "background": 0.2288,
+     "hair": 0.1711,
+     "body-skin": 0.1019,
+     "face-skin": 0.1036,
+     "clothes": 0.3934,
+     "others": 0.0013
+    }
+   },
+   "face_detector": [
+    {
+     "x": 1067,
+     "y": 598,
+     "w": 1078,
+     "h": 1078,
+     "score": 0.963
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 16.2,
+      "yaw": -8.6,
+      "roll": 2.7
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.98
+      ],
+      [
+       "mouthSmileRight",
+       0.97
+      ],
+      [
+       "browDownLeft",
+       0.808
+      ],
+      [
+       "browDownRight",
+       0.777
+      ],
+      [
+       "eyeSquintLeft",
+       0.735
+      ],
+      [
+       "eyeLookOutLeft",
+       0.52
+      ]
+     ],
+     "px": {
+      "mesh_length": 1138.3,
+      "face_length_hairline": 1317.3,
+      "hairline_offset_from_mesh_top": 179.0,
+      "cheek_width_234_454": 942.7,
+      "cheek_width_3d": 951.4,
+      "cheekbone_width_116_345": 877.3,
+      "jaw_width_172_397": 754.4,
+      "jaw_width_3d": 761.2,
+      "jaw2_width_58_288": 841.9,
+      "forehead_width_103_332": 673.5,
+      "forehead_width_3d": 679.0,
+      "temple_width_54_284": 807.9,
+      "forehead2_width_67_297": 474.1,
+      "chin_width_148_377": 162.1,
+      "eye_outer_dist": 607.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 137.2,
+      "at_58_288": 139.3,
+      "left_172": 138.2,
+      "right_397": 136.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       130.3,
+       132.4
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.397,
+      "LW_mesh": 1.207,
+      "JC": 0.8,
+      "FC": 0.714,
+      "chinC": 0.172,
+      "LW_rel": 1.047,
+      "JC_rel": 1.033,
+      "FC_rel": 1.066,
+      "chinC_rel": 1.017,
+      "jaw_angle_delta": 5.0
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 778,
+      "sil_person_jaw": 1779,
+      "sil_skin_cheek": 1065,
+      "sil_person_cheek": 1763,
+      "sil_skin_forehead": 749,
+      "sil_person_forehead": 1516,
+      "sil_hair_widest_above_forehead": 1440,
+      "hair_height_above_mesh_top": 535.0,
+      "sil_skin_jaw_over_cheek": 0.731,
+      "sil_skin_forehead_over_cheek": 0.703,
+      "sil_person_cheek_over_landmark_cheek": 1.87,
+      "sil_hair_widest_over_cheek": 1.527
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.40 LW_rel=1.05 JC_rel=1.03 FC_rel=1.07 dAng=+5)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 2592,
+      "y1": 2972,
+      "w": 2592,
+      "h": 2972,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       1086.587342262268,
+       525.3808171749115,
+       2050.2714042663574,
+       1670.4939494132996
+      ]
+     },
+     "pose_warning": "pitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/barbershop_unproc_90_landmarks.png",
+    "<scratchpad>/proto/out/barbershop_unproc_90_hair.png",
+    "<scratchpad>/proto/out/barbershop_unproc_90_multiclass.png",
+    "<scratchpad>/proto/out/barbershop_unproc_90_cropbox.png",
+    "<scratchpad>/proto/out/barbershop_unproc_90_crop.png",
+    "<scratchpad>/proto/out/barbershop_unproc_90_sheet.png"
+   ]
+  },
+  {
+   "image": "dlib_2008_001322.jpg",
+   "width": 500,
+   "height": 375,
+   "timings_ms": {
+    "face_landmarker": 33.7,
+    "hair_segmenter": 38.9,
+    "selfie_multiclass": 98.0,
+    "face_detector": 3.0,
+    "face_landmarker_min": 31.8,
+    "hair_segmenter_min": 35.3,
+    "selfie_multiclass_min": 96.3,
+    "face_detector_min": 2.8
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0371,
+    "n_components_total": 23,
+    "n_components_significant": 4,
+    "largest_component_fraction": 0.905,
+    "ambiguous_band_fraction_of_hair": 1.671,
+    "mean_conf_inside": 0.792,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.345,
+    "multiclass_hair_area_fraction": 0.0339,
+    "multiclass_class_fractions": {
+     "background": 0.5545,
+     "hair": 0.0339,
+     "body-skin": 0.0222,
+     "face-skin": 0.0957,
+     "clothes": 0.2937,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 362,
+     "y": 165,
+     "w": 80,
+     "h": 80,
+     "score": 0.943
+    },
+    {
+     "x": 104,
+     "y": 163,
+     "w": 75,
+     "h": 75,
+     "score": 0.931
+    },
+    {
+     "x": 225,
+     "y": 213,
+     "w": 74,
+     "h": 74,
+     "score": 0.862
+    }
+   ],
+   "n_faces_landmarker": 3,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 2.1,
+      "yaw": -14.0,
+      "roll": 14.2
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintRight",
+       0.682
+      ],
+      [
+       "mouthSmileLeft",
+       0.652
+      ],
+      [
+       "eyeSquintLeft",
+       0.623
+      ],
+      [
+       "mouthSmileRight",
+       0.537
+      ],
+      [
+       "eyeLookInRight",
+       0.3
+      ],
+      [
+       "eyeLookOutLeft",
+       0.274
+      ]
+     ],
+     "px": {
+      "mesh_length": 89.2,
+      "face_length_hairline": 118.2,
+      "hairline_offset_from_mesh_top": 29.0,
+      "cheek_width_234_454": 76.3,
+      "cheek_width_3d": 77.2,
+      "cheekbone_width_116_345": 70.3,
+      "jaw_width_172_397": 65.4,
+      "jaw_width_3d": 65.9,
+      "jaw2_width_58_288": 71.3,
+      "forehead_width_103_332": 56.4,
+      "forehead_width_3d": 56.9,
+      "temple_width_54_284": 66.6,
+      "forehead2_width_67_297": 39.9,
+      "chin_width_148_377": 16.3,
+      "eye_outer_dist": 46.4
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 134.6,
+      "at_58_288": 136.8,
+      "left_172": 136.7,
+      "right_397": 132.5,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       125.7,
+       129.4
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 3,
+     "ratios": {
+      "LW": 1.548,
+      "LW_mesh": 1.168,
+      "JC": 0.856,
+      "FC": 0.739,
+      "chinC": 0.214,
+      "LW_rel": 1.013,
+      "JC_rel": 1.105,
+      "FC_rel": 1.103,
+      "chinC_rel": 1.263,
+      "jaw_angle_delta": 2.4
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 70,
+      "sil_person_jaw": 78,
+      "sil_skin_cheek": 86,
+      "sil_person_cheek": 95,
+      "sil_skin_forehead": 70,
+      "sil_person_forehead": 99,
+      "sil_hair_widest_above_forehead": 94,
+      "hair_height_above_mesh_top": 35.0,
+      "sil_skin_jaw_over_cheek": 0.814,
+      "sil_skin_forehead_over_cheek": 0.814,
+      "sil_person_cheek_over_landmark_cheek": 1.245,
+      "sil_hair_widest_over_cheek": 1.232
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.55 LW_rel=1.01 JC_rel=1.11 FC_rel=1.10 dAng=+2)"
+     ],
+     "crop_box": {
+      "x0": 225,
+      "y0": 100,
+      "x1": 487,
+      "y1": 363,
+      "w": 262,
+      "h": 263,
+      "hair_components": [
+       4,
+       13
+      ],
+      "face_bbox": [
+       357.94657468795776,
+       158.1471562385559,
+       439.35951590538025,
+       249.72669035196304
+      ]
+     },
+     "pose_warning": ""
+    },
+    {
+     "face_index": 1,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -6.2,
+      "yaw": 10.2,
+      "roll": -8.4
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.671
+      ],
+      [
+       "eyeSquintRight",
+       0.504
+      ],
+      [
+       "eyeLookInLeft",
+       0.191
+      ],
+      [
+       "eyeLookOutRight",
+       0.174
+      ],
+      [
+       "eyeBlinkLeft",
+       0.165
+      ],
+      [
+       "eyeBlinkRight",
+       0.148
+      ]
+     ],
+     "px": {
+      "mesh_length": 85.2,
+      "face_length_hairline": 100.2,
+      "hairline_offset_from_mesh_top": 20.0,
+      "cheek_width_234_454": 66.6,
+      "cheek_width_3d": 67.0,
+      "cheekbone_width_116_345": 60.7,
+      "jaw_width_172_397": 54.1,
+      "jaw_width_3d": 54.4,
+      "jaw2_width_58_288": 59.8,
+      "forehead_width_103_332": 47.2,
+      "forehead_width_3d": 47.5,
+      "temple_width_54_284": 56.6,
+      "forehead2_width_67_297": 33.2,
+      "chin_width_148_377": 13.6,
+      "eye_outer_dist": 42.9
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 134.1,
+      "at_58_288": 136.9,
+      "left_172": 131.9,
+      "right_397": 136.3,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       128.1,
+       124.6
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.504,
+      "LW_mesh": 1.279,
+      "JC": 0.812,
+      "FC": 0.709,
+      "chinC": 0.205,
+      "LW_rel": 1.109,
+      "JC_rel": 1.048,
+      "FC_rel": 1.058,
+      "chinC_rel": 1.211,
+      "jaw_angle_delta": 1.9
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 53,
+      "sil_person_jaw": 59,
+      "sil_skin_cheek": 79,
+      "sil_person_cheek": 79,
+      "sil_skin_forehead": 61,
+      "sil_person_forehead": 65,
+      "sil_hair_widest_above_forehead": 62,
+      "hair_height_above_mesh_top": 31.0,
+      "sil_skin_jaw_over_cheek": 0.671,
+      "sil_skin_forehead_over_cheek": 0.772,
+      "sil_person_cheek_over_landmark_cheek": 1.186,
+      "sil_hair_widest_over_cheek": 0.93
+     },
+     "shape": "oval-long",
+     "shape_reasons": [
+      "long face, balanced widths (LW=1.50 LW_rel=1.11 JC_rel=1.05 FC_rel=1.06 dAng=+2)"
+     ],
+     "crop_box": {
+      "x0": 69,
+      "y0": 123,
+      "x1": 283,
+      "y1": 337,
+      "w": 214,
+      "h": 214,
+      "hair_components": [
+       5,
+       13
+      ],
+      "face_bbox": [
+       105.4099053144455,
+       156.3420295715332,
+       173.61223697662354,
+       242.2247976064682
+      ]
+     },
+     "pose_warning": ""
+    },
+    {
+     "face_index": 2,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 0.4,
+      "yaw": -8.8,
+      "roll": 2.6
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.914
+      ],
+      [
+       "mouthSmileRight",
+       0.894
+      ],
+      [
+       "eyeSquintLeft",
+       0.687
+      ],
+      [
+       "browDownLeft",
+       0.593
+      ],
+      [
+       "browDownRight",
+       0.582
+      ],
+      [
+       "eyeSquintRight",
+       0.516
+      ]
+     ],
+     "px": {
+      "mesh_length": 78.4,
+      "face_length_hairline": 82.4,
+      "hairline_offset_from_mesh_top": 4.0,
+      "cheek_width_234_454": 61.2,
+      "cheek_width_3d": 62.0,
+      "cheekbone_width_116_345": 55.0,
+      "jaw_width_172_397": 50.2,
+      "jaw_width_3d": 50.8,
+      "jaw2_width_58_288": 55.4,
+      "forehead_width_103_332": 41.8,
+      "forehead_width_3d": 42.4,
+      "temple_width_54_284": 50.3,
+      "forehead2_width_67_297": 29.4,
+      "chin_width_148_377": 12.1,
+      "eye_outer_dist": 36.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 137.0,
+      "at_58_288": 139.8,
+      "left_172": 138.8,
+      "right_397": 135.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       127.3,
+       129.4
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.347,
+      "LW_mesh": 1.282,
+      "JC": 0.821,
+      "FC": 0.684,
+      "chinC": 0.199,
+      "LW_rel": 1.112,
+      "JC_rel": 1.059,
+      "FC_rel": 1.02,
+      "chinC_rel": 1.175,
+      "jaw_angle_delta": 4.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 52,
+      "sil_person_jaw": 78,
+      "sil_skin_cheek": 71,
+      "sil_person_cheek": 92,
+      "sil_skin_forehead": 17,
+      "sil_person_forehead": 79,
+      "sil_hair_widest_above_forehead": 71,
+      "hair_height_above_mesh_top": 83.0,
+      "sil_skin_jaw_over_cheek": 0.732,
+      "sil_skin_forehead_over_cheek": 0.239,
+      "sil_person_cheek_over_landmark_cheek": 1.504,
+      "sil_hair_widest_over_cheek": 1.161
+     },
+     "shape": "oblong",
+     "shape_reasons": [
+      "long face with wide/angular jaw (LW=1.35 LW_rel=1.11 JC_rel=1.06 FC_rel=1.02 dAng=+5)"
+     ],
+     "crop_box": {
+      "x0": 125,
+      "y0": 130,
+      "x1": 368,
+      "y1": 373,
+      "w": 243,
+      "h": 243,
+      "hair_components": [
+       13
+      ],
+      "face_bbox": [
+       233.72957110404968,
+       209.34513956308365,
+       295.80143094062805,
+       287.99115121364594
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/dlib_2008_001322_landmarks.png",
+    "<scratchpad>/proto/out/dlib_2008_001322_hair.png",
+    "<scratchpad>/proto/out/dlib_2008_001322_multiclass.png",
+    "<scratchpad>/proto/out/dlib_2008_001322_cropbox.png",
+    "<scratchpad>/proto/out/dlib_2008_001322_crop.png",
+    "<scratchpad>/proto/out/dlib_2008_001322_sheet.png"
+   ]
+  },
+  {
+   "image": "dlib_bald_guys.jpg",
+   "width": 1986,
+   "height": 1545,
+   "timings_ms": {
+    "face_landmarker": 32.1,
+    "hair_segmenter": 81.2,
+    "selfie_multiclass": 164.7,
+    "face_detector": 2.9,
+    "face_landmarker_min": 30.9,
+    "hair_segmenter_min": 75.2,
+    "selfie_multiclass_min": 158.8,
+    "face_detector_min": 2.2
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0,
+    "n_components_total": 0,
+    "n_components_significant": 0,
+    "largest_component_fraction": 0.0,
+    "ambiguous_band_fraction_of_hair": 0.0,
+    "mean_conf_inside": 0.0,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.0,
+    "multiclass_hair_area_fraction": 0.0338,
+    "multiclass_class_fractions": {
+     "background": 0.5681,
+     "hair": 0.0338,
+     "body-skin": 0.1211,
+     "face-skin": 0.1763,
+     "clothes": 0.0789,
+     "others": 0.0218
+    }
+   },
+   "face_detector": [
+    {
+     "x": 1459,
+     "y": 135,
+     "w": 289,
+     "h": 289,
+     "score": 0.856
+    },
+    {
+     "x": 342,
+     "y": 798,
+     "w": 269,
+     "h": 269,
+     "score": 0.656
+    },
+    {
+     "x": 1497,
+     "y": 812,
+     "w": 291,
+     "h": 291,
+     "score": 0.546
+    }
+   ],
+   "n_faces_landmarker": 2,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 6.1,
+      "yaw": -3.6,
+      "roll": -11.0
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.921
+      ],
+      [
+       "mouthSmileRight",
+       0.874
+      ],
+      [
+       "eyeSquintLeft",
+       0.607
+      ],
+      [
+       "eyeSquintRight",
+       0.606
+      ],
+      [
+       "browDownLeft",
+       0.401
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.398
+      ]
+     ],
+     "px": {
+      "mesh_length": 320.0,
+      "face_length_hairline": 353.8,
+      "hairline_offset_from_mesh_top": 45.0,
+      "cheek_width_234_454": 277.3,
+      "cheek_width_3d": 277.3,
+      "cheekbone_width_116_345": 249.2,
+      "jaw_width_172_397": 230.9,
+      "jaw_width_3d": 230.9,
+      "jaw2_width_58_288": 255.8,
+      "forehead_width_103_332": 191.7,
+      "forehead_width_3d": 191.7,
+      "temple_width_54_284": 230.0,
+      "forehead2_width_67_297": 134.4,
+      "chin_width_148_377": 56.3,
+      "eye_outer_dist": 165.1
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 132.0,
+      "at_58_288": 132.9,
+      "left_172": 130.1,
+      "right_397": 133.9,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       128.0,
+       128.4
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.276,
+      "LW_mesh": 1.154,
+      "JC": 0.833,
+      "FC": 0.691,
+      "chinC": 0.203,
+      "LW_rel": 1.001,
+      "JC_rel": 1.075,
+      "FC_rel": 1.032,
+      "chinC_rel": 1.201,
+      "jaw_angle_delta": -0.2
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 233,
+      "sil_person_jaw": 295,
+      "sil_skin_cheek": 316,
+      "sil_person_cheek": 316,
+      "sil_skin_forehead": 232,
+      "sil_person_forehead": 258,
+      "sil_hair_widest_above_forehead": 242,
+      "hair_height_above_mesh_top": 106.0,
+      "sil_skin_jaw_over_cheek": 0.737,
+      "sil_skin_forehead_over_cheek": 0.734,
+      "sil_person_cheek_over_landmark_cheek": 1.14,
+      "sil_hair_widest_over_cheek": 0.873
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.28 LW_rel=1.00 JC_rel=1.07 FC_rel=1.03 dAng=-0)"
+     ],
+     "crop_box": {
+      "x0": 1351,
+      "y0": 46,
+      "x1": 1838,
+      "y1": 532,
+      "w": 487,
+      "h": 486,
+      "hair_components": [],
+      "face_bbox": [
+       1450.529942393303,
+       97.99850407987833,
+       1739.6484954357147,
+       422.5624658167362
+      ]
+     },
+     "pose_warning": ""
+    },
+    {
+     "face_index": 1,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 3.7,
+      "yaw": 9.7,
+      "roll": -12.0
+     },
+     "top_blendshapes": [
+      [
+       "mouthShrugLower",
+       0.699
+      ],
+      [
+       "browDownLeft",
+       0.641
+      ],
+      [
+       "browDownRight",
+       0.576
+      ],
+      [
+       "eyeSquintRight",
+       0.391
+      ],
+      [
+       "eyeSquintLeft",
+       0.307
+      ],
+      [
+       "eyeLookOutLeft",
+       0.187
+      ]
+     ],
+     "px": {
+      "mesh_length": 282.7,
+      "face_length_hairline": 282.7,
+      "hairline_offset_from_mesh_top": 0.0,
+      "cheek_width_234_454": 224.9,
+      "cheek_width_3d": 225.9,
+      "cheekbone_width_116_345": 198.8,
+      "jaw_width_172_397": 182.8,
+      "jaw_width_3d": 183.5,
+      "jaw2_width_58_288": 201.2,
+      "forehead_width_103_332": 157.2,
+      "forehead_width_3d": 158.0,
+      "temple_width_54_284": 190.3,
+      "forehead2_width_67_297": 109.7,
+      "chin_width_148_377": 42.8,
+      "eye_outer_dist": 138.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 137.2,
+      "at_58_288": 140.4,
+      "left_172": 138.2,
+      "right_397": 136.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       131.8,
+       125.5
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.257,
+      "LW_mesh": 1.257,
+      "JC": 0.813,
+      "FC": 0.699,
+      "chinC": 0.19,
+      "LW_rel": 1.091,
+      "JC_rel": 1.049,
+      "FC_rel": 1.044,
+      "chinC_rel": 1.127,
+      "jaw_angle_delta": 5.0
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 39,
+      "sil_person_jaw": 39,
+      "sil_skin_cheek": 115,
+      "sil_person_cheek": 115,
+      "sil_skin_forehead": 0,
+      "sil_person_forehead": 0,
+      "sil_hair_widest_above_forehead": 494,
+      "hair_height_above_mesh_top": 802.0,
+      "sil_skin_jaw_over_cheek": 0.339,
+      "sil_skin_forehead_over_cheek": 0.0,
+      "sil_person_cheek_over_landmark_cheek": 0.511,
+      "sil_hair_widest_over_cheek": 2.197
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.26 LW_rel=1.09 JC_rel=1.05 FC_rel=1.04 dAng=+5)"
+     ],
+     "crop_box": {
+      "x0": 278,
+      "y0": 749,
+      "x1": 710,
+      "y1": 1181,
+      "w": 432,
+      "h": 432,
+      "hair_components": [],
+      "face_bbox": [
+       380.7570621371269,
+       795.3842523694038,
+       608.8393657207489,
+       1083.3755618333817
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/dlib_bald_guys_landmarks.png",
+    "<scratchpad>/proto/out/dlib_bald_guys_hair.png",
+    "<scratchpad>/proto/out/dlib_bald_guys_multiclass.png",
+    "<scratchpad>/proto/out/dlib_bald_guys_cropbox.png",
+    "<scratchpad>/proto/out/dlib_bald_guys_crop.png",
+    "<scratchpad>/proto/out/dlib_bald_guys_sheet.png"
+   ]
+  },
+  {
+   "image": "dlib_tom_cruise.jpg",
+   "width": 565,
+   "height": 800,
+   "timings_ms": {
+    "face_landmarker": 15.4,
+    "hair_segmenter": 44.8,
+    "selfie_multiclass": 144.1,
+    "face_detector": 3.4,
+    "face_landmarker_min": 13.4,
+    "hair_segmenter_min": 44.6,
+    "selfie_multiclass_min": 141.5,
+    "face_detector_min": 3.1
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.2123,
+    "n_components_total": 4,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.219,
+    "mean_conf_inside": 0.95,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": true
+    },
+    "iou_vs_multiclass_hair": 0.919,
+    "multiclass_hair_area_fraction": 0.2081,
+    "multiclass_class_fractions": {
+     "background": 0.2385,
+     "hair": 0.2081,
+     "body-skin": 0.0222,
+     "face-skin": 0.4191,
+     "clothes": 0.1121,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 62,
+     "y": 242,
+     "w": 473,
+     "h": 473,
+     "score": 0.953
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 11.8,
+      "yaw": -2.6,
+      "roll": -5.6
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.968
+      ],
+      [
+       "mouthSmileLeft",
+       0.96
+      ],
+      [
+       "browDownLeft",
+       0.82
+      ],
+      [
+       "browDownRight",
+       0.816
+      ],
+      [
+       "eyeSquintLeft",
+       0.725
+      ],
+      [
+       "mouthUpperUpRight",
+       0.686
+      ]
+     ],
+     "px": {
+      "mesh_length": 494.8,
+      "face_length_hairline": 552.8,
+      "hairline_offset_from_mesh_top": 58.0,
+      "cheek_width_234_454": 394.6,
+      "cheek_width_3d": 395.1,
+      "cheekbone_width_116_345": 360.9,
+      "jaw_width_172_397": 329.3,
+      "jaw_width_3d": 329.7,
+      "jaw2_width_58_288": 367.1,
+      "forehead_width_103_332": 288.2,
+      "forehead_width_3d": 288.5,
+      "temple_width_54_284": 341.1,
+      "forehead2_width_67_297": 204.3,
+      "chin_width_148_377": 75.0,
+      "eye_outer_dist": 246.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 139.1,
+      "at_58_288": 139.5,
+      "left_172": 140.9,
+      "right_397": 137.2,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       132.7,
+       129.7
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.401,
+      "LW_mesh": 1.254,
+      "JC": 0.835,
+      "FC": 0.73,
+      "chinC": 0.19,
+      "LW_rel": 1.088,
+      "JC_rel": 1.077,
+      "FC_rel": 1.09,
+      "chinC_rel": 1.125,
+      "jaw_angle_delta": 6.9
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 344,
+      "sil_person_jaw": 344,
+      "sil_skin_cheek": 401,
+      "sil_person_cheek": 461,
+      "sil_skin_forehead": 359,
+      "sil_person_forehead": 497,
+      "sil_hair_widest_above_forehead": 502,
+      "hair_height_above_mesh_top": 232.0,
+      "sil_skin_jaw_over_cheek": 0.858,
+      "sil_skin_forehead_over_cheek": 0.895,
+      "sil_person_cheek_over_landmark_cheek": 1.168,
+      "sil_hair_widest_over_cheek": 1.272
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.40 LW_rel=1.09 JC_rel=1.08 FC_rel=1.09 dAng=+7)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 565,
+      "y1": 800,
+      "w": 565,
+      "h": 800,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       87.85741284489632,
+       237.27600574493408,
+       491.8588510155678,
+       734.9385738372803
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/dlib_tom_cruise_landmarks.png",
+    "<scratchpad>/proto/out/dlib_tom_cruise_hair.png",
+    "<scratchpad>/proto/out/dlib_tom_cruise_multiclass.png",
+    "<scratchpad>/proto/out/dlib_tom_cruise_cropbox.png",
+    "<scratchpad>/proto/out/dlib_tom_cruise_crop.png",
+    "<scratchpad>/proto/out/dlib_tom_cruise_sheet.png"
+   ]
+  },
+  {
+   "image": "facealign_aflw.jpg",
+   "width": 450,
+   "height": 450,
+   "timings_ms": {
+    "face_landmarker": 13.9,
+    "hair_segmenter": 29.6,
+    "selfie_multiclass": 136.3,
+    "face_detector": 3.6,
+    "face_landmarker_min": 11.1,
+    "hair_segmenter_min": 29.0,
+    "selfie_multiclass_min": 98.5,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1514,
+    "n_components_total": 7,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.918,
+    "ambiguous_band_fraction_of_hair": 0.304,
+    "mean_conf_inside": 0.929,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.754,
+    "multiclass_hair_area_fraction": 0.1444,
+    "multiclass_class_fractions": {
+     "background": 0.5629,
+     "hair": 0.1444,
+     "body-skin": 0.1763,
+     "face-skin": 0.1164,
+     "clothes": 0.0,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 146,
+     "y": 201,
+     "w": 160,
+     "h": 160,
+     "score": 0.787
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -16.1,
+      "yaw": -7.7,
+      "roll": -2.1
+     },
+     "top_blendshapes": [
+      [
+       "eyeLookOutLeft",
+       0.731
+      ],
+      [
+       "browOuterUpLeft",
+       0.566
+      ],
+      [
+       "browOuterUpRight",
+       0.565
+      ],
+      [
+       "eyeLookInRight",
+       0.306
+      ],
+      [
+       "mouthShrugUpper",
+       0.131
+      ],
+      [
+       "eyeLookUpLeft",
+       0.123
+      ]
+     ],
+     "px": {
+      "mesh_length": 182.2,
+      "face_length_hairline": 215.2,
+      "hairline_offset_from_mesh_top": 33.0,
+      "cheek_width_234_454": 157.7,
+      "cheek_width_3d": 159.0,
+      "cheekbone_width_116_345": 145.9,
+      "jaw_width_172_397": 136.8,
+      "jaw_width_3d": 137.7,
+      "jaw2_width_58_288": 147.9,
+      "forehead_width_103_332": 105.4,
+      "forehead_width_3d": 106.3,
+      "temple_width_54_284": 128.0,
+      "forehead2_width_67_297": 74.1,
+      "chin_width_148_377": 29.9,
+      "eye_outer_dist": 109.1
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 117.9,
+      "at_58_288": 123.7,
+      "left_172": 117.0,
+      "right_397": 118.7,
+      "auto_gonion": [
+       150,
+       397
+      ],
+      "auto_gonion_angle": [
+       112.0,
+       118.7
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.364,
+      "LW_mesh": 1.155,
+      "JC": 0.867,
+      "FC": 0.668,
+      "chinC": 0.19,
+      "LW_rel": 1.002,
+      "JC_rel": 1.119,
+      "FC_rel": 0.998,
+      "chinC_rel": 1.123,
+      "jaw_angle_delta": -14.3
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 136,
+      "sil_person_jaw": 304,
+      "sil_skin_cheek": 126,
+      "sil_person_cheek": 268,
+      "sil_skin_forehead": 70,
+      "sil_person_forehead": 258,
+      "sil_hair_widest_above_forehead": 256,
+      "hair_height_above_mesh_top": 67.0,
+      "sil_skin_jaw_over_cheek": 1.079,
+      "sil_skin_forehead_over_cheek": 0.556,
+      "sil_person_cheek_over_landmark_cheek": 1.699,
+      "sil_hair_widest_over_cheek": 1.623
+     },
+     "shape": "square",
+     "shape_reasons": [
+      "wide angular jaw at medium length (LW=1.36 LW_rel=1.00 JC_rel=1.12 FC_rel=1.00 dAng=-14)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 60,
+      "x1": 416,
+      "y1": 450,
+      "w": 416,
+      "h": 390,
+      "hair_components": [
+       1,
+       2
+      ],
+      "face_bbox": [
+       152.40003168582916,
+       176.38815343379974,
+       317.0210391283035,
+       358.96915197372437
+      ]
+     },
+     "pose_warning": "pitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/facealign_aflw_landmarks.png",
+    "<scratchpad>/proto/out/facealign_aflw_hair.png",
+    "<scratchpad>/proto/out/facealign_aflw_multiclass.png",
+    "<scratchpad>/proto/out/facealign_aflw_cropbox.png",
+    "<scratchpad>/proto/out/facealign_aflw_crop.png",
+    "<scratchpad>/proto/out/facealign_aflw_sheet.png"
+   ]
+  },
+  {
+   "image": "facenet_multiface.jpg",
+   "width": 1200,
+   "height": 630,
+   "timings_ms": {
+    "face_landmarker": 3.0,
+    "hair_segmenter": 38.9,
+    "selfie_multiclass": 107.0,
+    "face_detector": 2.4,
+    "face_landmarker_min": 2.6,
+    "hair_segmenter_min": 38.3,
+    "selfie_multiclass_min": 104.2,
+    "face_detector_min": 2.2
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0393,
+    "n_components_total": 8,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.898,
+    "ambiguous_band_fraction_of_hair": 0.838,
+    "mean_conf_inside": 0.844,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.254,
+    "multiclass_hair_area_fraction": 0.1085,
+    "multiclass_class_fractions": {
+     "background": 0.5076,
+     "hair": 0.1085,
+     "body-skin": 0.0773,
+     "face-skin": 0.0539,
+     "clothes": 0.2455,
+     "others": 0.0072
+    }
+   },
+   "face_detector": [],
+   "n_faces_landmarker": 0,
+   "faces": [],
+   "outputs": [
+    "<scratchpad>/proto/out/facenet_multiface_landmarks.png",
+    "<scratchpad>/proto/out/facenet_multiface_hair.png",
+    "<scratchpad>/proto/out/facenet_multiface_multiclass.png",
+    "<scratchpad>/proto/out/facenet_multiface_cropbox.png",
+    "<scratchpad>/proto/out/facenet_multiface_crop.png",
+    "<scratchpad>/proto/out/facenet_multiface_sheet.png"
+   ]
+  },
+  {
+   "image": "fr_johnsnow_test1.jpg",
+   "width": 768,
+   "height": 1154,
+   "timings_ms": {
+    "face_landmarker": 14.0,
+    "hair_segmenter": 43.6,
+    "selfie_multiclass": 142.2,
+    "face_detector": 2.2,
+    "face_landmarker_min": 10.9,
+    "hair_segmenter_min": 41.1,
+    "selfie_multiclass_min": 128.0,
+    "face_detector_min": 2.1
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.274,
+    "n_components_total": 53,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.578,
+    "ambiguous_band_fraction_of_hair": 0.748,
+    "mean_conf_inside": 0.857,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.045,
+    "multiclass_hair_area_fraction": 0.0127,
+    "multiclass_class_fractions": {
+     "background": 0.2683,
+     "hair": 0.0127,
+     "body-skin": 0.0232,
+     "face-skin": 0.046,
+     "clothes": 0.641,
+     "others": 0.0087
+    }
+   },
+   "face_detector": [
+    {
+     "x": 270,
+     "y": 202,
+     "w": 156,
+     "h": 156,
+     "score": 0.966
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -2.0,
+      "yaw": 14.4,
+      "roll": 10.0
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.695
+      ],
+      [
+       "browDownLeft",
+       0.551
+      ],
+      [
+       "eyeSquintRight",
+       0.528
+      ],
+      [
+       "browDownRight",
+       0.473
+      ],
+      [
+       "mouthPucker",
+       0.354
+      ],
+      [
+       "eyeLookUpLeft",
+       0.34
+      ]
+     ],
+     "px": {
+      "mesh_length": 188.9,
+      "face_length_hairline": 236.9,
+      "hairline_offset_from_mesh_top": 48.0,
+      "cheek_width_234_454": 172.5,
+      "cheek_width_3d": 178.6,
+      "cheekbone_width_116_345": 152.3,
+      "jaw_width_172_397": 144.4,
+      "jaw_width_3d": 148.8,
+      "jaw2_width_58_288": 159.6,
+      "forehead_width_103_332": 115.0,
+      "forehead_width_3d": 119.3,
+      "temple_width_54_284": 140.5,
+      "forehead2_width_67_297": 80.0,
+      "chin_width_148_377": 34.2,
+      "eye_outer_dist": 102.9
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 127.4,
+      "at_58_288": 129.5,
+      "left_172": 125.2,
+      "right_397": 129.7,
+      "auto_gonion": [
+       58,
+       400
+      ],
+      "auto_gonion_angle": [
+       123.9,
+       122.5
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.373,
+      "LW_mesh": 1.095,
+      "JC": 0.837,
+      "FC": 0.667,
+      "chinC": 0.198,
+      "LW_rel": 0.95,
+      "JC_rel": 1.08,
+      "FC_rel": 0.996,
+      "chinC_rel": 1.173,
+      "jaw_angle_delta": -4.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 164,
+      "sil_person_jaw": 434,
+      "sil_skin_cheek": 212,
+      "sil_person_cheek": 219,
+      "sil_skin_forehead": 159,
+      "sil_person_forehead": 212,
+      "sil_hair_widest_above_forehead": 208,
+      "hair_height_above_mesh_top": 86.0,
+      "sil_skin_jaw_over_cheek": 0.774,
+      "sil_skin_forehead_over_cheek": 0.75,
+      "sil_person_cheek_over_landmark_cheek": 1.27,
+      "sil_hair_widest_over_cheek": 1.206
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.37 LW_rel=0.95 JC_rel=1.08 FC_rel=1.00 dAng=-5)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 768,
+      "y1": 799,
+      "w": 768,
+      "h": 799,
+      "hair_components": [
+       1,
+       3
+      ],
+      "face_bbox": [
+       262.2436981201172,
+       174.21891230344772,
+       441.03973388671875,
+       364.8294073343277
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/fr_johnsnow_test1_landmarks.png",
+    "<scratchpad>/proto/out/fr_johnsnow_test1_hair.png",
+    "<scratchpad>/proto/out/fr_johnsnow_test1_multiclass.png",
+    "<scratchpad>/proto/out/fr_johnsnow_test1_cropbox.png",
+    "<scratchpad>/proto/out/fr_johnsnow_test1_crop.png",
+    "<scratchpad>/proto/out/fr_johnsnow_test1_sheet.png"
+   ]
+  },
+  {
+   "image": "fr_kit_with_rose.jpg",
+   "width": 501,
+   "height": 700,
+   "timings_ms": {
+    "face_landmarker": 23.9,
+    "hair_segmenter": 34.5,
+    "selfie_multiclass": 107.6,
+    "face_detector": 2.4,
+    "face_landmarker_min": 23.2,
+    "hair_segmenter_min": 31.4,
+    "selfie_multiclass_min": 106.2,
+    "face_detector_min": 2.4
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0781,
+    "n_components_total": 7,
+    "n_components_significant": 3,
+    "largest_component_fraction": 0.603,
+    "ambiguous_band_fraction_of_hair": 0.494,
+    "mean_conf_inside": 0.897,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.853,
+    "multiclass_hair_area_fraction": 0.0758,
+    "multiclass_class_fractions": {
+     "background": 0.3687,
+     "hair": 0.0758,
+     "body-skin": 0.0528,
+     "face-skin": 0.0449,
+     "clothes": 0.4418,
+     "others": 0.016
+    }
+   },
+   "face_detector": [
+    {
+     "x": 263,
+     "y": 96,
+     "w": 100,
+     "h": 100,
+     "score": 0.952
+    },
+    {
+     "x": 72,
+     "y": 120,
+     "w": 98,
+     "h": 98,
+     "score": 0.708
+    }
+   ],
+   "n_faces_landmarker": 2,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 11.6,
+      "yaw": -16.0,
+      "roll": 2.1
+     },
+     "top_blendshapes": [
+      [
+       "eyeLookInRight",
+       0.697
+      ],
+      [
+       "eyeLookOutLeft",
+       0.665
+      ],
+      [
+       "browDownRight",
+       0.517
+      ],
+      [
+       "eyeSquintLeft",
+       0.479
+      ],
+      [
+       "eyeSquintRight",
+       0.477
+      ],
+      [
+       "browDownLeft",
+       0.433
+      ]
+     ],
+     "px": {
+      "mesh_length": 107.4,
+      "face_length_hairline": 127.4,
+      "hairline_offset_from_mesh_top": 20.0,
+      "cheek_width_234_454": 87.4,
+      "cheek_width_3d": 90.3,
+      "cheekbone_width_116_345": 79.7,
+      "jaw_width_172_397": 70.8,
+      "jaw_width_3d": 73.1,
+      "jaw2_width_58_288": 78.3,
+      "forehead_width_103_332": 62.2,
+      "forehead_width_3d": 64.2,
+      "temple_width_54_284": 74.2,
+      "forehead2_width_67_297": 44.0,
+      "chin_width_148_377": 16.1,
+      "eye_outer_dist": 53.7
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 137.0,
+      "at_58_288": 139.7,
+      "left_172": 140.8,
+      "right_397": 133.2,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       127.0,
+       131.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.458,
+      "LW_mesh": 1.229,
+      "JC": 0.811,
+      "FC": 0.712,
+      "chinC": 0.185,
+      "LW_rel": 1.066,
+      "JC_rel": 1.046,
+      "FC_rel": 1.063,
+      "chinC_rel": 1.093,
+      "jaw_angle_delta": 4.8
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 70,
+      "sil_person_jaw": 101,
+      "sil_skin_cheek": 103,
+      "sil_person_cheek": 142,
+      "sil_skin_forehead": 74,
+      "sil_person_forehead": 150,
+      "sil_hair_widest_above_forehead": 146,
+      "hair_height_above_mesh_top": 65.0,
+      "sil_skin_jaw_over_cheek": 0.68,
+      "sil_skin_forehead_over_cheek": 0.718,
+      "sil_person_cheek_over_landmark_cheek": 1.625,
+      "sil_hair_widest_over_cheek": 1.671
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.46 LW_rel=1.07 JC_rel=1.05 FC_rel=1.06 dAng=+5)"
+     ],
+     "crop_box": {
+      "x0": 171,
+      "y0": 6,
+      "x1": 432,
+      "y1": 267,
+      "w": 261,
+      "h": 261,
+      "hair_components": [
+       1,
+       5
+      ],
+      "face_bbox": [
+       261.39419835805893,
+       94.8903352022171,
+       351.6184573173523,
+       203.17208170890808
+      ]
+     },
+     "pose_warning": "yaw"
+    },
+    {
+     "face_index": 1,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 18.7,
+      "yaw": 5.9,
+      "roll": 4.9
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.899
+      ],
+      [
+       "mouthSmileLeft",
+       0.871
+      ],
+      [
+       "mouthUpperUpRight",
+       0.706
+      ],
+      [
+       "browDownRight",
+       0.692
+      ],
+      [
+       "browDownLeft",
+       0.688
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.53
+      ]
+     ],
+     "px": {
+      "mesh_length": 92.8,
+      "face_length_hairline": 105.8,
+      "hairline_offset_from_mesh_top": 13.0,
+      "cheek_width_234_454": 78.1,
+      "cheek_width_3d": 78.3,
+      "cheekbone_width_116_345": 72.4,
+      "jaw_width_172_397": 62.4,
+      "jaw_width_3d": 62.4,
+      "jaw2_width_58_288": 69.8,
+      "forehead_width_103_332": 56.8,
+      "forehead_width_3d": 56.9,
+      "temple_width_54_284": 67.1,
+      "forehead2_width_67_297": 40.7,
+      "chin_width_148_377": 13.8,
+      "eye_outer_dist": 51.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 140.8,
+      "at_58_288": 141.5,
+      "left_172": 141.3,
+      "right_397": 140.4,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       136.8,
+       132.9
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.354,
+      "LW_mesh": 1.188,
+      "JC": 0.798,
+      "FC": 0.727,
+      "chinC": 0.177,
+      "LW_rel": 1.03,
+      "JC_rel": 1.03,
+      "FC_rel": 1.085,
+      "chinC_rel": 1.048,
+      "jaw_angle_delta": 8.6
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 63,
+      "sil_person_jaw": 143,
+      "sil_skin_cheek": 69,
+      "sil_person_cheek": 134,
+      "sil_skin_forehead": 49,
+      "sil_person_forehead": 122,
+      "sil_hair_widest_above_forehead": 113,
+      "hair_height_above_mesh_top": 90.0,
+      "sil_skin_jaw_over_cheek": 0.913,
+      "sil_skin_forehead_over_cheek": 0.71,
+      "sil_person_cheek_over_landmark_cheek": 1.715,
+      "sil_hair_widest_over_cheek": 1.446
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.35 LW_rel=1.03 JC_rel=1.03 FC_rel=1.09 dAng=+9)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 34,
+      "x1": 280,
+      "y1": 363,
+      "w": 280,
+      "h": 329,
+      "hair_components": [
+       2
+      ],
+      "face_bbox": [
+       77.42630302906036,
+       120.91699689626694,
+       157.1653227210045,
+       213.87718319892883
+      ]
+     },
+     "pose_warning": "pitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/fr_kit_with_rose_landmarks.png",
+    "<scratchpad>/proto/out/fr_kit_with_rose_hair.png",
+    "<scratchpad>/proto/out/fr_kit_with_rose_multiclass.png",
+    "<scratchpad>/proto/out/fr_kit_with_rose_cropbox.png",
+    "<scratchpad>/proto/out/fr_kit_with_rose_crop.png",
+    "<scratchpad>/proto/out/fr_kit_with_rose_sheet.png"
+   ]
+  },
+  {
+   "image": "gfpgan_blake_lively.jpg",
+   "width": 700,
+   "height": 464,
+   "timings_ms": {
+    "face_landmarker": 22.1,
+    "hair_segmenter": 38.5,
+    "selfie_multiclass": 105.2,
+    "face_detector": 2.3,
+    "face_landmarker_min": 20.7,
+    "hair_segmenter_min": 32.4,
+    "selfie_multiclass_min": 87.6,
+    "face_detector_min": 2.1
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.132,
+    "n_components_total": 17,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.846,
+    "ambiguous_band_fraction_of_hair": 0.546,
+    "mean_conf_inside": 0.92,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.507,
+    "multiclass_hair_area_fraction": 0.242,
+    "multiclass_class_fractions": {
+     "background": 0.3085,
+     "hair": 0.242,
+     "body-skin": 0.1311,
+     "face-skin": 0.1599,
+     "clothes": 0.121,
+     "others": 0.0375
+    }
+   },
+   "face_detector": [
+    {
+     "x": 416,
+     "y": 129,
+     "w": 190,
+     "h": 190,
+     "score": 0.947
+    },
+    {
+     "x": 105,
+     "y": 159,
+     "w": 145,
+     "h": 145,
+     "score": 0.874
+    }
+   ],
+   "n_faces_landmarker": 2,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -4.6,
+      "yaw": -9.3,
+      "roll": -10.5
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileLeft",
+       0.889
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.881
+      ],
+      [
+       "mouthUpperUpRight",
+       0.876
+      ],
+      [
+       "mouthSmileRight",
+       0.875
+      ],
+      [
+       "eyeSquintRight",
+       0.691
+      ],
+      [
+       "eyeLookOutLeft",
+       0.543
+      ]
+     ],
+     "px": {
+      "mesh_length": 216.8,
+      "face_length_hairline": 246.8,
+      "hairline_offset_from_mesh_top": 30.0,
+      "cheek_width_234_454": 177.6,
+      "cheek_width_3d": 178.1,
+      "cheekbone_width_116_345": 163.8,
+      "jaw_width_172_397": 140.6,
+      "jaw_width_3d": 141.1,
+      "jaw2_width_58_288": 156.9,
+      "forehead_width_103_332": 123.7,
+      "forehead_width_3d": 124.0,
+      "temple_width_54_284": 148.5,
+      "forehead2_width_67_297": 87.0,
+      "chin_width_148_377": 34.2,
+      "eye_outer_dist": 112.0
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 135.8,
+      "at_58_288": 138.0,
+      "left_172": 139.5,
+      "right_397": 132.2,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.4,
+       130.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.39,
+      "LW_mesh": 1.221,
+      "JC": 0.792,
+      "FC": 0.697,
+      "chinC": 0.193,
+      "LW_rel": 1.059,
+      "JC_rel": 1.022,
+      "FC_rel": 1.04,
+      "chinC_rel": 1.14,
+      "jaw_angle_delta": 3.6
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 146,
+      "sil_person_jaw": 239,
+      "sil_skin_cheek": 164,
+      "sil_person_cheek": 263,
+      "sil_skin_forehead": 127,
+      "sil_person_forehead": 237,
+      "sil_hair_widest_above_forehead": 223,
+      "hair_height_above_mesh_top": 84.0,
+      "sil_skin_jaw_over_cheek": 0.89,
+      "sil_skin_forehead_over_cheek": 0.774,
+      "sil_person_cheek_over_landmark_cheek": 1.481,
+      "sil_hair_widest_over_cheek": 1.256
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.39 LW_rel=1.06 JC_rel=1.02 FC_rel=1.04 dAng=+4)"
+     ],
+     "crop_box": {
+      "x0": 102,
+      "y0": 0,
+      "x1": 700,
+      "y1": 464,
+      "w": 598,
+      "h": 464,
+      "hair_components": [
+       1,
+       9
+      ],
+      "face_bbox": [
+       418.103152513504,
+       101.71234703063965,
+       600.5850076675415,
+       319.83024978637695
+      ]
+     },
+     "pose_warning": ""
+    },
+    {
+     "face_index": 1,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 1.4,
+      "yaw": 6.7,
+      "roll": -25.1
+     },
+     "top_blendshapes": [
+      [
+       "mouthLowerDownRight",
+       0.904
+      ],
+      [
+       "mouthLowerDownLeft",
+       0.848
+      ],
+      [
+       "mouthSmileRight",
+       0.475
+      ],
+      [
+       "mouthUpperUpRight",
+       0.469
+      ],
+      [
+       "mouthSmileLeft",
+       0.419
+      ],
+      [
+       "browInnerUp",
+       0.292
+      ]
+     ],
+     "px": {
+      "mesh_length": 161.5,
+      "face_length_hairline": 161.5,
+      "hairline_offset_from_mesh_top": 0.0,
+      "cheek_width_234_454": 144.1,
+      "cheek_width_3d": 144.1,
+      "cheekbone_width_116_345": 130.2,
+      "jaw_width_172_397": 110.3,
+      "jaw_width_3d": 110.3,
+      "jaw2_width_58_288": 123.5,
+      "forehead_width_103_332": 103.2,
+      "forehead_width_3d": 103.2,
+      "temple_width_54_284": 123.6,
+      "forehead2_width_67_297": 72.7,
+      "chin_width_148_377": 27.3,
+      "eye_outer_dist": 95.1
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 141.1,
+      "at_58_288": 143.3,
+      "left_172": 139.7,
+      "right_397": 142.6,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       135.2,
+       134.1
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.121,
+      "LW_mesh": 1.121,
+      "JC": 0.765,
+      "FC": 0.716,
+      "chinC": 0.189,
+      "LW_rel": 0.972,
+      "JC_rel": 0.988,
+      "FC_rel": 1.069,
+      "chinC_rel": 1.12,
+      "jaw_angle_delta": 8.9
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 120,
+      "sil_person_jaw": 344,
+      "sil_skin_cheek": 147,
+      "sil_person_cheek": 309,
+      "sil_skin_forehead": 27,
+      "sil_person_forehead": 246,
+      "sil_hair_widest_above_forehead": 229,
+      "hair_height_above_mesh_top": 128.0,
+      "sil_skin_jaw_over_cheek": 0.816,
+      "sil_skin_forehead_over_cheek": 0.184,
+      "sil_person_cheek_over_landmark_cheek": 2.144,
+      "sil_hair_widest_over_cheek": 1.589
+     },
+     "shape": "round",
+     "shape_reasons": [
+      "short face with soft jaw (LW=1.12 LW_rel=0.97 JC_rel=0.99 FC_rel=1.07 dAng=+9)"
+     ],
+     "crop_box": {
+      "x0": 47,
+      "y0": 85,
+      "x1": 362,
+      "y1": 400,
+      "w": 315,
+      "h": 315,
+      "hair_components": [
+       9
+      ],
+      "face_bbox": [
+       99.9797061085701,
+       136.89093208312988,
+       253.8351446390152,
+       300.9241180419922
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/gfpgan_blake_lively_landmarks.png",
+    "<scratchpad>/proto/out/gfpgan_blake_lively_hair.png",
+    "<scratchpad>/proto/out/gfpgan_blake_lively_multiclass.png",
+    "<scratchpad>/proto/out/gfpgan_blake_lively_cropbox.png",
+    "<scratchpad>/proto/out/gfpgan_blake_lively_crop.png",
+    "<scratchpad>/proto/out/gfpgan_blake_lively_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s0.jpg",
+   "width": 600,
+   "height": 704,
+   "timings_ms": {
+    "face_landmarker": 13.6,
+    "hair_segmenter": 51.0,
+    "selfie_multiclass": 111.4,
+    "face_detector": 3.1,
+    "face_landmarker_min": 13.1,
+    "hair_segmenter_min": 39.9,
+    "selfie_multiclass_min": 107.0,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0321,
+    "n_components_total": 5,
+    "n_components_significant": 3,
+    "largest_component_fraction": 0.8,
+    "ambiguous_band_fraction_of_hair": 0.629,
+    "mean_conf_inside": 0.89,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": true,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.592,
+    "multiclass_hair_area_fraction": 0.0197,
+    "multiclass_class_fractions": {
+     "background": 0.3355,
+     "hair": 0.0197,
+     "body-skin": 0.0342,
+     "face-skin": 0.0202,
+     "clothes": 0.5899,
+     "others": 0.0004
+    }
+   },
+   "face_detector": [
+    {
+     "x": 272,
+     "y": 87,
+     "w": 102,
+     "h": 102,
+     "score": 0.965
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 18.3,
+      "yaw": -1.2,
+      "roll": -1.4
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.352
+      ],
+      [
+       "eyeLookUpLeft",
+       0.339
+      ],
+      [
+       "eyeLookUpRight",
+       0.311
+      ],
+      [
+       "eyeSquintRight",
+       0.163
+      ],
+      [
+       "mouthPressRight",
+       0.088
+      ],
+      [
+       "eyeLookOutLeft",
+       0.069
+      ]
+     ],
+     "px": {
+      "mesh_length": 106.3,
+      "face_length_hairline": 119.3,
+      "hairline_offset_from_mesh_top": 13.0,
+      "cheek_width_234_454": 87.0,
+      "cheek_width_3d": 87.0,
+      "cheekbone_width_116_345": 78.0,
+      "jaw_width_172_397": 66.1,
+      "jaw_width_3d": 66.1,
+      "jaw2_width_58_288": 74.3,
+      "forehead_width_103_332": 62.8,
+      "forehead_width_3d": 62.8,
+      "temple_width_54_284": 74.6,
+      "forehead2_width_67_297": 44.5,
+      "chin_width_148_377": 14.9,
+      "eye_outer_dist": 54.5
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 141.7,
+      "at_58_288": 144.1,
+      "left_172": 144.1,
+      "right_397": 139.2,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       133.8,
+       129.8
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.372,
+      "LW_mesh": 1.222,
+      "JC": 0.76,
+      "FC": 0.722,
+      "chinC": 0.172,
+      "LW_rel": 1.06,
+      "JC_rel": 0.981,
+      "FC_rel": 1.078,
+      "chinC_rel": 1.015,
+      "jaw_angle_delta": 9.5
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 67,
+      "sil_person_jaw": 127,
+      "sil_skin_cheek": 100,
+      "sil_person_cheek": 100,
+      "sil_skin_forehead": 68,
+      "sil_person_forehead": 122,
+      "sil_hair_widest_above_forehead": 123,
+      "hair_height_above_mesh_top": 69.0,
+      "sil_skin_jaw_over_cheek": 0.67,
+      "sil_skin_forehead_over_cheek": 0.68,
+      "sil_person_cheek_over_landmark_cheek": 1.15,
+      "sil_hair_widest_over_cheek": 1.414
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.37 LW_rel=1.06 JC_rel=0.98 FC_rel=1.08 dAng=+9)"
+     ],
+     "crop_box": {
+      "x0": 198,
+      "y0": 0,
+      "x1": 470,
+      "y1": 255,
+      "w": 272,
+      "h": 255,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       274.33446049690247,
+       82.02624225616455,
+       362.1812582015991,
+       188.49148559570312
+      ]
+     },
+     "pose_warning": "pitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s0_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s0_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s0_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s0_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s0_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s0_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s1.jpg",
+   "width": 1145,
+   "height": 1145,
+   "timings_ms": {
+    "face_landmarker": 13.4,
+    "hair_segmenter": 46.3,
+    "selfie_multiclass": 149.0,
+    "face_detector": 3.5,
+    "face_landmarker_min": 12.2,
+    "hair_segmenter_min": 45.0,
+    "selfie_multiclass_min": 128.7,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1414,
+    "n_components_total": 1,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.113,
+    "mean_conf_inside": 0.967,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.956,
+    "multiclass_hair_area_fraction": 0.1394,
+    "multiclass_class_fractions": {
+     "background": 0.5752,
+     "hair": 0.1394,
+     "body-skin": 0.0492,
+     "face-skin": 0.0646,
+     "clothes": 0.1656,
+     "others": 0.006
+    }
+   },
+   "face_detector": [
+    {
+     "x": 341,
+     "y": 363,
+     "w": 377,
+     "h": 377,
+     "score": 0.956
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 10.1,
+      "yaw": 0.2,
+      "roll": -4.2
+     },
+     "top_blendshapes": [
+      [
+       "browDownLeft",
+       0.663
+      ],
+      [
+       "eyeSquintLeft",
+       0.628
+      ],
+      [
+       "browDownRight",
+       0.619
+      ],
+      [
+       "mouthSmileLeft",
+       0.586
+      ],
+      [
+       "mouthSmileRight",
+       0.455
+      ],
+      [
+       "eyeSquintRight",
+       0.403
+      ]
+     ],
+     "px": {
+      "mesh_length": 385.3,
+      "face_length_hairline": 385.3,
+      "hairline_offset_from_mesh_top": 0.0,
+      "cheek_width_234_454": 331.1,
+      "cheek_width_3d": 331.1,
+      "cheekbone_width_116_345": 301.3,
+      "jaw_width_172_397": 263.7,
+      "jaw_width_3d": 263.8,
+      "jaw2_width_58_288": 291.5,
+      "forehead_width_103_332": 238.0,
+      "forehead_width_3d": 238.1,
+      "temple_width_54_284": 283.8,
+      "forehead2_width_67_297": 167.9,
+      "chin_width_148_377": 60.1,
+      "eye_outer_dist": 211.5
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 135.6,
+      "at_58_288": 138.7,
+      "left_172": 135.4,
+      "right_397": 135.8,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.6,
+       128.9
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.164,
+      "LW_mesh": 1.164,
+      "JC": 0.797,
+      "FC": 0.719,
+      "chinC": 0.182,
+      "LW_rel": 1.009,
+      "JC_rel": 1.028,
+      "FC_rel": 1.073,
+      "chinC_rel": 1.075,
+      "jaw_angle_delta": 3.4
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 276,
+      "sil_person_jaw": 452,
+      "sil_skin_cheek": 325,
+      "sil_person_cheek": 535,
+      "sil_skin_forehead": 0,
+      "sil_person_forehead": 549,
+      "sil_hair_widest_above_forehead": 536,
+      "hair_height_above_mesh_top": 221.0,
+      "sil_skin_jaw_over_cheek": 0.849,
+      "sil_skin_forehead_over_cheek": 0.0,
+      "sil_person_cheek_over_landmark_cheek": 1.616,
+      "sil_hair_widest_over_cheek": 1.619
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.16 LW_rel=1.01 JC_rel=1.03 FC_rel=1.07 dAng=+3)"
+     ],
+     "crop_box": {
+      "x0": 86,
+      "y0": 29,
+      "x1": 997,
+      "y1": 940,
+      "w": 911,
+      "h": 911,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       361.9331707060337,
+       347.55806744098663,
+       695.8725881576538,
+       733.9267468452454
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s1_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s1_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s1_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s1_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s1_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s1_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s10.jpg",
+   "width": 1092,
+   "height": 1280,
+   "timings_ms": {
+    "face_landmarker": 13.4,
+    "hair_segmenter": 61.0,
+    "selfie_multiclass": 131.5,
+    "face_detector": 2.8,
+    "face_landmarker_min": 12.8,
+    "hair_segmenter_min": 50.7,
+    "selfie_multiclass_min": 117.1,
+    "face_detector_min": 2.4
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.124,
+    "n_components_total": 26,
+    "n_components_significant": 4,
+    "largest_component_fraction": 0.954,
+    "ambiguous_band_fraction_of_hair": 0.757,
+    "mean_conf_inside": 0.861,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.008,
+    "multiclass_hair_area_fraction": 0.001,
+    "multiclass_class_fractions": {
+     "background": 0.5929,
+     "hair": 0.001,
+     "body-skin": 0.0043,
+     "face-skin": 0.0717,
+     "clothes": 0.2787,
+     "others": 0.0514
+    }
+   },
+   "face_detector": [
+    {
+     "x": 351,
+     "y": 403,
+     "w": 355,
+     "h": 355,
+     "score": 0.861
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 19.3,
+      "yaw": -31.0,
+      "roll": -12.1
+     },
+     "top_blendshapes": [
+      [
+       "eyeLookOutLeft",
+       0.936
+      ],
+      [
+       "eyeLookInRight",
+       0.934
+      ],
+      [
+       "eyeLookUpLeft",
+       0.516
+      ],
+      [
+       "eyeLookUpRight",
+       0.509
+      ],
+      [
+       "browOuterUpRight",
+       0.385
+      ],
+      [
+       "browInnerUp",
+       0.298
+      ]
+     ],
+     "px": {
+      "mesh_length": 372.9,
+      "face_length_hairline": 387.9,
+      "hairline_offset_from_mesh_top": 15.0,
+      "cheek_width_234_454": 284.4,
+      "cheek_width_3d": 342.1,
+      "cheekbone_width_116_345": 251.1,
+      "jaw_width_172_397": 232.2,
+      "jaw_width_3d": 274.3,
+      "jaw2_width_58_288": 257.6,
+      "forehead_width_103_332": 200.4,
+      "forehead_width_3d": 238.9,
+      "temple_width_54_284": 243.2,
+      "forehead2_width_67_297": 138.9,
+      "chin_width_148_377": 49.9,
+      "eye_outer_dist": 178.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 143.2,
+      "at_58_288": 145.7,
+      "left_172": 160.1,
+      "right_397": 126.4,
+      "auto_gonion": [
+       176,
+       397
+      ],
+      "auto_gonion_angle": [
+       135.8,
+       126.4
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.364,
+      "LW_mesh": 1.311,
+      "JC": 0.816,
+      "FC": 0.705,
+      "chinC": 0.175,
+      "LW_rel": 1.137,
+      "JC_rel": 1.053,
+      "FC_rel": 1.052,
+      "chinC_rel": 1.038,
+      "jaw_angle_delta": 11.0
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 277,
+      "sil_person_jaw": 343,
+      "sil_skin_cheek": 311,
+      "sil_person_cheek": 458,
+      "sil_skin_forehead": 142,
+      "sil_person_forehead": 532,
+      "sil_hair_widest_above_forehead": 423,
+      "hair_height_above_mesh_top": -189.0,
+      "sil_skin_jaw_over_cheek": 0.891,
+      "sil_skin_forehead_over_cheek": 0.457,
+      "sil_person_cheek_over_landmark_cheek": 1.61,
+      "sil_hair_widest_over_cheek": 1.487
+     },
+     "shape": "oblong",
+     "shape_reasons": [
+      "long face with wide/angular jaw (LW=1.36 LW_rel=1.14 JC_rel=1.05 FC_rel=1.05 dAng=+11)"
+     ],
+     "crop_box": {
+      "x0": 179,
+      "y0": 57,
+      "x1": 1092,
+      "y1": 979,
+      "w": 913,
+      "h": 922,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       339.9418559074402,
+       389.8256301879883,
+       662.1996188163757,
+       770.2449798583984
+      ]
+     },
+     "pose_warning": "yawpitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s10_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s10_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s10_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s10_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s10_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s10_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s11.jpg",
+   "width": 708,
+   "height": 648,
+   "timings_ms": {
+    "face_landmarker": 12.9,
+    "hair_segmenter": 38.0,
+    "selfie_multiclass": 123.2,
+    "face_detector": 2.9,
+    "face_landmarker_min": 11.8,
+    "hair_segmenter_min": 37.3,
+    "selfie_multiclass_min": 117.3,
+    "face_detector_min": 2.6
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0438,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.239,
+    "mean_conf_inside": 0.941,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.905,
+    "multiclass_hair_area_fraction": 0.0419,
+    "multiclass_class_fractions": {
+     "background": 0.7799,
+     "hair": 0.0419,
+     "body-skin": 0.0226,
+     "face-skin": 0.0488,
+     "clothes": 0.106,
+     "others": 0.0009
+    }
+   },
+   "face_detector": [
+    {
+     "x": 276,
+     "y": 273,
+     "w": 147,
+     "h": 147,
+     "score": 0.934
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 6.8,
+      "yaw": -1.9,
+      "roll": -4.3
+     },
+     "top_blendshapes": [
+      [
+       "mouthPucker",
+       0.877
+      ],
+      [
+       "browOuterUpLeft",
+       0.553
+      ],
+      [
+       "eyeLookInRight",
+       0.553
+      ],
+      [
+       "browInnerUp",
+       0.477
+      ],
+      [
+       "eyeWideRight",
+       0.372
+      ],
+      [
+       "browOuterUpRight",
+       0.31
+      ]
+     ],
+     "px": {
+      "mesh_length": 155.7,
+      "face_length_hairline": 168.7,
+      "hairline_offset_from_mesh_top": 13.0,
+      "cheek_width_234_454": 141.9,
+      "cheek_width_3d": 142.0,
+      "cheekbone_width_116_345": 128.9,
+      "jaw_width_172_397": 106.7,
+      "jaw_width_3d": 106.8,
+      "jaw2_width_58_288": 120.4,
+      "forehead_width_103_332": 106.3,
+      "forehead_width_3d": 106.4,
+      "temple_width_54_284": 126.6,
+      "forehead2_width_67_297": 74.8,
+      "chin_width_148_377": 22.7,
+      "eye_outer_dist": 92.5
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 135.2,
+      "at_58_288": 137.5,
+      "left_172": 135.8,
+      "right_397": 134.6,
+      "auto_gonion": [
+       176,
+       397
+      ],
+      "auto_gonion_angle": [
+       133.7,
+       134.6
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.189,
+      "LW_mesh": 1.097,
+      "JC": 0.752,
+      "FC": 0.749,
+      "chinC": 0.16,
+      "LW_rel": 0.951,
+      "JC_rel": 0.97,
+      "FC_rel": 1.118,
+      "chinC_rel": 0.948,
+      "jaw_angle_delta": 3.0
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 109,
+      "sil_person_jaw": 195,
+      "sil_skin_cheek": 172,
+      "sil_person_cheek": 227,
+      "sil_skin_forehead": 129,
+      "sil_person_forehead": 207,
+      "sil_hair_widest_above_forehead": 173,
+      "hair_height_above_mesh_top": 81.0,
+      "sil_skin_jaw_over_cheek": 0.634,
+      "sil_skin_forehead_over_cheek": 0.75,
+      "sil_person_cheek_over_landmark_cheek": 1.6,
+      "sil_hair_widest_over_cheek": 1.219
+     },
+     "shape": "round",
+     "shape_reasons": [
+      "short face with soft jaw (LW=1.19 LW_rel=0.95 JC_rel=0.97 FC_rel=1.12 dAng=+3)"
+     ],
+     "crop_box": {
+      "x0": 170,
+      "y0": 137,
+      "x1": 526,
+      "y1": 492,
+      "w": 356,
+      "h": 355,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       277.8842911720276,
+       255.53556990623474,
+       423.3392186164856,
+       411.8545289039612
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s11_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s11_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s11_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s11_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s11_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s11_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s12.jpg",
+   "width": 375,
+   "height": 500,
+   "timings_ms": {
+    "face_landmarker": 14.9,
+    "hair_segmenter": 40.0,
+    "selfie_multiclass": 140.7,
+    "face_detector": 2.8,
+    "face_landmarker_min": 13.1,
+    "hair_segmenter_min": 33.8,
+    "selfie_multiclass_min": 137.8,
+    "face_detector_min": 2.6
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0601,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.192,
+    "mean_conf_inside": 0.952,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.95,
+    "multiclass_hair_area_fraction": 0.0606,
+    "multiclass_class_fractions": {
+     "background": 0.4249,
+     "hair": 0.0606,
+     "body-skin": 0.0173,
+     "face-skin": 0.115,
+     "clothes": 0.3821,
+     "others": 0.0001
+    }
+   },
+   "face_detector": [
+    {
+     "x": 117,
+     "y": 124,
+     "w": 149,
+     "h": 149,
+     "score": 0.943
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 1.2,
+      "yaw": -10.0,
+      "roll": 2.7
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.358
+      ],
+      [
+       "eyeLookInRight",
+       0.351
+      ],
+      [
+       "eyeLookOutLeft",
+       0.333
+      ],
+      [
+       "browDownLeft",
+       0.252
+      ],
+      [
+       "eyeSquintRight",
+       0.178
+      ],
+      [
+       "eyeBlinkLeft",
+       0.137
+      ]
+     ],
+     "px": {
+      "mesh_length": 158.4,
+      "face_length_hairline": 180.4,
+      "hairline_offset_from_mesh_top": 22.0,
+      "cheek_width_234_454": 127.9,
+      "cheek_width_3d": 130.0,
+      "cheekbone_width_116_345": 114.9,
+      "jaw_width_172_397": 101.6,
+      "jaw_width_3d": 103.2,
+      "jaw2_width_58_288": 113.4,
+      "forehead_width_103_332": 90.3,
+      "forehead_width_3d": 91.8,
+      "temple_width_54_284": 108.6,
+      "forehead2_width_67_297": 63.0,
+      "chin_width_148_377": 21.8,
+      "eye_outer_dist": 77.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 130.8,
+      "at_58_288": 133.9,
+      "left_172": 134.4,
+      "right_397": 127.2,
+      "auto_gonion": [
+       176,
+       397
+      ],
+      "auto_gonion_angle": [
+       124.6,
+       127.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.411,
+      "LW_mesh": 1.239,
+      "JC": 0.794,
+      "FC": 0.707,
+      "chinC": 0.171,
+      "LW_rel": 1.075,
+      "JC_rel": 1.025,
+      "FC_rel": 1.055,
+      "chinC_rel": 1.011,
+      "jaw_angle_delta": -1.4
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 103,
+      "sil_person_jaw": 123,
+      "sil_skin_cheek": 148,
+      "sil_person_cheek": 158,
+      "sil_skin_forehead": 120,
+      "sil_person_forehead": 176,
+      "sil_hair_widest_above_forehead": 168,
+      "hair_height_above_mesh_top": 78.0,
+      "sil_skin_jaw_over_cheek": 0.696,
+      "sil_skin_forehead_over_cheek": 0.811,
+      "sil_person_cheek_over_landmark_cheek": 1.236,
+      "sil_hair_widest_over_cheek": 1.314
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.41 LW_rel=1.07 JC_rel=1.03 FC_rel=1.05 dAng=-1)"
+     ],
+     "crop_box": {
+      "x0": 13,
+      "y0": 0,
+      "x1": 367,
+      "y1": 346,
+      "w": 354,
+      "h": 346,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       125.62594190239906,
+       107.28089511394501,
+       256.7809447646141,
+       266.325980424881
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s12_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s12_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s12_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s12_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s12_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s12_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s5.jpg",
+   "width": 720,
+   "height": 720,
+   "timings_ms": {
+    "face_landmarker": 13.3,
+    "hair_segmenter": 35.2,
+    "selfie_multiclass": 104.0,
+    "face_detector": 4.4,
+    "face_landmarker_min": 12.4,
+    "hair_segmenter_min": 35.1,
+    "selfie_multiclass_min": 94.5,
+    "face_detector_min": 3.2
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.04,
+    "n_components_total": 4,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.984,
+    "ambiguous_band_fraction_of_hair": 0.36,
+    "mean_conf_inside": 0.914,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.881,
+    "multiclass_hair_area_fraction": 0.0414,
+    "multiclass_class_fractions": {
+     "background": 0.6991,
+     "hair": 0.0414,
+     "body-skin": 0.0479,
+     "face-skin": 0.0365,
+     "clothes": 0.1699,
+     "others": 0.0053
+    }
+   },
+   "face_detector": [
+    {
+     "x": 282,
+     "y": 202,
+     "w": 147,
+     "h": 147,
+     "score": 0.969
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 12.9,
+      "yaw": 0.3,
+      "roll": -0.3
+     },
+     "top_blendshapes": [
+      [
+       "mouthPucker",
+       0.91
+      ],
+      [
+       "eyeLookUpLeft",
+       0.244
+      ],
+      [
+       "eyeLookUpRight",
+       0.239
+      ],
+      [
+       "mouthRollLower",
+       0.202
+      ],
+      [
+       "browDownLeft",
+       0.186
+      ],
+      [
+       "eyeSquintLeft",
+       0.185
+      ]
+     ],
+     "px": {
+      "mesh_length": 150.8,
+      "face_length_hairline": 167.8,
+      "hairline_offset_from_mesh_top": 17.0,
+      "cheek_width_234_454": 138.7,
+      "cheek_width_3d": 138.7,
+      "cheekbone_width_116_345": 126.3,
+      "jaw_width_172_397": 103.2,
+      "jaw_width_3d": 103.2,
+      "jaw2_width_58_288": 116.8,
+      "forehead_width_103_332": 102.3,
+      "forehead_width_3d": 102.3,
+      "temple_width_54_284": 121.6,
+      "forehead2_width_67_297": 72.4,
+      "chin_width_148_377": 22.6,
+      "eye_outer_dist": 91.0
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 139.4,
+      "at_58_288": 141.2,
+      "left_172": 140.0,
+      "right_397": 138.9,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       134.7,
+       134.6
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.209,
+      "LW_mesh": 1.087,
+      "JC": 0.744,
+      "FC": 0.737,
+      "chinC": 0.163,
+      "LW_rel": 0.943,
+      "JC_rel": 0.96,
+      "FC_rel": 1.101,
+      "chinC_rel": 0.966,
+      "jaw_angle_delta": 7.2
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 102,
+      "sil_person_jaw": 131,
+      "sil_skin_cheek": 165,
+      "sil_person_cheek": 179,
+      "sil_skin_forehead": 79,
+      "sil_person_forehead": 197,
+      "sil_hair_widest_above_forehead": 200,
+      "hair_height_above_mesh_top": 103.0,
+      "sil_skin_jaw_over_cheek": 0.618,
+      "sil_skin_forehead_over_cheek": 0.479,
+      "sil_person_cheek_over_landmark_cheek": 1.29,
+      "sil_hair_widest_over_cheek": 1.441
+     },
+     "shape": "heart",
+     "shape_reasons": [
+      "forehead wider and jaw narrower than canonical (LW=1.21 LW_rel=0.94 JC_rel=0.96 FC_rel=1.10 dAng=+7)"
+     ],
+     "crop_box": {
+      "x0": 163,
+      "y0": 48,
+      "x1": 542,
+      "y1": 427,
+      "w": 379,
+      "h": 379,
+      "hair_components": [
+       1,
+       2
+      ],
+      "face_bbox": [
+       281.93716049194336,
+       191.20401620864868,
+       423.17949771881104,
+       341.9817352294922
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s5_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s5_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s5_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s5_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s5_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s5_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s6.jpg",
+   "width": 725,
+   "height": 725,
+   "timings_ms": {
+    "face_landmarker": 15.4,
+    "hair_segmenter": 42.3,
+    "selfie_multiclass": 134.1,
+    "face_detector": 3.3,
+    "face_landmarker_min": 14.0,
+    "hair_segmenter_min": 40.7,
+    "selfie_multiclass_min": 126.0,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0101,
+    "n_components_total": 15,
+    "n_components_significant": 6,
+    "largest_component_fraction": 0.437,
+    "ambiguous_band_fraction_of_hair": 1.869,
+    "mean_conf_inside": 0.706,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.055,
+    "multiclass_hair_area_fraction": 0.0006,
+    "multiclass_class_fractions": {
+     "background": 0.6511,
+     "hair": 0.0006,
+     "body-skin": 0.0029,
+     "face-skin": 0.056,
+     "clothes": 0.2492,
+     "others": 0.0401
+    }
+   },
+   "face_detector": [
+    {
+     "x": 280,
+     "y": 270,
+     "w": 168,
+     "h": 168,
+     "score": 0.78
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -3.9,
+      "yaw": -1.0,
+      "roll": 1.0
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintRight",
+       0.589
+      ],
+      [
+       "eyeSquintLeft",
+       0.485
+      ],
+      [
+       "browOuterUpLeft",
+       0.394
+      ],
+      [
+       "eyeLookDownLeft",
+       0.301
+      ],
+      [
+       "eyeLookDownRight",
+       0.287
+      ],
+      [
+       "mouthShrugLower",
+       0.287
+      ]
+     ],
+     "px": {
+      "mesh_length": 188.9,
+      "face_length_hairline": 193.4,
+      "hairline_offset_from_mesh_top": 6.0,
+      "cheek_width_234_454": 160.1,
+      "cheek_width_3d": 160.1,
+      "cheekbone_width_116_345": 147.1,
+      "jaw_width_172_397": 129.6,
+      "jaw_width_3d": 129.6,
+      "jaw2_width_58_288": 143.5,
+      "forehead_width_103_332": 114.2,
+      "forehead_width_3d": 114.2,
+      "temple_width_54_284": 135.9,
+      "forehead2_width_67_297": 80.7,
+      "chin_width_148_377": 30.4,
+      "eye_outer_dist": 103.2
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 131.7,
+      "at_58_288": 134.2,
+      "left_172": 132.1,
+      "right_397": 131.4,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.0,
+       127.2
+      ]
+     },
+     "face_length_source": "skin_end_damped",
+     "hairline_lines_found": 0,
+     "ratios": {
+      "LW": 1.208,
+      "LW_mesh": 1.18,
+      "JC": 0.809,
+      "FC": 0.713,
+      "chinC": 0.19,
+      "LW_rel": 1.023,
+      "JC_rel": 1.044,
+      "FC_rel": 1.065,
+      "chinC_rel": 1.123,
+      "jaw_angle_delta": -0.5
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 146,
+      "sil_person_jaw": 146,
+      "sil_skin_cheek": 170,
+      "sil_person_cheek": 188,
+      "sil_skin_forehead": 101,
+      "sil_person_forehead": 176,
+      "sil_hair_widest_above_forehead": 175,
+      "hair_height_above_mesh_top": -38.0,
+      "sil_skin_jaw_over_cheek": 0.859,
+      "sil_skin_forehead_over_cheek": 0.594,
+      "sil_person_cheek_over_landmark_cheek": 1.174,
+      "sil_hair_widest_over_cheek": 1.093
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.21 LW_rel=1.02 JC_rel=1.04 FC_rel=1.06 dAng=-0)"
+     ],
+     "crop_box": {
+      "x0": 153,
+      "y0": 147,
+      "x1": 572,
+      "y1": 565,
+      "w": 419,
+      "h": 418,
+      "hair_components": [
+       2,
+       3,
+       4,
+       7,
+       8,
+       14
+      ],
+      "face_bbox": [
+       280.03333806991577,
+       251.31557062268257,
+       440.6813219189644,
+       440.1420623064041
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s6_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s6_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s6_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s6_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s6_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s6_sheet.png"
+   ]
+  },
+  {
+   "image": "liveportrait_s9.jpg",
+   "width": 720,
+   "height": 1280,
+   "timings_ms": {
+    "face_landmarker": 14.1,
+    "hair_segmenter": 44.7,
+    "selfie_multiclass": 111.9,
+    "face_detector": 2.8,
+    "face_landmarker_min": 12.2,
+    "hair_segmenter_min": 42.1,
+    "selfie_multiclass_min": 99.7,
+    "face_detector_min": 2.6
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0647,
+    "n_components_total": 6,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.916,
+    "ambiguous_band_fraction_of_hair": 0.799,
+    "mean_conf_inside": 0.857,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.577,
+    "multiclass_hair_area_fraction": 0.0744,
+    "multiclass_class_fractions": {
+     "background": 0.3497,
+     "hair": 0.0744,
+     "body-skin": 0.1199,
+     "face-skin": 0.0548,
+     "clothes": 0.3966,
+     "others": 0.0045
+    }
+   },
+   "face_detector": [
+    {
+     "x": 278,
+     "y": 246,
+     "w": 201,
+     "h": 201,
+     "score": 0.957
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 19.9,
+      "yaw": -16.7,
+      "roll": -3.4
+     },
+     "top_blendshapes": [
+      [
+       "eyeLookOutLeft",
+       0.632
+      ],
+      [
+       "eyeLookInRight",
+       0.617
+      ],
+      [
+       "eyeSquintLeft",
+       0.483
+      ],
+      [
+       "eyeSquintRight",
+       0.431
+      ],
+      [
+       "eyeLookUpLeft",
+       0.28
+      ],
+      [
+       "eyeLookUpRight",
+       0.278
+      ]
+     ],
+     "px": {
+      "mesh_length": 224.0,
+      "face_length_hairline": 282.0,
+      "hairline_offset_from_mesh_top": 58.0,
+      "cheek_width_234_454": 191.3,
+      "cheek_width_3d": 200.8,
+      "cheekbone_width_116_345": 175.5,
+      "jaw_width_172_397": 157.1,
+      "jaw_width_3d": 164.1,
+      "jaw2_width_58_288": 173.1,
+      "forehead_width_103_332": 136.6,
+      "forehead_width_3d": 142.8,
+      "temple_width_54_284": 163.9,
+      "forehead2_width_67_297": 96.2,
+      "chin_width_148_377": 34.7,
+      "eye_outer_dist": 120.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 136.9,
+      "at_58_288": 140.2,
+      "left_172": 143.4,
+      "right_397": 130.5,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       128.3,
+       130.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.474,
+      "LW_mesh": 1.171,
+      "JC": 0.821,
+      "FC": 0.714,
+      "chinC": 0.181,
+      "LW_rel": 1.016,
+      "JC_rel": 1.059,
+      "FC_rel": 1.065,
+      "chinC_rel": 1.074,
+      "jaw_angle_delta": 4.7
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 180,
+      "sil_person_jaw": 336,
+      "sil_skin_cheek": 200,
+      "sil_person_cheek": 312,
+      "sil_skin_forehead": 188,
+      "sil_person_forehead": 289,
+      "sil_hair_widest_above_forehead": 281,
+      "hair_height_above_mesh_top": 111.0,
+      "sil_skin_jaw_over_cheek": 0.9,
+      "sil_skin_forehead_over_cheek": 0.94,
+      "sil_person_cheek_over_landmark_cheek": 1.631,
+      "sil_hair_widest_over_cheek": 1.469
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.47 LW_rel=1.02 JC_rel=1.06 FC_rel=1.07 dAng=+5)"
+     ],
+     "crop_box": {
+      "x0": 67,
+      "y0": 48,
+      "x1": 718,
+      "y1": 699,
+      "w": 651,
+      "h": 651,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       270.00465631484985,
+       228.92423629760742,
+       470.4649543762207,
+       454.21417236328125
+      ]
+     },
+     "pose_warning": "yawpitch"
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/liveportrait_s9_landmarks.png",
+    "<scratchpad>/proto/out/liveportrait_s9_hair.png",
+    "<scratchpad>/proto/out/liveportrait_s9_multiclass.png",
+    "<scratchpad>/proto/out/liveportrait_s9_cropbox.png",
+    "<scratchpad>/proto/out/liveportrait_s9_crop.png",
+    "<scratchpad>/proto/out/liveportrait_s9_sheet.png"
+   ]
+  },
+  {
+   "image": "openface_adams.jpg",
+   "width": 800,
+   "height": 1061,
+   "timings_ms": {
+    "face_landmarker": 14.9,
+    "hair_segmenter": 41.7,
+    "selfie_multiclass": 117.1,
+    "face_detector": 2.8,
+    "face_landmarker_min": 13.5,
+    "hair_segmenter_min": 41.0,
+    "selfie_multiclass_min": 113.5,
+    "face_detector_min": 2.7
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.3131,
+    "n_components_total": 7,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.202,
+    "mean_conf_inside": 0.946,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.921,
+    "multiclass_hair_area_fraction": 0.3195,
+    "multiclass_class_fractions": {
+     "background": 0.2725,
+     "hair": 0.3195,
+     "body-skin": 0.1423,
+     "face-skin": 0.1408,
+     "clothes": 0.1246,
+     "others": 0.0003
+    }
+   },
+   "face_detector": [
+    {
+     "x": 258,
+     "y": 272,
+     "w": 351,
+     "h": 351,
+     "score": 0.938
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 4.2,
+      "yaw": -1.9,
+      "roll": -6.3
+     },
+     "top_blendshapes": [
+      [
+       "browDownRight",
+       0.278
+      ],
+      [
+       "eyeSquintLeft",
+       0.278
+      ],
+      [
+       "browDownLeft",
+       0.271
+      ],
+      [
+       "eyeLookUpLeft",
+       0.229
+      ],
+      [
+       "eyeLookUpRight",
+       0.214
+      ],
+      [
+       "eyeSquintRight",
+       0.123
+      ]
+     ],
+     "px": {
+      "mesh_length": 384.9,
+      "face_length_hairline": 447.9,
+      "hairline_offset_from_mesh_top": 63.0,
+      "cheek_width_234_454": 329.5,
+      "cheek_width_3d": 329.8,
+      "cheekbone_width_116_345": 295.4,
+      "jaw_width_172_397": 262.5,
+      "jaw_width_3d": 262.7,
+      "jaw2_width_58_288": 291.9,
+      "forehead_width_103_332": 222.3,
+      "forehead_width_3d": 222.5,
+      "temple_width_54_284": 269.8,
+      "forehead2_width_67_297": 155.8,
+      "chin_width_148_377": 58.2,
+      "eye_outer_dist": 212.9
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 132.7,
+      "at_58_288": 135.7,
+      "left_172": 131.5,
+      "right_397": 134.0,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       128.0,
+       128.2
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.359,
+      "LW_mesh": 1.168,
+      "JC": 0.797,
+      "FC": 0.675,
+      "chinC": 0.177,
+      "LW_rel": 1.013,
+      "JC_rel": 1.028,
+      "FC_rel": 1.007,
+      "chinC_rel": 1.045,
+      "jaw_angle_delta": 0.5
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 264,
+      "sil_person_jaw": 605,
+      "sil_skin_cheek": 296,
+      "sil_person_cheek": 564,
+      "sil_skin_forehead": 261,
+      "sil_person_forehead": 491,
+      "sil_hair_widest_above_forehead": 475,
+      "hair_height_above_mesh_top": 181.0,
+      "sil_skin_jaw_over_cheek": 0.892,
+      "sil_skin_forehead_over_cheek": 0.882,
+      "sil_person_cheek_over_landmark_cheek": 1.712,
+      "sil_hair_widest_over_cheek": 1.442
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.36 LW_rel=1.01 JC_rel=1.03 FC_rel=1.01 dAng=+1)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 800,
+      "y1": 1061,
+      "w": 800,
+      "h": 1061,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       259.20679569244385,
+       225.9321937263012,
+       594.2106246948242,
+       613.2081128358841
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/openface_adams_landmarks.png",
+    "<scratchpad>/proto/out/openface_adams_hair.png",
+    "<scratchpad>/proto/out/openface_adams_multiclass.png",
+    "<scratchpad>/proto/out/openface_adams_cropbox.png",
+    "<scratchpad>/proto/out/openface_adams_crop.png",
+    "<scratchpad>/proto/out/openface_adams_sheet.png"
+   ]
+  },
+  {
+   "image": "openface_clapton2.jpg",
+   "width": 400,
+   "height": 400,
+   "timings_ms": {
+    "face_landmarker": 12.8,
+    "hair_segmenter": 39.6,
+    "selfie_multiclass": 110.0,
+    "face_detector": 3.8,
+    "face_landmarker_min": 11.6,
+    "hair_segmenter_min": 39.2,
+    "selfie_multiclass_min": 106.9,
+    "face_detector_min": 3.6
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.1242,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.545,
+    "mean_conf_inside": 0.89,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.746,
+    "multiclass_hair_area_fraction": 0.1243,
+    "multiclass_class_fractions": {
+     "background": 0.3936,
+     "hair": 0.1243,
+     "body-skin": 0.0221,
+     "face-skin": 0.1632,
+     "clothes": 0.2869,
+     "others": 0.0098
+    }
+   },
+   "face_detector": [
+    {
+     "x": 181,
+     "y": 94,
+     "w": 159,
+     "h": 159,
+     "score": 0.929
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 0.8,
+      "yaw": 6.7,
+      "roll": 1.2
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.471
+      ],
+      [
+       "eyeSquintRight",
+       0.416
+      ],
+      [
+       "browDownLeft",
+       0.401
+      ],
+      [
+       "browDownRight",
+       0.339
+      ],
+      [
+       "eyeLookOutRight",
+       0.277
+      ],
+      [
+       "eyeLookUpLeft",
+       0.27
+      ]
+     ],
+     "px": {
+      "mesh_length": 170.5,
+      "face_length_hairline": 211.5,
+      "hairline_offset_from_mesh_top": 41.0,
+      "cheek_width_234_454": 146.9,
+      "cheek_width_3d": 149.1,
+      "cheekbone_width_116_345": 131.3,
+      "jaw_width_172_397": 120.1,
+      "jaw_width_3d": 121.8,
+      "jaw2_width_58_288": 132.8,
+      "forehead_width_103_332": 100.7,
+      "forehead_width_3d": 102.3,
+      "temple_width_54_284": 121.6,
+      "forehead2_width_67_297": 70.6,
+      "chin_width_148_377": 28.1,
+      "eye_outer_dist": 90.8
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 132.4,
+      "at_58_288": 134.9,
+      "left_172": 129.6,
+      "right_397": 135.3,
+      "auto_gonion": [
+       58,
+       400
+      ],
+      "auto_gonion_angle": [
+       129.6,
+       125.3
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.44,
+      "LW_mesh": 1.161,
+      "JC": 0.818,
+      "FC": 0.686,
+      "chinC": 0.191,
+      "LW_rel": 1.007,
+      "JC_rel": 1.055,
+      "FC_rel": 1.023,
+      "chinC_rel": 1.132,
+      "jaw_angle_delta": 0.2
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 123,
+      "sil_person_jaw": 203,
+      "sil_skin_cheek": 36,
+      "sil_person_cheek": 254,
+      "sil_skin_forehead": 131,
+      "sil_person_forehead": 215,
+      "sil_hair_widest_above_forehead": 200,
+      "hair_height_above_mesh_top": 73.0,
+      "sil_skin_jaw_over_cheek": 3.417,
+      "sil_skin_forehead_over_cheek": 3.639,
+      "sil_person_cheek_over_landmark_cheek": 1.729,
+      "sil_hair_widest_over_cheek": 1.362
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.44 LW_rel=1.01 JC_rel=1.06 FC_rel=1.02 dAng=+0)"
+     ],
+     "crop_box": {
+      "x0": 43,
+      "y0": 0,
+      "x1": 400,
+      "y1": 352,
+      "w": 357,
+      "h": 352,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       185.21218299865723,
+       79.94012236595154,
+       334.2952251434326,
+       250.40185451507568
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/openface_clapton2_landmarks.png",
+    "<scratchpad>/proto/out/openface_clapton2_hair.png",
+    "<scratchpad>/proto/out/openface_clapton2_multiclass.png",
+    "<scratchpad>/proto/out/openface_clapton2_cropbox.png",
+    "<scratchpad>/proto/out/openface_clapton2_crop.png",
+    "<scratchpad>/proto/out/openface_clapton2_sheet.png"
+   ]
+  },
+  {
+   "image": "openface_lennon1.jpg",
+   "width": 1400,
+   "height": 1050,
+   "timings_ms": {
+    "face_landmarker": 14.0,
+    "hair_segmenter": 68.4,
+    "selfie_multiclass": 118.0,
+    "face_detector": 2.9,
+    "face_landmarker_min": 13.2,
+    "hair_segmenter_min": 60.4,
+    "selfie_multiclass_min": 117.8,
+    "face_detector_min": 2.6
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.3357,
+    "n_components_total": 31,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.5,
+    "ambiguous_band_fraction_of_hair": 0.351,
+    "mean_conf_inside": 0.918,
+    "touches_border": {
+     "top": true,
+     "bottom": false,
+     "left": true,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.878,
+    "multiclass_hair_area_fraction": 0.3517,
+    "multiclass_class_fractions": {
+     "background": 0.2127,
+     "hair": 0.3517,
+     "body-skin": 0.0488,
+     "face-skin": 0.2811,
+     "clothes": 0.0904,
+     "others": 0.0154
+    }
+   },
+   "face_detector": [
+    {
+     "x": 289,
+     "y": 137,
+     "w": 820,
+     "h": 820,
+     "score": 0.919
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 5.9,
+      "yaw": 0.6,
+      "roll": -0.6
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintRight",
+       0.69
+      ],
+      [
+       "eyeSquintLeft",
+       0.606
+      ],
+      [
+       "eyeLookUpLeft",
+       0.244
+      ],
+      [
+       "eyeLookUpRight",
+       0.24
+      ],
+      [
+       "mouthPressRight",
+       0.197
+      ],
+      [
+       "mouthPressLeft",
+       0.191
+      ]
+     ],
+     "px": {
+      "mesh_length": 835.6,
+      "face_length_hairline": 835.6,
+      "hairline_offset_from_mesh_top": 0.0,
+      "cheek_width_234_454": 677.9,
+      "cheek_width_3d": 677.9,
+      "cheekbone_width_116_345": 603.6,
+      "jaw_width_172_397": 555.1,
+      "jaw_width_3d": 555.1,
+      "jaw2_width_58_288": 612.6,
+      "forehead_width_103_332": 461.6,
+      "forehead_width_3d": 461.6,
+      "temple_width_54_284": 555.3,
+      "forehead2_width_67_297": 327.5,
+      "chin_width_148_377": 126.8,
+      "eye_outer_dist": 418.7
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 136.3,
+      "at_58_288": 139.1,
+      "left_172": 136.6,
+      "right_397": 136.0,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       130.6,
+       130.3
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 3,
+     "ratios": {
+      "LW": 1.233,
+      "LW_mesh": 1.233,
+      "JC": 0.819,
+      "FC": 0.681,
+      "chinC": 0.187,
+      "LW_rel": 1.069,
+      "JC_rel": 1.056,
+      "FC_rel": 1.016,
+      "chinC_rel": 1.107,
+      "jaw_angle_delta": 4.1
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 548,
+      "sil_person_jaw": 764,
+      "sil_skin_cheek": 131,
+      "sil_person_cheek": 1141,
+      "sil_skin_forehead": 0,
+      "sil_person_forehead": 1065,
+      "sil_hair_widest_above_forehead": 1056,
+      "hair_height_above_mesh_top": 124.0,
+      "sil_skin_jaw_over_cheek": 4.183,
+      "sil_skin_forehead_over_cheek": 0.0,
+      "sil_person_cheek_over_landmark_cheek": 1.683,
+      "sil_hair_widest_over_cheek": 1.558
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.23 LW_rel=1.07 JC_rel=1.06 FC_rel=1.02 dAng=+4)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 1400,
+      "y1": 1050,
+      "w": 1400,
+      "h": 1050,
+      "hair_components": [
+       1,
+       2
+      ],
+      "face_bbox": [
+       347.88429737091064,
+       124.79040361940861,
+       1026.3631105422974,
+       960.3867173194885
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/openface_lennon1_landmarks.png",
+    "<scratchpad>/proto/out/openface_lennon1_hair.png",
+    "<scratchpad>/proto/out/openface_lennon1_multiclass.png",
+    "<scratchpad>/proto/out/openface_lennon1_cropbox.png",
+    "<scratchpad>/proto/out/openface_lennon1_crop.png",
+    "<scratchpad>/proto/out/openface_lennon1_sheet.png"
+   ]
+  },
+  {
+   "image": "torchvision_person1.jpg",
+   "width": 480,
+   "height": 640,
+   "timings_ms": {
+    "face_landmarker": 2.8,
+    "hair_segmenter": 31.2,
+    "selfie_multiclass": 96.5,
+    "face_detector": 3.1,
+    "face_landmarker_min": 2.4,
+    "hair_segmenter_min": 30.9,
+    "selfie_multiclass_min": 95.5,
+    "face_detector_min": 3.1
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.021,
+    "n_components_total": 1,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.582,
+    "mean_conf_inside": 0.839,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.0,
+    "multiclass_hair_area_fraction": 0.0015,
+    "multiclass_class_fractions": {
+     "background": 0.8932,
+     "hair": 0.0015,
+     "body-skin": 0.0036,
+     "face-skin": 0.0027,
+     "clothes": 0.0797,
+     "others": 0.0192
+    }
+   },
+   "face_detector": [],
+   "n_faces_landmarker": 0,
+   "faces": [],
+   "outputs": [
+    "<scratchpad>/proto/out/torchvision_person1_landmarks.png",
+    "<scratchpad>/proto/out/torchvision_person1_hair.png",
+    "<scratchpad>/proto/out/torchvision_person1_multiclass.png",
+    "<scratchpad>/proto/out/torchvision_person1_cropbox.png",
+    "<scratchpad>/proto/out/torchvision_person1_crop.png",
+    "<scratchpad>/proto/out/torchvision_person1_sheet.png"
+   ]
+  },
+  {
+   "image": "barbershop_117.png",
+   "width": 1024,
+   "height": 1024,
+   "timings_ms": {
+    "face_landmarker": 15.5,
+    "hair_segmenter": 45.7,
+    "selfie_multiclass": 125.1,
+    "face_detector": 3.1,
+    "face_landmarker_min": 15.1,
+    "hair_segmenter_min": 44.6,
+    "selfie_multiclass_min": 120.7,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.4228,
+    "n_components_total": 10,
+    "n_components_significant": 1,
+    "largest_component_fraction": 0.999,
+    "ambiguous_band_fraction_of_hair": 0.243,
+    "mean_conf_inside": 0.933,
+    "touches_border": {
+     "top": true,
+     "bottom": true,
+     "left": true,
+     "right": true
+    },
+    "iou_vs_multiclass_hair": 0.882,
+    "multiclass_hair_area_fraction": 0.4662,
+    "multiclass_class_fractions": {
+     "background": 0.1053,
+     "hair": 0.4662,
+     "body-skin": 0.042,
+     "face-skin": 0.3822,
+     "clothes": 0.0,
+     "others": 0.0042
+    }
+   },
+   "face_detector": [
+    {
+     "x": 196,
+     "y": 345,
+     "w": 614,
+     "h": 614,
+     "score": 0.915
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -1.7,
+      "yaw": 2.2,
+      "roll": -0.4
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.915
+      ],
+      [
+       "mouthSmileLeft",
+       0.912
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.772
+      ],
+      [
+       "mouthUpperUpRight",
+       0.753
+      ],
+      [
+       "eyeSquintLeft",
+       0.591
+      ],
+      [
+       "eyeSquintRight",
+       0.375
+      ]
+     ],
+     "px": {
+      "mesh_length": 669.0,
+      "face_length_hairline": 797.0,
+      "hairline_offset_from_mesh_top": 128.0,
+      "cheek_width_234_454": 582.2,
+      "cheek_width_3d": 582.7,
+      "cheekbone_width_116_345": 519.4,
+      "jaw_width_172_397": 473.3,
+      "jaw_width_3d": 473.6,
+      "jaw2_width_58_288": 526.3,
+      "forehead_width_103_332": 376.9,
+      "forehead_width_3d": 377.3,
+      "temple_width_54_284": 461.1,
+      "forehead2_width_67_297": 263.8,
+      "chin_width_148_377": 106.3,
+      "eye_outer_dist": 349.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 133.4,
+      "at_58_288": 134.9,
+      "left_172": 131.5,
+      "right_397": 135.4,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       130.0,
+       131.1
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.369,
+      "LW_mesh": 1.149,
+      "JC": 0.813,
+      "FC": 0.647,
+      "chinC": 0.183,
+      "LW_rel": 0.997,
+      "JC_rel": 1.049,
+      "FC_rel": 0.966,
+      "chinC_rel": 1.08,
+      "jaw_angle_delta": 1.2
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 489,
+      "sil_person_jaw": 1015,
+      "sil_skin_cheek": 602,
+      "sil_person_cheek": 1013,
+      "sil_skin_forehead": 516,
+      "sil_person_forehead": 904,
+      "sil_hair_widest_above_forehead": 907,
+      "hair_height_above_mesh_top": 290.0,
+      "sil_skin_jaw_over_cheek": 0.812,
+      "sil_skin_forehead_over_cheek": 0.857,
+      "sil_person_cheek_over_landmark_cheek": 1.74,
+      "sil_hair_widest_over_cheek": 1.558
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.37 LW_rel=1.00 JC_rel=1.05 FC_rel=0.97 dAng=+1)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 1024,
+      "y1": 1024,
+      "w": 1024,
+      "h": 1024,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       209.3518524169922,
+       290.2620849609375,
+       792.5882568359375,
+       959.1986083984375
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/barbershop_117_landmarks.png",
+    "<scratchpad>/proto/out/barbershop_117_hair.png",
+    "<scratchpad>/proto/out/barbershop_117_multiclass.png",
+    "<scratchpad>/proto/out/barbershop_117_cropbox.png",
+    "<scratchpad>/proto/out/barbershop_117_crop.png",
+    "<scratchpad>/proto/out/barbershop_117_sheet.png"
+   ]
+  },
+  {
+   "image": "barbershop_15.png",
+   "width": 1024,
+   "height": 1024,
+   "timings_ms": {
+    "face_landmarker": 16.8,
+    "hair_segmenter": 59.3,
+    "selfie_multiclass": 193.5,
+    "face_detector": 3.4,
+    "face_landmarker_min": 14.3,
+    "hair_segmenter_min": 57.9,
+    "selfie_multiclass_min": 129.5,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.3444,
+    "n_components_total": 2,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.158,
+    "mean_conf_inside": 0.966,
+    "touches_border": {
+     "top": false,
+     "bottom": true,
+     "left": true,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.933,
+    "multiclass_hair_area_fraction": 0.3276,
+    "multiclass_class_fractions": {
+     "background": 0.285,
+     "hair": 0.3276,
+     "body-skin": 0.0396,
+     "face-skin": 0.3476,
+     "clothes": 0.0,
+     "others": 0.0002
+    }
+   },
+   "face_detector": [
+    {
+     "x": 237,
+     "y": 331,
+     "w": 598,
+     "h": 598,
+     "score": 0.919
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": -6.6,
+      "yaw": -3.8,
+      "roll": -1.6
+     },
+     "top_blendshapes": [
+      [
+       "mouthSmileRight",
+       0.947
+      ],
+      [
+       "mouthSmileLeft",
+       0.937
+      ],
+      [
+       "mouthUpperUpRight",
+       0.897
+      ],
+      [
+       "mouthUpperUpLeft",
+       0.847
+      ],
+      [
+       "eyeLookDownRight",
+       0.645
+      ],
+      [
+       "eyeLookDownLeft",
+       0.62
+      ]
+     ],
+     "px": {
+      "mesh_length": 657.3,
+      "face_length_hairline": 807.3,
+      "hairline_offset_from_mesh_top": 150.0,
+      "cheek_width_234_454": 543.2,
+      "cheek_width_3d": 544.8,
+      "cheekbone_width_116_345": 504.8,
+      "jaw_width_172_397": 451.3,
+      "jaw_width_3d": 452.5,
+      "jaw2_width_58_288": 495.9,
+      "forehead_width_103_332": 379.4,
+      "forehead_width_3d": 380.5,
+      "temple_width_54_284": 456.6,
+      "forehead2_width_67_297": 267.8,
+      "chin_width_148_377": 109.7,
+      "eye_outer_dist": 361.6
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 132.6,
+      "at_58_288": 134.8,
+      "left_172": 133.6,
+      "right_397": 131.7,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       128.4,
+       129.6
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.486,
+      "LW_mesh": 1.21,
+      "JC": 0.831,
+      "FC": 0.699,
+      "chinC": 0.202,
+      "LW_rel": 1.05,
+      "JC_rel": 1.072,
+      "FC_rel": 1.043,
+      "chinC_rel": 1.196,
+      "jaw_angle_delta": 0.4
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 457,
+      "sil_person_jaw": 889,
+      "sil_skin_cheek": 545,
+      "sil_person_cheek": 773,
+      "sil_skin_forehead": 467,
+      "sil_person_forehead": 720,
+      "sil_hair_widest_above_forehead": 704,
+      "hair_height_above_mesh_top": 273.0,
+      "sil_skin_jaw_over_cheek": 0.839,
+      "sil_skin_forehead_over_cheek": 0.857,
+      "sil_person_cheek_over_landmark_cheek": 1.423,
+      "sil_hair_widest_over_cheek": 1.296
+     },
+     "shape": "triangle",
+     "shape_reasons": [
+      "jaw wider than canonical, forehead not (LW=1.49 LW_rel=1.05 JC_rel=1.07 FC_rel=1.04 dAng=+0)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 1024,
+      "y1": 1024,
+      "w": 1024,
+      "h": 1024,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       255.38156127929688,
+       288.06732177734375,
+       808.0779418945312,
+       944.8801879882812
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/barbershop_15_landmarks.png",
+    "<scratchpad>/proto/out/barbershop_15_hair.png",
+    "<scratchpad>/proto/out/barbershop_15_multiclass.png",
+    "<scratchpad>/proto/out/barbershop_15_cropbox.png",
+    "<scratchpad>/proto/out/barbershop_15_crop.png",
+    "<scratchpad>/proto/out/barbershop_15_sheet.png"
+   ]
+  },
+  {
+   "image": "gfpgan_10045.png",
+   "width": 783,
+   "height": 1146,
+   "timings_ms": {
+    "face_landmarker": 3.1,
+    "hair_segmenter": 53.9,
+    "selfie_multiclass": 111.5,
+    "face_detector": 3.0,
+    "face_landmarker_min": 2.5,
+    "hair_segmenter_min": 52.7,
+    "selfie_multiclass_min": 105.4,
+    "face_detector_min": 2.9
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.0244,
+    "n_components_total": 6,
+    "n_components_significant": 2,
+    "largest_component_fraction": 0.989,
+    "ambiguous_band_fraction_of_hair": 0.96,
+    "mean_conf_inside": 0.84,
+    "touches_border": {
+     "top": false,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.0,
+    "multiclass_hair_area_fraction": 0.011,
+    "multiclass_class_fractions": {
+     "background": 0.5997,
+     "hair": 0.011,
+     "body-skin": 0.0345,
+     "face-skin": 0.0223,
+     "clothes": 0.3229,
+     "others": 0.0096
+    }
+   },
+   "face_detector": [],
+   "n_faces_landmarker": 0,
+   "faces": [],
+   "outputs": [
+    "<scratchpad>/proto/out/gfpgan_10045_landmarks.png",
+    "<scratchpad>/proto/out/gfpgan_10045_hair.png",
+    "<scratchpad>/proto/out/gfpgan_10045_multiclass.png",
+    "<scratchpad>/proto/out/gfpgan_10045_cropbox.png",
+    "<scratchpad>/proto/out/gfpgan_10045_crop.png",
+    "<scratchpad>/proto/out/gfpgan_10045_sheet.png"
+   ]
+  },
+  {
+   "image": "sadtalker_art_5.png",
+   "width": 1024,
+   "height": 1024,
+   "timings_ms": {
+    "face_landmarker": 16.9,
+    "hair_segmenter": 55.7,
+    "selfie_multiclass": 158.6,
+    "face_detector": 3.6,
+    "face_landmarker_min": 14.9,
+    "hair_segmenter_min": 55.3,
+    "selfie_multiclass_min": 129.4,
+    "face_detector_min": 2.7
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.2941,
+    "n_components_total": 2,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.184,
+    "mean_conf_inside": 0.951,
+    "touches_border": {
+     "top": true,
+     "bottom": false,
+     "left": false,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.911,
+    "multiclass_hair_area_fraction": 0.2951,
+    "multiclass_class_fractions": {
+     "background": 0.2599,
+     "hair": 0.2951,
+     "body-skin": 0.0408,
+     "face-skin": 0.2277,
+     "clothes": 0.1765,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 255,
+     "y": 217,
+     "w": 512,
+     "h": 512,
+     "score": 0.961
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 12.9,
+      "yaw": 0.2,
+      "roll": 0.5
+     },
+     "top_blendshapes": [
+      [
+       "mouthPucker",
+       0.954
+      ],
+      [
+       "eyeLookUpRight",
+       0.363
+      ],
+      [
+       "eyeLookUpLeft",
+       0.35
+      ],
+      [
+       "eyeSquintLeft",
+       0.349
+      ],
+      [
+       "eyeSquintRight",
+       0.167
+      ],
+      [
+       "mouthRollLower",
+       0.132
+      ]
+     ],
+     "px": {
+      "mesh_length": 521.1,
+      "face_length_hairline": 613.1,
+      "hairline_offset_from_mesh_top": 92.0,
+      "cheek_width_234_454": 463.5,
+      "cheek_width_3d": 463.5,
+      "cheekbone_width_116_345": 427.1,
+      "jaw_width_172_397": 333.3,
+      "jaw_width_3d": 333.3,
+      "jaw2_width_58_288": 379.5,
+      "forehead_width_103_332": 356.7,
+      "forehead_width_3d": 356.7,
+      "temple_width_54_284": 421.5,
+      "forehead2_width_67_297": 253.0,
+      "chin_width_148_377": 74.1,
+      "eye_outer_dist": 312.3
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 143.9,
+      "at_58_288": 146.1,
+      "left_172": 143.6,
+      "right_397": 144.1,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       134.8,
+       133.9
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.323,
+      "LW_mesh": 1.124,
+      "JC": 0.719,
+      "FC": 0.77,
+      "chinC": 0.16,
+      "LW_rel": 0.975,
+      "JC_rel": 0.928,
+      "FC_rel": 1.149,
+      "chinC_rel": 0.946,
+      "jaw_angle_delta": 11.7
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 337,
+      "sil_person_jaw": 886,
+      "sil_skin_cheek": 531,
+      "sil_person_cheek": 826,
+      "sil_skin_forehead": 404,
+      "sil_person_forehead": 671,
+      "sil_hair_widest_above_forehead": 668,
+      "hair_height_above_mesh_top": 193.0,
+      "sil_skin_jaw_over_cheek": 0.635,
+      "sil_skin_forehead_over_cheek": 0.761,
+      "sil_person_cheek_over_landmark_cheek": 1.782,
+      "sil_hair_widest_over_cheek": 1.441
+     },
+     "shape": "heart",
+     "shape_reasons": [
+      "forehead wider and jaw narrower than canonical (LW=1.32 LW_rel=0.98 JC_rel=0.93 FC_rel=1.15 dAng=+12)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 1024,
+      "y1": 1024,
+      "w": 1024,
+      "h": 1024,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       270.4725036621094,
+       193.75018310546875,
+       746.0316772460938,
+       714.8176879882812
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/sadtalker_art_5_landmarks.png",
+    "<scratchpad>/proto/out/sadtalker_art_5_hair.png",
+    "<scratchpad>/proto/out/sadtalker_art_5_multiclass.png",
+    "<scratchpad>/proto/out/sadtalker_art_5_cropbox.png",
+    "<scratchpad>/proto/out/sadtalker_art_5_crop.png",
+    "<scratchpad>/proto/out/sadtalker_art_5_sheet.png"
+   ]
+  },
+  {
+   "image": "sadtalker_people_0.png",
+   "width": 474,
+   "height": 474,
+   "timings_ms": {
+    "face_landmarker": 13.9,
+    "hair_segmenter": 45.9,
+    "selfie_multiclass": 156.8,
+    "face_detector": 3.1,
+    "face_landmarker_min": 12.1,
+    "hair_segmenter_min": 32.2,
+    "selfie_multiclass_min": 103.9,
+    "face_detector_min": 2.5
+   },
+   "hair_segmenter_labels": [
+    "background",
+    "hair"
+   ],
+   "multiclass_labels": [
+    "background",
+    "hair",
+    "body-skin",
+    "face-skin",
+    "clothes",
+    "others"
+   ],
+   "hair_mask": {
+    "area_fraction": 0.2354,
+    "n_components_total": 3,
+    "n_components_significant": 1,
+    "largest_component_fraction": 1.0,
+    "ambiguous_band_fraction_of_hair": 0.143,
+    "mean_conf_inside": 0.96,
+    "touches_border": {
+     "top": true,
+     "bottom": false,
+     "left": true,
+     "right": false
+    },
+    "iou_vs_multiclass_hair": 0.962,
+    "multiclass_hair_area_fraction": 0.2375,
+    "multiclass_class_fractions": {
+     "background": 0.3358,
+     "hair": 0.2375,
+     "body-skin": 0.035,
+     "face-skin": 0.1138,
+     "clothes": 0.2779,
+     "others": 0.0
+    }
+   },
+   "face_detector": [
+    {
+     "x": 146,
+     "y": 91,
+     "w": 179,
+     "h": 179,
+     "score": 0.834
+    }
+   ],
+   "n_faces_landmarker": 1,
+   "faces": [
+    {
+     "face_index": 0,
+     "n_landmarks": 478,
+     "pose_deg": {
+      "pitch": 14.5,
+      "yaw": -1.0,
+      "roll": 2.3
+     },
+     "top_blendshapes": [
+      [
+       "eyeSquintLeft",
+       0.399
+      ],
+      [
+       "browOuterUpLeft",
+       0.359
+      ],
+      [
+       "eyeLookUpLeft",
+       0.314
+      ],
+      [
+       "mouthSmileRight",
+       0.287
+      ],
+      [
+       "eyeLookUpRight",
+       0.266
+      ],
+      [
+       "mouthSmileLeft",
+       0.252
+      ]
+     ],
+     "px": {
+      "mesh_length": 180.2,
+      "face_length_hairline": 204.2,
+      "hairline_offset_from_mesh_top": 24.0,
+      "cheek_width_234_454": 148.2,
+      "cheek_width_3d": 148.2,
+      "cheekbone_width_116_345": 136.0,
+      "jaw_width_172_397": 115.0,
+      "jaw_width_3d": 115.0,
+      "jaw2_width_58_288": 127.5,
+      "forehead_width_103_332": 109.4,
+      "forehead_width_3d": 109.4,
+      "temple_width_54_284": 129.7,
+      "forehead2_width_67_297": 77.9,
+      "chin_width_148_377": 25.7,
+      "eye_outer_dist": 100.2
+     },
+     "jaw_angle_deg": {
+      "at_172_397": 138.8,
+      "at_58_288": 142.5,
+      "left_172": 139.4,
+      "right_397": 138.3,
+      "auto_gonion": [
+       176,
+       400
+      ],
+      "auto_gonion_angle": [
+       130.2,
+       131.1
+      ]
+     },
+     "face_length_source": "hair_mask",
+     "hairline_lines_found": 5,
+     "ratios": {
+      "LW": 1.378,
+      "LW_mesh": 1.216,
+      "JC": 0.776,
+      "FC": 0.738,
+      "chinC": 0.173,
+      "LW_rel": 1.054,
+      "JC_rel": 1.001,
+      "FC_rel": 1.101,
+      "chinC_rel": 1.026,
+      "jaw_angle_delta": 6.6
+     },
+     "silhouette_px": {
+      "sil_skin_jaw": 115,
+      "sil_person_jaw": 252,
+      "sil_skin_cheek": 164,
+      "sil_person_cheek": 270,
+      "sil_skin_forehead": 127,
+      "sil_person_forehead": 237,
+      "sil_hair_widest_above_forehead": 230,
+      "hair_height_above_mesh_top": 86.0,
+      "sil_skin_jaw_over_cheek": 0.701,
+      "sil_skin_forehead_over_cheek": 0.774,
+      "sil_person_cheek_over_landmark_cheek": 1.822,
+      "sil_hair_widest_over_cheek": 1.552
+     },
+     "shape": "oval",
+     "shape_reasons": [
+      "medium length, widths within ~5% of canonical (LW=1.38 LW_rel=1.05 JC_rel=1.00 FC_rel=1.10 dAng=+7)"
+     ],
+     "crop_box": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 474,
+      "y1": 474,
+      "w": 474,
+      "h": 474,
+      "hair_components": [
+       1
+      ],
+      "face_bbox": [
+       156.13536125421524,
+       85.81667000055313,
+       306.2414195537567,
+       266.5278958082199
+      ]
+     },
+     "pose_warning": ""
+    }
+   ],
+   "outputs": [
+    "<scratchpad>/proto/out/sadtalker_people_0_landmarks.png",
+    "<scratchpad>/proto/out/sadtalker_people_0_hair.png",
+    "<scratchpad>/proto/out/sadtalker_people_0_multiclass.png",
+    "<scratchpad>/proto/out/sadtalker_people_0_cropbox.png",
+    "<scratchpad>/proto/out/sadtalker_people_0_crop.png",
+    "<scratchpad>/proto/out/sadtalker_people_0_sheet.png"
+   ]
+  }
+ ]
+}

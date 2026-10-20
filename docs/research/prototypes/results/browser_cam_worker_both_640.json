@@ -1,0 +1,232 @@
+{
+ "name": "worker_both_640",
+ "chromium": "141.0.7390.37",
+ "playwright_core": "1.64.1",
+ "tasks_vision": "1.1.1",
+ "remote_via_curl": [],
+ "args": [
+  "--use-fake-ui-for-media-stream",
+  "--use-fake-device-for-media-stream",
+  "--autoplay-policy=no-user-gesture-required",
+  "--use-file-for-fake-video-capture=face_640x480.y4m"
+ ],
+ "proxy": false,
+ "url": "/cam_worker.html?delegate=CPU&frames=60",
+ "wall_ms": 20634,
+ "rss": {
+  "processes": 11,
+  "total_rss_mb": 1327,
+  "renderer_rss_mb": 691
+ },
+ "screenshots": [
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_lm.png",
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_lm_canvas.png",
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_hair.png",
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_hair_canvas.png",
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_both.png",
+  "<scratchpad>/proto/out/browser_worker_both_640_worker_both_canvas.png"
+ ],
+ "results": {
+  "params": {
+   "delegate": "CPU",
+   "frames": 60,
+   "w": 640,
+   "h": 480,
+   "segW": 0,
+   "segH": 0
+  },
+  "env": {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+   "hw": 4,
+   "webgpu_api": true,
+   "webgpu_adapter": null,
+   "webgl2": true,
+   "webgl_renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "phases": {
+   "init": {
+    "worker_init_ms": 597,
+    "lm_create_ms": 360,
+    "hair_create_ms": 211
+   },
+   "loops": [
+    {
+     "name": "lm",
+     "n": 60,
+     "fps": 14.6,
+     "frame_interval_ms": {
+      "n": 60,
+      "mean": 68.1,
+      "median": 66.5,
+      "p90": 69.1,
+      "min": 19.7,
+      "max": 563.5
+     },
+     "createImageBitmap_ms": {
+      "n": 60,
+      "mean": 1.7,
+      "median": 1.4,
+      "p90": 2.3,
+      "min": 1,
+      "max": 5.3
+     },
+     "roundtrip_ms": {
+      "n": 60,
+      "mean": 37.2,
+      "median": 32,
+      "p90": 48.9,
+      "min": 24.4,
+      "max": 251.3
+     },
+     "worker_lm_ms": {
+      "n": 60,
+      "mean": 36.6,
+      "median": 31.4,
+      "p90": 48.4,
+      "min": 24,
+      "max": 250.7
+     },
+     "worker_hair_ms": null,
+     "main_draw_ms": {
+      "n": 60,
+      "mean": 1.3,
+      "median": 1.3,
+      "p90": 2.3,
+      "min": 0.3,
+      "max": 3.3
+     },
+     "faces": 60,
+     "main_thread_timer_lateness_ms": {
+      "n": 257,
+      "mean": 0,
+      "median": 0,
+      "p90": 0.2,
+      "min": -11.5,
+      "max": 11.5
+     },
+     "seg_input": "640x480"
+    },
+    {
+     "name": "hair",
+     "n": 60,
+     "fps": 8.8,
+     "frame_interval_ms": {
+      "n": 60,
+      "mean": 112.8,
+      "median": 100.1,
+      "p90": 133.3,
+      "min": 5.9,
+      "max": 607.9
+     },
+     "createImageBitmap_ms": {
+      "n": 60,
+      "mean": 1.8,
+      "median": 1.6,
+      "p90": 2.4,
+      "min": 1,
+      "max": 5.9
+     },
+     "roundtrip_ms": {
+      "n": 60,
+      "mean": 82.5,
+      "median": 83,
+      "p90": 96.6,
+      "min": 63.8,
+      "max": 147.9
+     },
+     "worker_lm_ms": null,
+     "worker_hair_ms": {
+      "n": 60,
+      "mean": 82,
+      "median": 81.3,
+      "p90": 95.9,
+      "min": 63.5,
+      "max": 147.3
+     },
+     "main_draw_ms": {
+      "n": 60,
+      "mean": 3.7,
+      "median": 3.7,
+      "p90": 5,
+      "min": 2.3,
+      "max": 8.7
+     },
+     "faces": 0,
+     "main_thread_timer_lateness_ms": {
+      "n": 427,
+      "mean": 0,
+      "median": 0,
+      "p90": 0.2,
+      "min": -4.2,
+      "max": 4
+     },
+     "seg_input": "640x480"
+    },
+    {
+     "name": "both",
+     "n": 60,
+     "fps": 7,
+     "frame_interval_ms": {
+      "n": 60,
+      "mean": 140.5,
+      "median": 133.3,
+      "p90": 166.4,
+      "min": 31.1,
+      "max": 667.2
+     },
+     "createImageBitmap_ms": {
+      "n": 60,
+      "mean": 1.7,
+      "median": 1.5,
+      "p90": 2.3,
+      "min": 1.1,
+      "max": 4.1
+     },
+     "roundtrip_ms": {
+      "n": 60,
+      "mean": 108.4,
+      "median": 103.5,
+      "p90": 136.3,
+      "min": 84.1,
+      "max": 171.2
+     },
+     "worker_lm_ms": {
+      "n": 60,
+      "mean": 30.8,
+      "median": 28,
+      "p90": 39.3,
+      "min": 23.7,
+      "max": 50.8
+     },
+     "worker_hair_ms": {
+      "n": 60,
+      "mean": 76.1,
+      "median": 74.1,
+      "p90": 91.8,
+      "min": 59.8,
+      "max": 120.4
+     },
+     "main_draw_ms": {
+      "n": 60,
+      "mean": 4.8,
+      "median": 3.5,
+      "p90": 5.7,
+      "min": 2.5,
+      "max": 49.9
+     },
+     "faces": 60,
+     "main_thread_timer_lateness_ms": {
+      "n": 526,
+      "mean": 0.2,
+      "median": 0,
+      "p90": 0.2,
+      "min": -7.8,
+      "max": 104.3
+     },
+     "seg_input": "640x480"
+    }
+   ]
+  },
+  "errors": []
+ }
+}

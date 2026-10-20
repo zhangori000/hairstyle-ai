@@ -1,0 +1,589 @@
+[
+ {
+  "image": "portrait.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.25,
+  "length_ratio_below_chin": -0.67,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.32,
+  "width_over_cheek": 1.26,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   103,
+   98,
+   97
+  ],
+  "color": "grey",
+  "hsv_L": [
+   10,
+   0.06,
+   0.4,
+   42
+  ]
+ },
+ {
+  "image": "business-person.png",
+  "face": 0,
+  "hair_area_over_face_area": 0.53,
+  "length_ratio_below_chin": -0.68,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.56,
+  "width_over_cheek": 1.35,
+  "bangs_coverage_of_forehead_band": 0.05,
+  "bangs": "no",
+  "median_rgb": [
+   37,
+   35,
+   36
+  ],
+  "color": "black",
+  "hsv_L": [
+   330,
+   0.05,
+   0.15,
+   14
+  ]
+ },
+ {
+  "image": "biden.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.2,
+  "length_ratio_below_chin": -0.6,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.57,
+  "width_over_cheek": 1.26,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   158,
+   132,
+   105
+  ],
+  "color": "light brown/dark blonde",
+  "hsv_L": [
+   30,
+   0.34,
+   0.62,
+   57
+  ]
+ },
+ {
+  "image": "alex-lacamoire.png",
+  "face": 0,
+  "hair_area_over_face_area": 0.89,
+  "length_ratio_below_chin": -0.08,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.49,
+  "width_over_cheek": 1.75,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   49,
+   40,
+   35
+  ],
+  "color": "black",
+  "hsv_L": [
+   22,
+   0.29,
+   0.19,
+   17
+  ]
+ },
+ {
+  "image": "faceparsing_116_ori.png",
+  "face": 0,
+  "hair_area_over_face_area": 1.17,
+  "length_ratio_below_chin": 0.15,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.44,
+  "width_over_cheek": 1.85,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   85,
+   57,
+   41
+  ],
+  "color": "dark brown",
+  "hsv_L": [
+   22,
+   0.52,
+   0.33,
+   27
+  ]
+ },
+ {
+  "image": "extra/barbershop_15.png",
+  "face": 0,
+  "hair_area_over_face_area": 0.99,
+  "length_ratio_below_chin": 0.12,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.41,
+  "width_over_cheek": 1.74,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   58,
+   44,
+   39
+  ],
+  "color": "black",
+  "hsv_L": [
+   16,
+   0.33,
+   0.23,
+   20
+  ]
+ },
+ {
+  "image": "extra/barbershop_117.png",
+  "face": 0,
+  "hair_area_over_face_area": 1.13,
+  "length_ratio_below_chin": 0.1,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.43,
+  "width_over_cheek": 1.76,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   70,
+   31,
+   34
+  ],
+  "color": "black",
+  "hsv_L": [
+   356,
+   0.56,
+   0.27,
+   18
+  ]
+ },
+ {
+  "image": "extra/sadtalker_people_0.png",
+  "face": 0,
+  "hair_area_over_face_area": 1.95,
+  "length_ratio_below_chin": 0.89,
+  "length": "long (shoulder/chest)",
+  "height_above_mesh_top_over_face_len": 0.48,
+  "width_over_cheek": 2.99,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   21,
+   8,
+   5
+  ],
+  "color": "black",
+  "hsv_L": [
+   12,
+   0.76,
+   0.08,
+   3
+  ]
+ },
+ {
+  "image": "extra/sadtalker_art_5.png",
+  "face": 0,
+  "hair_area_over_face_area": 1.24,
+  "length_ratio_below_chin": 0.15,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.37,
+  "width_over_cheek": 1.91,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   37,
+   24,
+   32
+  ],
+  "color": "black",
+  "hsv_L": [
+   324,
+   0.35,
+   0.15,
+   11
+  ]
+ },
+ {
+  "image": "extra/openface_lennon1.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.87,
+  "length_ratio_below_chin": 0.03,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.15,
+  "width_over_cheek": 1.83,
+  "bangs_coverage_of_forehead_band": 0.51,
+  "bangs": "yes",
+  "median_rgb": [
+   46,
+   35,
+   37
+  ],
+  "color": "black",
+  "hsv_L": [
+   350,
+   0.24,
+   0.18,
+   15
+  ]
+ },
+ {
+  "image": "extra/openface_clapton2.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.78,
+  "length_ratio_below_chin": -0.03,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.43,
+  "width_over_cheek": 1.81,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   62,
+   56,
+   50
+  ],
+  "color": "dark brown",
+  "hsv_L": [
+   30,
+   0.19,
+   0.24,
+   24
+  ]
+ },
+ {
+  "image": "extra/openface_adams.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 2.05,
+  "length_ratio_below_chin": 1.0,
+  "length": "long (shoulder/chest)",
+  "height_above_mesh_top_over_face_len": 0.48,
+  "width_over_cheek": 2.07,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   101,
+   61,
+   51
+  ],
+  "color": "dark brown",
+  "hsv_L": [
+   12,
+   0.49,
+   0.4,
+   30
+  ]
+ },
+ {
+  "image": "extra/liveportrait_s1.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 1.44,
+  "length_ratio_below_chin": -0.04,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.58,
+  "width_over_cheek": 1.73,
+  "bangs_coverage_of_forehead_band": 0.99,
+  "bangs": "yes",
+  "median_rgb": [
+   66,
+   40,
+   21
+  ],
+  "color": "black",
+  "hsv_L": [
+   26,
+   0.68,
+   0.26,
+   19
+  ]
+ },
+ {
+  "image": "extra/liveportrait_s5.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.97,
+  "length_ratio_below_chin": -0.15,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.68,
+  "width_over_cheek": 1.47,
+  "bangs_coverage_of_forehead_band": 0.04,
+  "bangs": "no",
+  "median_rgb": [
+   59,
+   32,
+   34
+  ],
+  "color": "black",
+  "hsv_L": [
+   356,
+   0.46,
+   0.23,
+   16
+  ]
+ },
+ {
+  "image": "extra/liveportrait_s11.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.88,
+  "length_ratio_below_chin": -0.08,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.52,
+  "width_over_cheek": 1.64,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   37,
+   38,
+   33
+  ],
+  "color": "black",
+  "hsv_L": [
+   72,
+   0.13,
+   0.15,
+   15
+  ]
+ },
+ {
+  "image": "extra/liveportrait_s12.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.54,
+  "length_ratio_below_chin": -0.37,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.49,
+  "width_over_cheek": 1.43,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   29,
+   25,
+   21
+  ],
+  "color": "black",
+  "hsv_L": [
+   30,
+   0.27,
+   0.11,
+   9
+  ]
+ },
+ {
+  "image": "extra/dlib_tom_cruise.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.48,
+  "length_ratio_below_chin": -0.34,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.47,
+  "width_over_cheek": 1.29,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   64,
+   39,
+   24
+  ],
+  "color": "black",
+  "hsv_L": [
+   22,
+   0.62,
+   0.25,
+   18
+  ]
+ },
+ {
+  "image": "extra/fr_kit_with_rose.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 1.69,
+  "length_ratio_below_chin": 0.73,
+  "length": "long (shoulder/chest)",
+  "height_above_mesh_top_over_face_len": 0.58,
+  "width_over_cheek": 2.63,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   35,
+   23,
+   19
+  ],
+  "color": "black",
+  "hsv_L": [
+   16,
+   0.46,
+   0.14,
+   9
+  ]
+ },
+ {
+  "image": "extra/fr_kit_with_rose.jpg",
+  "face": 1,
+  "hair_area_over_face_area": 2.23,
+  "length_ratio_below_chin": 0.81,
+  "length": "long (shoulder/chest)",
+  "height_above_mesh_top_over_face_len": 0.55,
+  "width_over_cheek": 2.11,
+  "bangs_coverage_of_forehead_band": 0.04,
+  "bangs": "no",
+  "median_rgb": [
+   127,
+   86,
+   63
+  ],
+  "color": "red/auburn",
+  "hsv_L": [
+   22,
+   0.51,
+   0.5,
+   40
+  ]
+ },
+ {
+  "image": "extra/fr_johnsnow_test1.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 6.51,
+  "length_ratio_below_chin": 2.54,
+  "length": "very long",
+  "height_above_mesh_top_over_face_len": 0.48,
+  "width_over_cheek": 3.52,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   70,
+   69,
+   68
+  ],
+  "color": "dark brown",
+  "hsv_L": [
+   30,
+   0.03,
+   0.27,
+   29
+  ]
+ },
+ {
+  "image": "extra/gfpgan_blake_lively.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 1.06,
+  "length_ratio_below_chin": 0.5,
+  "length": "medium (neck/collar)",
+  "height_above_mesh_top_over_face_len": 0.35,
+  "width_over_cheek": 2.67,
+  "bangs_coverage_of_forehead_band": 0.01,
+  "bangs": "no",
+  "median_rgb": [
+   150,
+   111,
+   84
+  ],
+  "color": "brown",
+  "hsv_L": [
+   24,
+   0.44,
+   0.59,
+   50
+  ]
+ },
+ {
+  "image": "extra/gfpgan_blake_lively.jpg",
+  "face": 1,
+  "hair_area_over_face_area": 0.26,
+  "length_ratio_below_chin": 0.09,
+  "length": "chin-length / bob",
+  "height_above_mesh_top_over_face_len": 0.4,
+  "width_over_cheek": 1.6,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   33,
+   17,
+   13
+  ],
+  "color": "black",
+  "hsv_L": [
+   12,
+   0.61,
+   0.13,
+   7
+  ]
+ },
+ {
+  "image": "extra/dlib_bald_guys.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.0,
+  "verdict": "no hair detected (bald/very short/hat or model miss)"
+ },
+ {
+  "image": "extra/dlib_bald_guys.jpg",
+  "face": 1,
+  "hair_area_over_face_area": 0.0,
+  "verdict": "no hair detected (bald/very short/hat or model miss)"
+ },
+ {
+  "image": "extra/facealign_aflw.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 1.02,
+  "length_ratio_below_chin": 0.31,
+  "length": "medium (neck/collar)",
+  "height_above_mesh_top_over_face_len": 0.37,
+  "width_over_cheek": 1.56,
+  "bangs_coverage_of_forehead_band": 0.02,
+  "bangs": "no",
+  "median_rgb": [
+   51,
+   50,
+   48
+  ],
+  "color": "black",
+  "hsv_L": [
+   40,
+   0.06,
+   0.2,
+   21
+  ]
+ },
+ {
+  "image": "two_people.jpg",
+  "face": 0,
+  "hair_area_over_face_area": 0.04,
+  "length_ratio_below_chin": -0.78,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.36,
+  "width_over_cheek": 1.75,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   142,
+   115,
+   91
+  ],
+  "color": "brown",
+  "hsv_L": [
+   28,
+   0.36,
+   0.56,
+   51
+  ]
+ },
+ {
+  "image": "two_people.jpg",
+  "face": 1,
+  "hair_area_over_face_area": 0.08,
+  "length_ratio_below_chin": -0.78,
+  "length": "short (above jaw)",
+  "height_above_mesh_top_over_face_len": 0.21,
+  "width_over_cheek": 0.98,
+  "bangs_coverage_of_forehead_band": 0.0,
+  "bangs": "no",
+  "median_rgb": [
+   85,
+   70,
+   64
+  ],
+  "color": "dark brown",
+  "hsv_L": [
+   18,
+   0.25,
+   0.33,
+   31
+  ]
+ }
+]
