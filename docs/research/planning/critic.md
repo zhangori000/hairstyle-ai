@@ -1,0 +1,112 @@
+# Completeness critic
+
+_An independent agent checked the synthesized plan against the original brief, the research brief and the gap-fill evidence, and listed gaps, contradictions and overclaims. Each item was addressed in `../game-plan.md`._
+
+# Critic
+
+## Overall
+Every explicit question in the owner's request is answered somewhere in the plan, and the big ones are answered well: state machines (yes, three small ones), typing (strict + Zod + branded ids + a type-level privacy invariant), zero comments (reinterpreted sensibly), event-driven (no, with a 'what would change this' trigger), image analysis (on-device geometry + VLM semantics, face shape as soft ratios, prototype-backed), calling AI (one provider interface, typed refusals, retention classes, shutdown tests), run-cost pricing (verified Vertex/Anthropic rates, honest secondary tags elsewhere), reference-hair transfer (feasible, unproven, Phase 3) and live video (not feasible in 2026, recolour only). The plan's verified/secondary/unverified discipline is unusually good and most gap-fill corrections (Nano Banana 2.1 token ladders, Safari 27 HEIC, iOS 26 rotation, Anthropic Covered Models, Omnibus scope, TAKE IT DOWN text, fal CDN caveat, Android 2026-08-25 post) are carried through correctly. Three weaknesses matter. First, honesty about prototyping: the owner explicitly asked for prototypes, and the three that ran never touched the core generative render, never made a live API call, never ran on Safari or a phone GPU, and never saw a dark-skin textured-hair subject; the plan quotes prototype results freely but has no ledger saying what was not tried, and a $1.50 render prototype would have been possible. Second, a handful of categorical or 'verified' statements outrun the evidence (live video nonexistence stated as fact, Seedream 86-110 s, OpenAI token rates 'verified', 14 refs on 2.1, idempotency-key claim, 1,000 free YouCam units, Anthropic retention without caveat, 'only runnable specialist', the white-space claim); each is a one-line wording fix. Third, knowledge the owner asked for was collected but not surfaced: competitor price points and complaint themes, an incumbent feature inventory, the taxonomy/catalog seed repos, Mobbin references, the uploaded-video edit option, and a parked-ideas list. All of these are zero-cost edits from material already in the brief and gap-fills; the only spend needed to close the gaps is roughly $5-10 of Phase 0 API calls (20-photo cross-vendor analysis probe, 10-30 first renders, a 5-10 image textured-hair run through the MediaPipe prototype).
+
+## Gaps
+- [covered] Should we introduce state machines?
+  missing: Nothing material. Plan Section 7 and the decision table answer yes with three concrete machines (client Session union + exhaustive reducer, photo lifecycle Picked->Discarded, server render-job table), name the promotion trigger to XState 5.33.3 and rule out XState 6 alpha; this matches the architecture lane and the fact-check.
+  fill: None required. Optionally put the reducer table-test sketch in the first ADR so the answer is executable, not just stated.
+- [covered] Should we use good/strong typing?
+  missing: Nothing material: strict flags, ts-reset, t3-env, Zod 4.6.7 at boundaries, branded ids, a PhotoBytes type confined to lib/privacy with a type test, enums for RefinementIntent/SafetyOutcome. Versions are npm-verified in the platform gap-fill.
+  fill: None required.
+- [covered] Should we adopt 'zero comments' for AI-written code?
+  missing: Answered with a nuanced position (no restating comments, keep why:/invariant:/privacy:/quirk:). It is a judgment, not an evidence claim, and it is consistent with CLAUDE.md's existing privacy-comment mandate. The brief's only external support (Anthropic guidance on pruning CLAUDE.md, tests-as-spec) is cited in the architecture lane but not in the plan.
+  fill: Add one sentence citing the architecture lane's Anthropic guidance so the owner can see it is grounded rather than taste.
+- [covered] Should we use event-driven architecture?
+  missing: Answered 'no bus/CQRS/event sourcing/Temporal at friends scale; an append-only events table as data'. The evidence is the architecture lane's judgment (primary docs only, fact-check line truncated); the plan gives the scale rationale and the processor-in-consent rationale, which is adequate.
+  fill: None required; keep the 'what would change this' line (loss rate > a few percent or provider duration > function limit) in the ADR, which Section 7 already states.
+- [covered] Etc etc. (other engineering best practices for AI-assisted coding)
+  missing: Repo conventions, hooks, ADRs, colocated tests, type tests, eslint bans, prompt-as-PR-with-harness-deltas, observability without inputs, layered spend caps are all present.
+  fill: None required.
+- [partial] I need knowledge on image analysis
+  missing: The analysis story (on-device MediaPipe geometry + VLM semantics, face shape as soft ratios, user-confirmed curl pattern and undertone) is thorough and prototype-backed. Missing: the MediaPipe prototype explicitly could not obtain a very dark-skin subject with textured/afro hair, Safari was never run, and the GPU delegate was never measured on a phone; the plan quotes the model-card fairness gap (71.9 vs 81.7 IoU) but never says the gate/mask/crop path is untested on 3C-4C hair and Monk 9-10 skin, which is the population it flags as a top risk.
+  fill: Zero-cost, under an hour: rerun proto-mediapipe on 5-10 FairFace (CC BY 4.0) or SFHQ (MIT) dark-skin textured-hair images and report gate pass rate, mask IoU vs multiclass and hairline-length success; add one honest sentence to Section 5 ('untested on textured hair until X').
+- [partial] I need knowledge on calling AI
+  missing: Provider interface, structured-output schema rules, refusal typing, retention classes and shutdown tests are well covered. Missing: (1) no live API call was made to any vendor in the whole sweep (proto-vision-llm had no keys), so render latency, refusal rate on ordinary selfies and thinking-token cost are all unmeasured and the plan only says so obliquely ('no source measured Nano Banana latency'); (2) the brief's recommended 20-photo cross-vendor analysis test (Claude vs Gemini vs GPT for enum agreement and refusals) was dropped; the plan locks Sonnet 5.5 with only a same-vendor two-call consistency probe.
+  fill: About $5 in Phase 0 week 1: 20 SFHQ faces x {Sonnet 5.5, Haiku 5.5, Gemini on Vertex} analyze calls (agreement on enums/taxonomy IDs, refusals, latency, thinking tokens) plus 10 gemini-nano-banana-2.1 renders for p50/p95 latency and refusal count. Record the numbers in the Phase 0 exit table.
+- [partial] I need knowledge on pricing
+  missing: API unit prices and the per-session/per-user cost model are covered with verified/secondary labels. Missing: the market-side pricing the gap-fill collected (Facetune $25/mo-$77.99/yr, HairTry $4.99/mo-$29.99/yr, hairstyleai.com $9 one-time photoshoot, The Face Report $17.49, AI Hair Try-On $7.99/week, YouCam API ~$0.09-0.11 per render, FaceApp Pro ~$19.99/yr estimate) and the complaint themes about paywalls and billing never reach the plan, so the owner cannot see what the market charges or why friends-never-pay is a differentiator.
+  fill: Zero cost: add a 7-row 'what incumbents charge' table to Section 1 or an appendix, every row marked unverified/secondary with the gap-fill source and as_of.
+- [partial] I need knowledge on product features in general
+  missing: Section 4 gives the app's own flow and Section 1 the white space, but there is no inventory of what incumbents actually ship (live AR recolour, preset catalogs 50-250+, face-shape analyzers that do not render, Instagram/Pinterest style import, analysis-first flows, A/B polls, share cards, weekly paywalls), no summary of the review complaint themes (paywall on saving, 'synthetic mask' uncanny look, billing/cancellation), and the stylist reply link is presented as original although the brief attributes it to HairPath/ManeRoute (a hackathon project).
+  fill: Zero cost: one feature-inventory table from the brief's products lane plus the products gap-fill, with a 'we copy / we skip / we improve' column; credit HairPath/ManeRoute in Section 4.
+- [covered] Is it possible to upload a photo of someone's hair and have the AI put that hair on me?
+  missing: Answered honestly: feasible on a still, quality unproven, no systematic test for any 2026 model, hairline/texture/pose-gap failures expected, Phase 3 behind a flag, reference cropped to hair on device so the other person's face never uploads. The one omission is that the sweep itself never tried a two-image prompt, so the owner should know the answer rests on vendor guides and research ablations only.
+  fill: State that no two-image transfer was prototyped; a 10-pair SFHQ test on gemini-nano-banana-2.1 costs under $1 and would give the first in-house evidence.
+- [partial] Is it possible to turn on video and have the AI put the hair on me live?
+  missing: Live photoreal cut replacement is correctly answered 'not feasible in 2026; ship on-device recolour labelled preview', and the turntable clip is offered. Missing from Section 6: the brief's third video option, editing a short uploaded selfie video (Gemini Omni Flash 1.1, <=10 s input, not available in EEA/UK/CH, untested for hair), and the Snap Camera Kit 3D hair-asset lens route are both dropped silently rather than rejected with a reason.
+  fill: Zero cost: add two sentences to Section 6 listing uploaded-video edit as a Phase 3 experiment (privacy cost: the video leaves the device; region restriction) and stating why 3D-asset lenses were not chosen (Snap approval, online-only, low realism).
+- [covered] Feed a photo of you and the AI works to put the hair on you (core still-photo try-on)
+  missing: This is the MVP; the plan covers capture, consent, render, paste-back, refine, export. Honesty note: it has never been run end to end in this sweep (see prototypes gap).
+  fill: Covered by the prototype-ledger fix below.
+- [partial] Try out creatively (explore ideas, do not take the obvious path)
+  missing: The plan has genuinely creative product moves (suitability-first with rendering as proof, typed refine chips, stylist reply link, 'I got the cut' compare, balance language, bald-first chain). Several ideas the brief surfaced are dropped without mention: a Krea-style resemblance knob, Warby Parker-style 'hide current hair/hat', per-style thumbnails on the user's own face once cost allows, LivePortrait-style animated preview of the chosen still, seasonal trend refresh from Pinterest Predicts/Google Trends instead of the LLM.
+  fill: Zero cost: a short 'parked ideas' list at the end of Section 4 with a one-line reason each (cost, licence, scope).
+- [partial] Exhaust and look for inspiration, resources and test data
+  missing: Test data is well covered (Section 10). Inspiration and resources are used but never named: the ~70 Mobbin references, the catalog seed repos (shape-up 50 classes with synonyms, headcutter schema with aiPrompt/maintenance/1A-4C suitability, groomai barberScript + guard numbers), Hairmony's 18-attribute/74-label taxonomy and HairCLIP's 44 style names for the typed HairDescription, hairstyle-ai-studio's privacy pattern, hairgen-io/fade-try-on delete patterns, and the lane note paths. The owner asked for the knowledge, and the plan only carries the conclusions.
+  fill: Zero cost: a 'Resources' appendix listing each repo/dataset/pattern with its licence and the scratchpad note path (research/*.md) it came from; name the taxonomy sources in Phase 1's 'catalog v1' bullet.
+- [partial] Run prototypes
+  missing: Three prototypes ran (MediaPipe in Python against golden assets, MediaPipe in headless Chromium with worker and GPU delegate, a vision-LLM JSON exercise without an API key) and the plan quotes their results, but it has no ledger of what was and was not tried. Not prototyped: any generative hair render (the app's core claim), any live API call, any reference-hair two-image prompt, Safari/iOS, a real phone GPU, a textured-hair subject. Given the owner's explicit dislike of AI that does not try, this absence is the most important honesty gap in the plan.
+  fill: Add a 'Prototypes run / not run' box to Section 1 or 10. Then run the first render prototype before or on day 1 of Phase 0: 10 SFHQ faces x 3 styles on gemini-nano-banana-2.1 via Vertex (about $1.50) with the fixed template, recording latency, refusals, and a visual identity check; this also seeds the golden set.
+- [covered] Help my friends visualize hairstyles (private multi-user app)
+  missing: Allowlist magic-link invites, adults-only, own-face-only, share-sheet distribution, no feed, consent per vendor list; friends' legal exposure (BIPA/WA/CO/GDPR) addressed.
+  fill: None required.
+- [covered] Do not code anything
+  missing: Complied; the repo has no code and the plan is research only.
+  fill: None required.
+
+## Contradictions
+- A: Plan Section 1 and Section 6: 'Live photoreal haircut replacement does not exist in 2026' / 'No product ships it'.
+  B: Products gap-fill rates this [medium] as 'nothing found' and lists among still-unverified items 'whether any Snapchat/TikTok generative lens shipped live photoreal hair restyle in 2026 (nothing found, but vendor sites were unreachable)'; Snap, TikTok, Decart docs and Perfect Corp hosts were all blocked.
+  resolve: Reword to 'none found in this sweep; Snapchat/TikTok/Decart/Perfect Corp sites unreachable'. The design decision (ship on-device recolour) stands either way.
+- A: Plan Section 6: HairFastGAN is 'the only runnable specialist'; HairPort and Stable-Hair v2 are 'research-only'.
+  B: Brief hair-models lane lists Stable-Hair (Apache-2.0, SD1.5) as a runnable diffusion successor, and the hair-edit gap-fill corrects the sweep: Stable-Hair v2 has an official public repo (github.com/sunkymepro/StableHairV2, weights on Google Drive, bald input, no licence stated).
+  resolve: Say HairFastGAN is the only sub-second, permissively licensed transfer specialist; list Stable-Hair v1 (Apache-2.0) and v2 (code public, licence unstated) as heavier Ring B options rather than 'research-only'.
+- A: Plan Section 5 and decision table: for Claude Sonnet/Haiku 5.5 'content is not retained by default'.
+  B: Brief privacy lane said '~30-day retention'; the privacy-legal gap-fill replaced that with the platform doc's 'not retained by default except Covered Models' but adds that the standard commercial retention article (privacy.claude.com/en/articles/7996866) was unreachable, 'so a stated 30-day default there cannot be ruled out'.
+  resolve: Keep the platform-doc wording but carry the caveat; add 'read the commercial retention article' to the Phase 0 list that already exists for the Vertex abuse-log window. Image ephemerality (vision doc) is verified and can stay unqualified.
+- A: Plan Section 1: 'no incumbent exposes a refine vocabulary, a suitability-first flow ..., a stylist handoff with a reply link'.
+  B: Products gap-fill: 2026 newcomers are 'moving from catalog grids to prompt- and reference-driven try-on and to analysis-first flows' (Hairu text prompts, HairTry Instagram/Pinterest import, YouCam custom reference, HairWow/Hiface/CutMuse analysis-first); brief products lane: the stylist handoff with barber reply link already exists in HairPath/ManeRoute (a hackathon project); the products lane itself ran with app stores unreachable.
+  resolve: Narrow the white-space claim to 'no shipped product found with a typed refine vocabulary plus suitability-first flow plus stylist reply link'; acknowledge prompt-driven and analysis-first newcomers and credit HairPath/ManeRoute.
+- A: Plan Section 5: gemini-nano-banana-2.1 takes 'up to 14 reference images'.
+  B: Brief reference-and-video lane verifies 14 for gemini-3.1-flash-image and gemini-3-pro-image-preview (6 at high fidelity, 3 on Lite); the platform gap-fill's AI SDK docs read says 2.1 accepts prompt.images and cites 14 for gemini-3-pro-image-preview, not for 2.1.
+  resolve: Mark the 2.1 reference limit as unverified and confirm it on the model page or by test in Phase 0; it only matters for the Phase 3 reference-transfer experiment.
+- A: Plan Section 6: turntable clip 'via Veo 3.1 Lite/Fast, $0.30-0.60 per clip, secondary'.
+  B: Brief pricing lane: 'Veo 3.1 Lite/Fast $0.15-0.50 per 5 s'; reference-and-video lane: '$0.30-1.60 per 5-6 s' and '$0.30-0.60'.
+  resolve: Quote $0.15-0.60 per clip as secondary; irrelevant until Phase 3, but the plan should not pick one sub-range.
+- A: Plan Section 7 / decision table: Vercel Hobby is 'personal, non-commercial per the official snippet; the friends case is unaddressed', with Cloudflare as drop-in.
+  B: Brief pricing lane recommendation: 'Vercel Hobby (non-commercial is acceptable for a friends app)'; platform gap-fill: 'no official text addresses a zero-revenue friends-only app'.
+  resolve: The plan's hedge is the correct reading; the pricing lane's acceptability claim was unsupported and should not be reused.
+- A: Plan Section 5: 'Gemini and OpenAI image endpoints accept no idempotency key, so the renders table enforces one render id per request'.
+  B: Neither the brief nor any gap-fill lane states this for Gemini or OpenAI; the only documented no-idempotency-key finding is for the YouCam API ('retries re-charge').
+  resolve: Keep the server-side render-id design (it is harmless and useful) but either source the Gemini/OpenAI claim or drop it from the plan.
+- A: Plan Section 3 Phase 0 and decision table rest on Vertex 'contractual no-training and a disable-able cache' (cacheConfig.disableCache=true).
+  B: Privacy-legal gap-fill: the Vertex data-governance evidence is a mirror scraped 2025-05-12; docs.cloud.google.com is blocked, and the abuse-log window (30 vs 90 days) is unresolved.
+  resolve: Design is sound; add 're-read the live data-governance page and the exception-request form' to Phase 0 week 1 alongside the existing instruction to fill consent copy only from primary pages.
+- A: Plan Section 9: hard cap $40 per month with alerts at $25/$35.
+  B: Plan Section 7: default per-user daily cap of 24 renders; 10 friends x 24 x ~$0.039 x 30 days is roughly $280 per month if exhausted, so the daily cap alone cannot hold the budget.
+  resolve: Internal tension, not an evidence conflict: either lower the default daily cap (about 6 renders per user per day keeps the worst case near $70) or state plainly that the alerts and kill switch, not the per-user cap, are the budget guard.
+- A: Plan Section 8: 'Guideline 5.1.2(i) (last updated 2026-10-16)'.
+  B: Brief privacy fact-check: the third-party-AI consent clause dates from the 2025-11-13 guideline update; only the page's last-updated stamp is 2026-10-16.
+  resolve: Clarify to 'page last updated 2026-10-16; clause in force since 2025-11-13' so no one treats it as a new rule.
+
+## Overclaims
+- Section 1 and 6 state categorically that live photoreal haircut replacement does not exist / no product ships it; the evidence is 'none found' from a sweep in which Snapchat, TikTok, Decart docs and Perfect Corp hosts were all unreachable (products gap-fill rates it [medium] and lists it as still unverified).
+- Section 5 and the decision table give Seedream 5.0 Pro latency as '86-110 s' as a plain fact; the hair-edit gap-fill marks it unverified, carried from the prior sweep, source page blocked, single reviewer.
+- Section 5 labels gpt-image-2.5 '$5/$8/$30 per 1M tokens verified' while defining 'verified' as 'read on a primary page during this sweep'; the edit-pricing gap-fill got these from LiteLLM's mirror plus an OpenAI model-page search snippet and says 'the page itself was not read' (OpenAI hosts DNS-blocked).
+- Section 5 attributes 'up to 14 reference images' to gemini-nano-banana-2.1; the 14 figure is verified only for gemini-3.1-flash-image and gemini-3-pro-image-preview.
+- Section 5 asserts 'Gemini and OpenAI image endpoints accept no idempotency key'; no lane or gap-fill documents this for either vendor (only YouCam).
+- Open decision 13 and Section 5 speak of YouCam's 'roughly 1,000 free units'; the gap-fill says the unconditional sandbox is ~40 units and 1,000 requires a hackathon or affiliate signup code.
+- Section 5 and the decision table state Anthropic 'content is not retained by default' without the gap-fill's caveat that the standard commercial retention article was unreachable and a 30-day default cannot be ruled out.
+- Section 1's white-space claim ('no incumbent exposes a refine vocabulary ... a stylist handoff with a reply link') overstates a products lane that could not reach app stores; the gap-fill found prompt-driven and analysis-first newcomers, and the reply-link pattern exists in HairPath/ManeRoute.
+- Section 6 calls HairFastGAN 'the only runnable specialist' although Stable-Hair (Apache-2.0) and Stable-Hair v2 (official repo, weights public) are runnable per the brief and the gap-fill correction.
+- Decision table (Platform) says 'HEIC and iOS 26.x rotation quirks are known and handled'; nothing is built, and the gap-fill says it is unconfirmed whether Safari 27.0 fix 180429147 resolves the home-screen rotation bug.
+- Section 5 applies the '+10% in non-global regions' Vertex surcharge to gemini-nano-banana-2.1; the quoted footnote [4] for 2.1 does not mention it (it is quoted for Nano Banana 2 footnote [2] and as a general Vertex rule), and open decision 2 itself says 2.1's regional availability is unverified.
+- Section 8 states 'a private entity includes individuals, so the owner is covered' under BIPA; plausible from the statute, but the BIPA mirror quoted in the gap-fill does not include the private-entity definition, so it is unsourced within this evidence set.
+- Section 5's '~$0.014 per photo analysis on Sonnet (verified rates)' is a rate-only verification: the token count assumes a 1024x1024 image and excludes system prompt, caching and thinking tokens, which the prototype names as the largest unknown; the plan says so only for the session estimate, not for the per-photo figure.
+- Section 1 says 'Three evidence facts drive every choice' and that the plan is grounded in prototypes, but the core render step, any live vendor call, and any textured-hair subject were never prototyped; the plan nowhere states this plainly.

@@ -6,9 +6,10 @@ Everything else is supporting evidence.
 
 | Folder | What it is |
 |---|---|
-| `findings/` | One document per research lane: summary, recommendations, open questions, findings with sources, a numbers table with as-of dates, resources, and the fact-check verdicts with every correction. |
+| `findings/` | One document per research lane: summary, recommendations, open questions, findings with sources, a numbers table with as-of dates, resources, and the fact-check verdicts with every correction. The `gap-*.md` files are the second pass that re-checked what the first could not reach. |
 | `notes/` | The long-form notes each research agent wrote while working (every URL it opened). Lightly edited; treat as raw material. |
 | `prototypes/` | The three hands-on experiments (on-device MediaPipe analysis, in-browser live camera analysis, vision-LLM analysis loop): scripts, raw results and overlay images. |
+| `planning/` | The three competing plans (MVP-first, quality-first, privacy-first), the judges' scores and flaws, the agent-drafted synthesis, and the critic's review. `game-plan.md` is the synthesis after hand editing against that review. |
 
 ## How this was produced
 
